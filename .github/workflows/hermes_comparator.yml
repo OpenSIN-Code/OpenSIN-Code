@@ -1,0 +1,106 @@
+name: 🔍 Hermes-to-OpenSIN Issue Generator
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: 'Force run even if target reached'
+        required: false
+        default: false
+        type: boolean
+      target_issues:
+        description: 'Target number of open issues per repo'
+        required: false
+        default: 50
+        type: number
+
+env:
+  TARGET_ISSUES_PER_REPO: 50
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  clone-hermes:
+    runs-on: ubuntu-latest
+    outputs:
+      hermes_path: ${{ steps.clone.outputs.path }}
+    steps:
+      - name: Clone sin-hermes-agent
+        id: clone
+        run: |
+          git clone https://github.com/Delqhi/sin-hermes-agent.git hermes
+          echo "path=hermes" >> $GITHUB_OUTPUT
+          echo "✅ Hermes cloned: $(find hermes -type f | wc -l) files"
+
+  analyze-and-create-issues:
+    needs: clone-hermes
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        repo: ['OpenSIN', 'OpenSIN-Code', 'OpenSIN-backend']
+      max-parallel: 1
+
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          repository: OpenSIN-AI/${{ matrix.repo }}
+          path: target-repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests PyGithub
+
+      - name: Count open issues
+        id: count
+        run: |
+          OPEN_ISSUES=$(gh issue list --repo OpenSIN-AI/${{ matrix.repo }} --state open --limit 1000 --json number | jq length)
+          echo "open_issues=$OPEN_ISSUES" >> $GITHUB_OUTPUT
+          TARGET=${{ inputs.target_issues || env.TARGET_ISSUES_PER_REPO }}
+          echo "target=$TARGET" >> $GITHUB_OUTPUT
+          NEEDED=$((TARGET - OPEN_ISSUES))
+          [ $NEEDED -lt 0 ] && NEEDED=0
+          echo "needed=$NEEDED" >> $GITHUB_OUTPUT
+          echo "Open: $OPEN_ISSUES | Target: $TARGET | Needed: $NEEDED"
+
+      - name: Run Hermes Comparator
+        if: steps.count.outputs.needed != '0' || github.event.inputs.force_run == 'true'
+        env:
+          REPO_NAME: ${{ matrix.repo }}
+          NEEDED: ${{ steps.count.outputs.needed }}
+          HERMES_PATH: ${{ needs.clone-hermes.outputs.hermes_path }}
+          FORCE_RUN: ${{ github.event.inputs.force_run || 'false' }}
+        run: |
+          python target-repo/.github/workflows/hermes_comparator.py \
+            --repo OpenSIN-AI/$REPO_NAME \
+            --needed ${NEEDED:-50} \
+            --force ${FORCE_RUN} \
+            --hermes-dir $HERMES_PATH \
+            --target-dir target-repo
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hermes-comparator-${{ matrix.repo }}
+          path: |
+            hermes_comparator_results.json
+            hermes_comparator_log.txt
+          retention-days: 7
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🔍 Hermes Comparator - ${{ matrix.repo }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Open Issues: ${{ steps.count.outputs.open_issues }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Target: ${{ steps.count.outputs.target }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Needed: ${{ steps.count.outputs.needed }}" >> $GITHUB_STEP_SUMMARY
+          [ -f hermes_comparator_results.json ] && cat hermes_comparator_results.json >> $GITHUB_STEP_SUMMARY
