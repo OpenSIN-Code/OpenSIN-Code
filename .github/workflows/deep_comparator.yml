@@ -1,0 +1,133 @@
+name: 🔍 DEEP Hermes+Claude-to-OpenSIN Comparator
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      force_run:
+        description: 'Force run even if target reached'
+        required: false
+        default: false
+        type: boolean
+      target_issues:
+        description: 'Target number of open issues per repo'
+        required: false
+        default: 50
+        type: number
+
+env:
+  TARGET_ISSUES_PER_REPO: 50
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  clone-reference-repos:
+    runs-on: ubuntu-latest
+    outputs:
+      hermes_path: ${{ steps.clone-hermes.outputs.path }}
+      claude_path: ${{ steps.clone-claude.outputs.path }}
+    steps:
+      - name: Clone sin-hermes-agent
+        id: clone-hermes
+        run: |
+          git clone https://github.com/Delqhi/sin-hermes-agent.git hermes
+          echo "path=hermes" >> $GITHUB_OUTPUT
+          echo "✅ Hermes cloned: $(find hermes -type f | wc -l) files"
+
+      - name: Clone sin-claude repos
+        id: clone-claude
+        run: |
+          mkdir -p claude
+          git clone --depth 1 https://github.com/Delqhi/sin-claude.git claude/sin-claude 2>/dev/null || true
+          # If sin-claude is a meta-repo, clone sub-repos
+          if [ -d "claude/sin-claude/claude-code-main" ]; then
+            echo "path=claude/sin-claude" >> $GITHUB_OUTPUT
+            echo "✅ Claude Code cloned: $(find claude/sin-claude/claude-code-main -type f | wc -l) files"
+          elif [ -d "claude/sin-claude" ]; then
+            echo "path=claude/sin-claude" >> $GITHUB_OUTPUT
+            echo "✅ Claude cloned: $(find claude/sin-claude -type f | wc -l) files"
+          else
+            # Try direct clone of claude-code
+            git clone --depth 1 https://github.com/Delqhi/claude-code.git claude/claude-code 2>/dev/null || true
+            echo "path=claude" >> $GITHUB_OUTPUT
+            echo "✅ Claude fallback: $(find claude -type f | wc -l) files"
+          fi
+
+  analyze-and-create-issues:
+    needs: clone-reference-repos
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      matrix:
+        repo: ['OpenSIN', 'OpenSIN-Code', 'OpenSIN-backend']
+      max-parallel: 1
+
+    steps:
+      - name: Checkout target repo
+        uses: actions/checkout@v4
+        with:
+          repository: OpenSIN-AI/${{ matrix.repo }}
+          path: target-repo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests PyGithub
+
+      - name: Count open issues
+        id: count
+        run: |
+          OPEN_ISSUES=$(gh issue list --repo OpenSIN-AI/${{ matrix.repo }} --state open --limit 1000 --json number | jq length)
+          echo "open_issues=$OPEN_ISSUES" >> $GITHUB_OUTPUT
+          TARGET=${{ inputs.target_issues || env.TARGET_ISSUES_PER_REPO }}
+          echo "target=$TARGET" >> $GITHUB_OUTPUT
+          NEEDED=$((TARGET - OPEN_ISSUES))
+          [ $NEEDED -lt 0 ] && NEEDED=0
+          echo "needed=$NEEDED" >> $GITHUB_OUTPUT
+          echo "📊 Open: $OPEN_ISSUES | Target: $TARGET | Needed: $NEEDED"
+
+      - name: Run DEEP Comparator
+        if: steps.count.outputs.needed != '0' || github.event.inputs.force_run == 'true'
+        env:
+          REPO_NAME: ${{ matrix.repo }}
+          NEEDED: ${{ steps.count.outputs.needed }}
+          HERMES_PATH: ${{ needs.clone-reference-repos.outputs.hermes_path }}
+          CLAUDE_PATH: ${{ needs.clone-reference-repos.outputs.claude_path }}
+          FORCE_RUN: ${{ github.event.inputs.force_run || 'false' }}
+        run: |
+          python target-repo/.github/workflows/deep_comparator.py \
+            --repo OpenSIN-AI/$REPO_NAME \
+            --needed ${NEEDED:-50} \
+            --force ${FORCE_RUN} \
+            --hermes-dir $HERMES_PATH \
+            --claude-dir $CLAUDE_PATH \
+            --target-dir target-repo
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deep-comparator-${{ matrix.repo }}
+          path: |
+            deep_comparator_results.json
+          retention-days: 7
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 🔍 DEEP Comparator - ${{ matrix.repo }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Open Issues Before:** ${{ steps.count.outputs.open_issues }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Target:** ${{ steps.count.outputs.target }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Issues Needed:** ${{ steps.count.outputs.needed }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f deep_comparator_results.json ]; then
+            echo "### Results" >> $GITHUB_STEP_SUMMARY
+            cat deep_comparator_results.json >> $GITHUB_STEP_SUMMARY
+          fi
