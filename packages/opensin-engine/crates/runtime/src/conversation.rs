@@ -7,6 +7,7 @@ use crate::compact::{
 use crate::config::RuntimeFeatureConfig;
 use crate::hooks::{HookRunResult, HookRunner};
 use crate::permissions::{PermissionOutcome, PermissionPolicy, PermissionPrompter};
+use crate::recursive_mas::RecursiveMasMonitor;
 use crate::session::{ContentBlock, ConversationMessage, Session};
 use crate::usage::{TokenUsage, UsageTracker};
 
@@ -97,6 +98,7 @@ pub struct ConversationRuntime<C, T> {
     max_iterations: usize,
     usage_tracker: UsageTracker,
     hook_runner: HookRunner,
+    recursive_mas_monitor: RecursiveMasMonitor,
 }
 
 impl<C, T> ConversationRuntime<C, T>
@@ -141,6 +143,7 @@ where
             max_iterations: usize::MAX,
             usage_tracker,
             hook_runner: HookRunner::from_feature_config(&feature_config),
+            recursive_mas_monitor: RecursiveMasMonitor::new(feature_config.recursive_mas()),
         }
     }
 
@@ -206,11 +209,20 @@ where
                     self.permission_policy.authorize(&tool_name, &input, None)
                 };
 
+                self.recursive_mas_monitor
+                    .before_tool_use(&tool_name, &input);
+
                 let result_message = match permission_outcome {
                     PermissionOutcome::Allow => {
                         let pre_hook_result = self.hook_runner.run_pre_tool_use(&tool_name, &input);
                         if pre_hook_result.is_denied() {
                             let deny_message = format!("PreToolUse hook denied tool `{tool_name}`");
+                            self.recursive_mas_monitor.after_tool_use(
+                                &tool_name,
+                                &input,
+                                &deny_message,
+                                true,
+                            );
                             ConversationMessage::tool_result(
                                 tool_use_id,
                                 tool_name,
@@ -237,6 +249,13 @@ where
                                 post_hook_result.is_denied(),
                             );
 
+                            self.recursive_mas_monitor.after_tool_use(
+                                &tool_name,
+                                &input,
+                                &output,
+                                is_error,
+                            );
+
                             ConversationMessage::tool_result(
                                 tool_use_id,
                                 tool_name,
@@ -246,6 +265,12 @@ where
                         }
                     }
                     PermissionOutcome::Deny { reason } => {
+                        self.recursive_mas_monitor.after_tool_use(
+                            &tool_name,
+                            &input,
+                            &reason,
+                            true,
+                        );
                         ConversationMessage::tool_result(tool_use_id, tool_name, reason, true)
                     }
                 };

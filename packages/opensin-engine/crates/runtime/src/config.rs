@@ -53,6 +53,53 @@ pub struct RuntimeFeatureConfig {
     model: Option<String>,
     permission_mode: Option<ResolvedPermissionMode>,
     sandbox: SandboxConfig,
+    recursive_mas: Option<RecursiveMasConfig>,
+}
+
+#[derive(Debug, Clone, PartialEq, Eq, Default)]
+pub struct RecursiveMasConfig {
+    pub enabled: bool,
+    pub topology: String,
+    pub latent_dim: usize,
+    pub cli_path: String,
+    pub log_traces: bool,
+}
+
+impl RecursiveMasConfig {
+    #[must_use]
+    pub fn new() -> Self {
+        Self {
+            enabled: false,
+            topology: "chain".to_string(),
+            latent_dim: 64,
+            cli_path: "recursivemas".to_string(),
+            log_traces: true,
+        }
+    }
+
+    #[must_use]
+    pub fn with_topology(mut self, topology: impl Into<String>) -> Self {
+        self.topology = topology.into();
+        self
+    }
+
+    #[must_use]
+    pub fn with_latent_dim(mut self, dim: usize) -> Self {
+        self.latent_dim = dim;
+        self
+    }
+
+    #[must_use]
+    pub fn with_cli_path(mut self, path: impl Into<String>) -> Self {
+        self.cli_path = path.into();
+        self
+    }
+
+    #[must_use]
+    pub fn with_log_traces(mut self, log: bool) -> Self {
+        self.log_traces = log;
+        self
+    }
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, Default)]
@@ -249,6 +296,7 @@ impl ConfigLoader {
             model: parse_optional_model(&merged_value),
             permission_mode: parse_optional_permission_mode(&merged_value)?,
             sandbox: parse_optional_sandbox_config(&merged_value)?,
+            recursive_mas: parse_optional_recursive_mas_config(&merged_value)?,
         };
 
         Ok(RuntimeConfig {
@@ -376,6 +424,11 @@ impl RuntimeFeatureConfig {
     #[must_use]
     pub fn sandbox(&self) -> &SandboxConfig {
         &self.sandbox
+    }
+
+    #[must_use]
+    pub fn recursive_mas(&self) -> Option<&RecursiveMasConfig> {
+        self.recursive_mas.as_ref()
     }
 }
 
@@ -661,6 +714,39 @@ fn parse_optional_sandbox_config(root: &JsonValue) -> Result<SandboxConfig, Conf
     })
 }
 
+fn parse_optional_recursive_mas_config(
+    root: &JsonValue,
+) -> Result<Option<RecursiveMasConfig>, ConfigError> {
+    let Some(object) = root.as_object() else {
+        return Ok(None);
+    };
+    let Some(rm_value) = object.get("recursiveMas") else {
+        return Ok(None);
+    };
+    let rm = expect_object(rm_value, "merged settings.recursiveMas")?;
+
+    let enabled = optional_bool(rm, "enabled", "merged settings.recursiveMas")?
+        .unwrap_or(false);
+    let topology = optional_string(rm, "topology", "merged settings.recursiveMas")?
+        .unwrap_or("chain")
+        .to_string();
+    let latent_dim = optional_usize(rm, "latentDim", "merged settings.recursiveMas")?
+        .unwrap_or(64);
+    let cli_path = optional_string(rm, "cliPath", "merged settings.recursiveMas")?
+        .unwrap_or("recursivemas")
+        .to_string();
+    let log_traces = optional_bool(rm, "logTraces", "merged settings.recursiveMas")?
+        .unwrap_or(true);
+
+    Ok(Some(RecursiveMasConfig {
+        enabled,
+        topology,
+        latent_dim,
+        cli_path,
+        log_traces,
+    }))
+}
+
 fn parse_filesystem_mode_label(value: &str) -> Result<FilesystemIsolationMode, ConfigError> {
     match value {
         "off" => Ok(FilesystemIsolationMode::Off),
@@ -824,6 +910,27 @@ fn optional_u16(
                 )));
             };
             let number = u16::try_from(number).map_err(|_| {
+                ConfigError::Parse(format!("{context}: field {key} is out of range"))
+            })?;
+            Ok(Some(number))
+        }
+        None => Ok(None),
+    }
+}
+
+fn optional_usize(
+    object: &BTreeMap<String, JsonValue>,
+    key: &str,
+    context: &str,
+) -> Result<Option<usize>, ConfigError> {
+    match object.get(key) {
+        Some(value) => {
+            let Some(number) = value.as_i64() else {
+                return Err(ConfigError::Parse(format!(
+                    "{context}: field {key} must be an integer"
+                )));
+            };
+            let number = usize::try_from(number as i64).map_err(|_| {
                 ConfigError::Parse(format!("{context}: field {key} is out of range"))
             })?;
             Ok(Some(number))

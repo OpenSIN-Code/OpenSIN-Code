@@ -16,6 +16,7 @@ mod remote;
 pub mod sandbox;
 mod session;
 mod usage;
+pub mod recursive_mas;
 
 pub use lsp::{
     FileDiagnostics, LspContextEnrichment, LspError, LspManager, LspServerConfig,
@@ -33,6 +34,7 @@ pub use config::{
     McpServerConfig, McpStdioServerConfig, McpTransport, McpWebSocketServerConfig, OAuthConfig,
     ResolvedPermissionMode, RuntimeConfig, RuntimeFeatureConfig, RuntimeHookConfig,
     RuntimePluginConfig, ScopedMcpServerConfig, SIN_SETTINGS_SCHEMA_NAME,
+    RecursiveMasConfig,
 };
 pub use conversation::{
     ApiClient, ApiRequest, AssistantEvent, ConversationRuntime, RuntimeError, StaticToolExecutor,
@@ -81,6 +83,9 @@ pub use remote::{
     DEFAULT_SESSION_TOKEN_PATH, DEFAULT_SYSTEM_CA_BUNDLE, NO_PROXY_HOSTS, UPSTREAM_PROXY_ENV_KEYS,
 };
 pub use session::{ContentBlock, ConversationMessage, MessageRole, Session, SessionError};
+pub use recursive_mas::{
+    monitor_tool_use, RecursiveMasMonitor, RecursiveMasSession,
+};
 pub use usage::{
     format_usd, pricing_for_model, ModelPricing, TokenUsage, UsageCostEstimate, UsageTracker,
 };
