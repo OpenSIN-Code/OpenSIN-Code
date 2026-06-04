@@ -11,10 +11,12 @@
 name: ceo-audit
 
 on:
+  # NUR main/master (Branches sind verboten — siehe globale AGENTS.md).
+  # PRs sind weiterhin willkommen (last line of defense wenn doch einer entsteht).
   push:
-    branches: [main, master, develop]
+    branches: [main, master]
   pull_request:
-    branches: [main, master, develop]
+    branches: [main, master]
   workflow_dispatch:
     inputs:
       profile:
@@ -69,10 +71,10 @@ jobs:
         run: |
           # sin-code-bundle does not yet ship the skill scripts.
           # Clone the SSOT (Infra-SIN-OpenCode-Stack) to get audit.sh + axis scripts.
-          git clone --depth 1 --branch main https://github.com/OpenSIN-Code/Infra-SIN-OpenCode-Stack.git /tmp/infra
+          git clone --depth 1 --branch main https://github.com/OpenSIN-Code/Infra-SIN-OpenCode-Stack.git ${{ github.workspace }}/infra
           mkdir -p ~/.config/opencode/skills/ceo-audit
-          cp -r /tmp/infra/skills/ceo-audit/scripts ~/.config/opencode/skills/ceo-audit/
-          cp -r /tmp/infra/skills/ceo-audit/lib ~/.config/opencode/skills/ceo-audit/
+          cp -r ${{ github.workspace }}/infra/skills/ceo-audit/scripts ~/.config/opencode/skills/ceo-audit/
+          cp -r ${{ github.workspace }}/infra/skills/ceo-audit/lib ~/.config/opencode/skills/ceo-audit/
           chmod +x ~/.config/opencode/skills/ceo-audit/scripts/audit.sh
           ls ~/.config/opencode/skills/ceo-audit/scripts/audit.sh
 
@@ -162,6 +164,39 @@ jobs:
             📊 [Download SARIF (for Code Scanning)](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts)
 
             > Run `${{ env.AUDIT_PROFILE == 'FULL' && '~/.config/opencode/skills/ceo-audit/scripts/audit.sh . --profile=FULL' || '~/.config/opencode/skills/ceo-audit/scripts/audit.sh . --profile=QUICK' }}` locally to reproduce.
+
+      - name: Post official audit comment (SIN-GitHub-Issues App)
+        if: github.event_name == 'pull_request' && always()
+        # Token resolution chain (highest priority first):
+        #   1. SIN_GITHUB_INSTALLATION_TOKEN (org secret, App identity, public repos only)
+        #   2. SIN_GITHUB_FALLBACK_TOKEN (repo secret, PAT — works on ALL repos incl. private)
+        #   3. GITHUB_TOKEN (built-in, Action identity, always present)
+        # Resolution happens inside post_audit_pr.py via github_app.get_token().
+        # If ALL tokens are missing, the step fails but continue-on-error prevents
+        # the workflow from blocking on App issues.
+        continue-on-error: true
+        env:
+          PYTHONPATH: ${{ github.workspace }}/infra/skills/ceo-audit/lib
+          SIN_GITHUB_APP_CLIENT_ID: Iv23livllaHIBTdQdyhY
+          # Chain of GitHub tokens (post_audit_pr.py picks the first available).
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SIN_GITHUB_FALLBACK_TOKEN: ${{ secrets.SIN_GITHUB_FALLBACK_TOKEN }}
+        run: |
+          # post_audit_pr.py lives in the cloned Infra repo (see 'Install ceo-audit skill' step)
+          # score.json is written by audit.sh to ~/ceo-audits/<repo>-ceo-audit-<runid>/score.json
+          # We search both ceo-audit-output/ and ~/ceo-audits/ to be robust.
+          SCORE_FILE=$(find $HOME/ceo-audits ceo-audit-output -name 'score.json' 2>/dev/null | head -1)
+          if [ -z "$SCORE_FILE" ]; then
+            echo "::warning::No score.json found — skipping App commenter (Action comment above still posts)"
+            exit 0
+          fi
+          echo "Using score.json: $SCORE_FILE"
+          python3 ${{ github.workspace }}/infra/skills/ceo-audit/scripts/post_audit_pr.py \
+            --repo ${{ github.repository }} \
+            --pr ${{ github.event.pull_request.number }} \
+            --score-json "$SCORE_FILE" \
+            --artifact-url ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} \
+            --run-id ${{ github.run_id }}
 
       - name: Fail if grade below gate
         if: github.event_name == 'pull_request'
