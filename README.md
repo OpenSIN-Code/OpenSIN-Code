@@ -2,6 +2,21 @@
 
 > The autonomous OpenSIN CLI with full browser & computer-use capabilities.
 
+> [!IMPORTANT]
+> **SSOT:** Die kanonische OpenCode-Konfiguration liegt unter [Delqhi/upgraded-opencode-stack](https://github.com/Delqhi/upgraded-opencode-stack).
+> Nach jeder Änderung MUSS `sin-sync` ausgeführt werden.
+
+## 🚨 CI/CD MANDAT — ABSOLUTES VERBOT FÜR NORMALE GITHUB ACTIONS
+
+**NIEMALS normale GitHub Actions Runner von GitHub nutzen!** GitHub Actions Billing blockiert unsere Pipelines. Dieses Repository nutzt **ausschließlich** n8n + sin-github-action für CI/CD. Alle Builds laufen auf dem kostenlosen OCI VM (Oracle Cloud Always-Free).
+
+- **GitHub Action:** `OpenSIN-AI/sin-github-action` (curl-only, ~2s)
+- **n8n Webhook:** `http://92.5.60.87:5678/webhook/opensin-ci`
+- **CI Runner:** `opensin-ci-runner.py` als systemd Service auf OCI VM
+- **Vollständige Doku:** [docs.opensin.ai/best-practices/ci-cd-n8n](https://docs.opensin.ai/best-practices/ci-cd-n8n)
+
+**Setup für Repos:** Secret `N8N_CI_WEBHOOK_URL` setzen und `.github/workflows/ci.yml` aus der Doku übernehmen. Keine selbstgeschriebenen GitHub Workflows mit `runs-on: ubuntu-latest` für Build/Test/Lint — immer nur den Delegator verwenden!
+
 ## Features
 
 - **AI-Powered Coding**: Autonomous code generation, refactoring, and debugging
@@ -81,8 +96,8 @@ OpenSIN-Code now includes enterprise-grade browser and desktop automation:
 ## Quick Start
 
 ```bash
-npm install
-npm run build
+bun install
+bun run build
 opensin-code
 ```
 
