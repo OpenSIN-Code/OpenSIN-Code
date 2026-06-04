@@ -16,7 +16,7 @@ import type {
   AssistantKillRequest,
   LifecycleEvent,
   LifecycleEventType,
-} from './types';
+} from './types.js';
 
 interface AssistantProcess {
   id: AssistantId;
@@ -66,7 +66,6 @@ export class AssistantLifecycle extends EventEmitter {
     this.emitEvent({
       type: 'assistant_spawned',
       assistantId: id,
-      state: 'running',
       details: { name: request.descriptor.name, role: request.descriptor.role },
     });
 
@@ -86,7 +85,6 @@ export class AssistantLifecycle extends EventEmitter {
       this.emitEvent({
         type: 'assistant_error',
         assistantId: id,
-        state: 'error',
         error: err,
       });
 
@@ -119,7 +117,6 @@ export class AssistantLifecycle extends EventEmitter {
     this.emitEvent({
       type: 'assistant_paused',
       assistantId: request.assistantId,
-      state: 'paused',
       details: { saveState: request.saveState, reason: request.reason },
     });
 
@@ -147,7 +144,6 @@ export class AssistantLifecycle extends EventEmitter {
     this.emitEvent({
       type: 'assistant_resumed',
       assistantId: request.assistantId,
-      state: 'running',
       details: { restoreState: request.restoreState },
     });
 
@@ -176,7 +172,6 @@ export class AssistantLifecycle extends EventEmitter {
     this.emitEvent({
       type: 'assistant_killed',
       assistantId: request.assistantId,
-      state: 'terminated',
       details: { force: request.force, reason: request.reason },
     });
 

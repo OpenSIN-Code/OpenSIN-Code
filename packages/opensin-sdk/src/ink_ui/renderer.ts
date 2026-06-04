@@ -14,7 +14,7 @@ import type {
   UIComponent,
   Style,
   TerminalState,
-} from './types';
+} from './types.js';
 
 const ESC = '\x1b[';
 const RESET = `${ESC}0m`;

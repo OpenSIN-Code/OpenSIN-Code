@@ -1,4 +1,4 @@
-import type { CompanionBones, Eye, Species } from './types'
+import type { CompanionBones, Eye, Species } from './types.js'
 
 const BODIES: Record<Species, string[][]> = {
   duck: [

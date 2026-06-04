@@ -130,11 +130,10 @@ export interface LifecycleTransition {
 
 /** Lifecycle event */
 export interface LifecycleEvent {
-  type: LifecycleEventType
+  type: 'transition' | 'error' | 'heartbeat'
   assistantId: AssistantId
   state: LifecycleState
   details?: Record<string, unknown>
-  error?: string
   timestamp: number
 }
 
@@ -211,55 +210,3 @@ export interface OrchestratorEvents {
   on(event: 'error', handler: (error: Error) => void): void
   emit(event: string, data: unknown): void
 }
-
-/** Descriptor for an assistant instance */
-export interface AssistantDescriptor {
-  id: AssistantId
-  name: string
-  role: AssistantRole
-  metadata?: Record<string, unknown>
-}
-
-/** Request to spawn an assistant */
-export interface AssistantSpawnRequest {
-  descriptor: AssistantDescriptor
-  config?: Partial<AssistantConfig>
-}
-
-/** Result from spawning an assistant */
-export interface AssistantSpawnResult {
-  success: boolean
-  assistantId?: AssistantId
-  error?: string
-  spawnDurationMs: number
-}
-
-/** Request to pause an assistant */
-export interface AssistantPauseRequest {
-  assistantId: AssistantId
-  saveState: boolean
-  reason?: string
-}
-
-/** Request to resume an assistant */
-export interface AssistantResumeRequest {
-  assistantId: AssistantId
-  restoreState: boolean
-}
-
-/** Request to kill an assistant */
-export interface AssistantKillRequest {
-  assistantId: AssistantId
-  force: boolean
-  reason?: string
-}
-
-/** Type of lifecycle event */
-export type LifecycleEventType =
-  | 'assistant_spawned'
-  | 'assistant_paused'
-  | 'assistant_resumed'
-  | 'assistant_killed'
-  | 'assistant_error'
-  | 'state_transition'
-

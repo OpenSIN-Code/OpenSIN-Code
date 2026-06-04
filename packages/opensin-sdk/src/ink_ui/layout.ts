@@ -12,7 +12,7 @@ import type {
   LayoutNode,
   Position,
   Style,
-} from './types';
+} from './types.js';
 
 interface LayoutConstraint {
   x: number;

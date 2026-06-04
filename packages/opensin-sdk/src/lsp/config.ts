@@ -13,7 +13,7 @@ const DEFAULT_SERVERS: Record<string, LanguageServerConfig> = {
   typescript: {
     command: 'typescript-language-server',
     args: ['--stdio'],
-    fileExtensions: ['', '.tsx', '', '.jsx'],
+    fileExtensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
   python: {
     command: 'pyright-langserver',

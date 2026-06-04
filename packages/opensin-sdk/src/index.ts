@@ -1,86 +1,402 @@
-// ============================================================
-// OpenSIN SDK - Main Entry Point
-// ============================================================
+// Core
+export { OpenSINClient } from "./client.js";
+export type { ConnectionConfig, ConnectionStatus } from "./client.js";
 
-// Agent Loop
-export { AgentLoop, createAgentLoop, AgentLoopContext } from './agent_loop';
-export type { AgentLoopConfig, AgentLoopResult, ToolHandler } from './agent_loop';
+// Agent SDK re-export
 
-// CLI Agent
-export { CLIAgent, SessionManager, ToolRegistry, createBuiltinTools } from './cli-agent';
-export type { CLIAgentConfig, CLIAgentSession, CLIMessage, CLIContext, CLITool, ToolCallRecord, ToolResult as CLIToolResult, CLICommand, CLICommandOptions, CLIAgentState, CLIEvent } from './cli-agent';
+// Types
+export type {
+  SessionId,
+  ModelId,
+  RequestId,
+  ProtocolVersion,
+  Implementation,
+  Meta,
+  Position,
+  Range,
+  Role,
+  TextContent,
+  ImageContent,
+  AudioContent,
+  ResourceLink,
+  TextResourceContents,
+  BlobResourceContents,
+  EmbeddedResource,
+  ContentBlock,
+  Annotations,
+  Content,
+  ContentChunk,
+  StopReason,
+  Usage,
+  Cost,
+  PlanEntryPriority,
+  PlanEntryStatus,
+  PlanEntry,
+  Plan,
+  Diff,
+  ToolCall,
+  SessionModeId,
+  SessionMode,
+  SessionModeState,
+  ModelInfo,
+  SessionModelState,
+  SessionConfigOption,
+  SessionInfo,
+  PromptCapabilities,
+  FileSystemCapabilities,
+  ClientCapabilities,
+  McpServerHttp,
+  McpServerSse,
+  McpServerStdio,
+  McpServer,
+  AgentCapabilities,
+  SessionCapabilities,
+  InitializeRequest,
+  InitializeResponse,
+  AuthMethodAgent,
+  AuthMethod,
+  NewSessionRequest,
+  NewSessionResponse,
+  LoadSessionRequest,
+  LoadSessionResponse,
+  ListSessionsRequest,
+  ListSessionsResponse,
+  CloseSessionRequest,
+  CloseSessionResponse,
+  PromptRequest,
+  PromptResponse,
+  CancelNotification,
+  SessionUpdate,
+  CurrentModeUpdate,
+  ConfigOptionUpdate,
+  SessionNotification,
+  JsonRpcError,
+  JsonRpcRequest,
+  JsonRpcResponse,
+  JsonRpcNotification,
+  ProviderConfig,
+  StreamEvent,
+  StreamChunk,
+  StreamError,
+  DocumentEvent,
+  DidOpenDocumentNotification,
+  DidCloseDocumentNotification,
+  DidFocusDocumentNotification,
+  TextDocumentContentChangeEvent,
+  DidChangeDocumentNotification,
+  DidSaveDocumentNotification,
+} from "./types.js";
 
-// Model Routing
-export { SmartModelRouter } from './model_routing';
-export type { ModelConfig, RoutingConfig, RoutingDecision, TaskComplexity } from './model_routing';
+// Session
+export {
+  SessionManager,
+  createSessionId,
+  serializeSession,
+  deserializeSession,
+} from "./session.js";
+export type { SessionRecord, SessionManagerOptions } from "./session.js";
 
-// Context Management
-export { OpenSINContextManager, OpenSINContextCompressor, createCompressor } from './context_mgmt';
+// Events
+export { EventStream, EventMultiplexer, parseSSELine, streamSSE } from "./events.js";
 
-// Memory
-export { MemoryManager, FileMemoryProvider, createMemoryManager, createFileProvider } from './memory';
-export type { MemoryEntry, MemoryProvider } from './memory';
+// Providers
+export type { IProvider as Provider, ProviderName } from "./providers.js";
+export {
+  BaseProvider,
+  OpenAIProvider,
+  AnthropicProvider,
+  createProvider,
+  ProviderRegistry,
+  ProviderError,
+} from "./providers.js";
 
-// Safety
-export { SafetyDetector, createSafetyDetector } from './safety';
-export type { SafetyCheck } from './safety';
+// Autonomy
+export { AutonomyLevel } from "./autonomy/index.js";
+export type {
+  AutonomyConfig,
+  AutonomyPermissions,
+  AdminAutonomyPolicy,
+  AutonomyState,
+  AutonomyChangeEvent,
+} from "./autonomy/index.js";
+export { AutonomySlider } from "./autonomy/index.js";
+export { PermissionMatrix, resolvePermissions } from "./autonomy/index.js";
 
-// Permissions
-export { PermissionEvaluator, ApprovalGate, AuditLogger } from './permissions';
-export type { PermissionRule, PermissionDecision } from './permissions';
+// CLI
+export { handleAutonomyCommand, parseAutonomyCommand } from "./cli/index.js";
+export type { AutonomyCommandResult } from "./cli/index.js";
+export { StatusBarRenderer } from "./cli/index.js";
+export type { StatusBarConfig } from "./cli/index.js";
 
-// Session Persistence
-export { SessionStore, SessionManager } from './session_persistence';
-export type { SessionMessage, SessionMetadata, SessionData } from './session_persistence';
+// Hooks
+export { HookEvent } from "./hooks/index.js";
+export type {
+  HookConfig,
+  HookDefinition,
+  HookResult,
+  HookExecutionContext,
+  HooksConfig,
+  BuiltinHookOptions,
+} from "./hooks/index.js";
+export { HookRegistry, HookExecutor, registerBuiltinHooks } from "./hooks/index.js";
 
-// Hook System
-export { HookRegistry, executeHook } from './hook_system';
-export type { HookEvent, HookResult, HookDefinition } from './hook_system';
+// Lint
+export {
+  LinterAggregator,
+  AutoFixEngine,
+  RulesManager,
+  AutoLintSession,
+  createLinter,
+  createAutoFixEngine,
+  createRulesManager,
+  createAutoLintSession,
+} from "./lint/index.js";
+export type {
+  LintError,
+  LintFix,
+  LintConfig,
+  LintResult,
+  AutoFixConfig,
+  RulesConfig,
+  RuleConfig,
+  LintEvent,
+  LintListener,
+  LintSeverity,
+  LintSource,
+  AutoLintSessionConfig,
+} from "./lint/index.js";
 
-// Parallel Tools
-export { ParallelToolExecutor, createParallelExecutor } from './parallel_tools';
-export type { ToolCall, ToolResult, ParallelConfig } from './parallel_tools';
+// Continue My Work
+export {
+  ActionHistory,
+  ContextRestorer,
+  WorkStateSerializer,
+  ContinueMyWork,
+  continueMyWork,
+} from "./continue_work/index.js";
+export type { ActionRecord, WorkState, ContinueWorkResult } from "./continue_work/models.js";
 
-// Usage Pricing
-export { UsagePricing } from './usage_pricing';
-export type { UsageRecord, UsageSummary } from './usage_pricing';
+// Turbo Mode
+export { CommandSafetyFilterImpl as CommandSafetyFilter, AuditTrail, TurboMode, turboMode } from "./turbo/index.js";
+export type { TurboConfig, CommandSafetyFilter as CommandSafetyFilterConfig, AuditEntry, CommandResult } from "./turbo/models.js";
 
-// Prompt Builder
-export { PromptBuilder, optimizeSections, injectContext } from './prompt_builder';
-export type { PromptSection, PromptTemplate, PromptContext } from './prompt_builder';
+// i18n
+export { I18nEngine, TranslationManager, LanguageSelector, RTLHandler, LocaleDetector } from "./i18n/index.js";
+export type { Locale, TranslationEntry, TranslationBundle, LocaleInfo, I18nConfig } from "./i18n/index.js";
 
-// Skill System
-export { SkillRegistry, SkillActivator, parseSkillFile, loadSkillFile } from './skill_system';
-export type { SkillMetadata, SkillDefinition, SkillRegistryOptions } from './skill_system';
+// Design Mode
+export {
+  UIAnnotator,
+  ElementSelector,
+  FeedbackCollector,
+  sendFeedbackToAgent,
+  DesignMode,
+  activateDesignMode,
+  deactivateDesignMode,
+  isDesignModeActive,
+} from "./design_mode/index.js";
+export type {
+  DesignModeConfig,
+  UIElement,
+  Annotation,
+  SelectionArea,
+  FeedbackPayload,
+  CoordinateClick,
+  DesignModeState,
+  ElementSelector as ElementSelectorType,
+  AnnotationStyle,
+  ScreenshotFallback,
+} from "./design_mode/index.js";
 
-// A2A Transport Layer
-export { A2AServer, A2AClient } from './transport';
-export type { A2ATaskPayload, A2ATaskResponse, A2AHealthCheck } from './transport';
+// Powerup
+export {
+  LessonEngine,
+  createLessonEngine,
+  DemoRenderer,
+  createDemoRenderer,
+  ProgressTracker,
+  createProgressTracker,
+  Powerup,
+  activatePowerup,
+  deactivatePowerup,
+  isPowerupActive,
+} from "./powerup/index.js";
+export type {
+  Lesson,
+  LessonStep,
+  LessonCategory,
+  DemoAnimation,
+  DemoAction,
+  UserProgress,
+  LessonProgress,
+  PowerupConfig,
+  PowerupState,
+  Achievement,
+  StepResult,
+} from "./powerup/index.js";
 
-// Heartbeat System
-export { HeartbeatSystem, createHeartbeatSystem } from './heartbeat';
-export type { HeartbeatConfig, HeartbeatState, HeartbeatEvent, HeartbeatStatus, QueuedTask, TaskResult, TaskProcessor, TaskQueuePoller } from './heartbeat';
+// Named Subagents
+export {
+  SubAgentRegistry,
+  getSubAgentRegistry,
+  resetSubAgentRegistry,
+  extractMentions,
+  hasMention,
+  removeMentions,
+  getMentionAtPosition,
+  getMentionPrefix,
+  replaceMentionWithAgent,
+  insertMention,
+} from "./named_subagents/index.js";
+export type {
+  NamedSubAgent,
+  SubAgentMention,
+  TypeaheadSuggestion,
+  AgentRegistryConfig,
+} from "./named_subagents/index.js";
 
-// Failover Model Router
-export { FailoverRouter, createFailoverRouter, OPENSIN_MODELS, DEFAULT_CHAINS } from './model_routing/failover';
-export type { FailoverModelConfig, FailoverChain, FailoverResult, FailoverEvent } from './model_routing/failover';
+// Context Optimizer
+export {
+  ContextAnalyzer,
+  ContextOptimizer,
+  getBuiltinTips,
+  getTipsByCategory,
+  getTipById,
+} from "./context_optimizer/index.js";
+export type {
+  ContextTool,
+  ContextMetrics,
+  ContextWarning,
+  OptimizationTip,
+  ContextAnalysis,
+  ContextOptimizerConfig,
+} from "./context_optimizer/index.js";
 
-// Cron Scheduler
-export { CronScheduler, createCronScheduler, parseCronExpression, getNextExecution } from './cron';
-export type { CronTask, CronExecution, CronExecutor, CronEvent } from './cron';
+// Color Picker
+export { ColorPicker, ThemeApplier, applyPromptBarColor, resetPromptBarColor } from "./color_picker/index.js";
+export { COLOR_PRESETS, DEFAULT_SESSION_COLOR } from "./color_picker/index.js";
+export type {
+  ColorPreset,
+  SessionColor,
+  ColorPickerState,
+  ColorPickerConfig,
+} from "./color_picker/index.js";
 
-// Approval Hooks
-export { ApprovalHooks, createApprovalHooks, DEFAULT_RULES as DEFAULT_APPROVAL_RULES } from './approval';
-export type { ApprovalRule, ApprovalRequest, ApprovalDecision, ApprovalEvent, RiskLevel, ApprovalCondition } from './approval';
+// Live Status
+export { StatusMonitor, StatusDisplay, renderLiveStatus } from "./live_status/index.js";
+export type {
+  LiveStatusSnapshot,
+  TokenUsage,
+  CostInfo,
+  ModelInfo as LiveModelInfo,
+  TurnInfo,
+  StatusDisplayMode,
+  StatusMonitorConfig,
+  StreamingStatusUpdate,
+} from "./live_status/index.js";
 
-// Agent Orchestrator
-export { AgentOrchestrator, createOrchestrator } from './orchestrator';
-export type { OrchestratorConfig, OrchestratorState, OrchestratorEvent, OrchestratorCallback } from './orchestrator';
+// Effort Control
+export { EffortManager } from "./effort_control/index.js";
+export {
+  renderEffortStatusBar,
+  renderEffortHelp,
+  renderEffortConfirmation,
+  formatEffortForPrompt,
+} from "./effort_control/index.js";
+export type {
+  EffortLevel,
+  EffortConfig,
+  EffortState,
+  EffortFrontmatter,
+  EffortChangeEvent,
+} from "./effort_control/index.js";
+export { EFFORT_CONFIGS } from "./effort_control/index.js";
 
-// V2 Modules (experimental)
-export * from './hooks_v2';
-export * from './ink_v2';
-export * from './cli_v2';
-export * from './tools_v2';
-export * from './utils_v2';
-export * from './components_v2';
+// Session Naming
+export { SessionNamer, AutoNamer } from "./session_naming/index.js";
+export type {
+  SessionName,
+  SessionNameConfig,
+  SessionNameEvent,
+  SessionNamingStrategy,
+  AutoNameRequest,
+  RenameRequest,
+} from "./session_naming/index.js";
+
+// Rate Limit Status
+export { RateLimitMonitor } from "./rate_limit_status/index.js";
+export {
+  renderRateLimitStatusline,
+  renderRateLimitBanner,
+  formatRateLimitDetails,
+} from "./rate_limit_status/index.js";
+export type {
+  RateLimitWindow,
+  RateLimitWindowInfo,
+  RateLimitStatus,
+  RateLimitConfig,
+  RateLimitEvent,
+} from "./rate_limit_status/index.js";
+export { DEFAULT_RATE_LIMIT_CONFIG } from "./rate_limit_status/index.js";
+
+// A2A SIN Agents
+export {
+  sinAgentRegistry,
+  registerBuiltInAgents,
+  registerAllAgents,
+  BUILT_IN_AGENTS,
+  SIN_EXPLORER,
+  SIN_PLANNER,
+  SIN_VERIFIER,
+  SIN_CREATOR,
+  SIN_IMAGE_GEN,
+  SIN_VIDEO_GEN,
+  SIN_TEAM_LEAD,
+  SIN_RESEARCHER,
+  SIN_GUIDE,
+} from "./agents/index.js";
+export type {
+  SinAgentDefinition,
+  SpawnedAgent,
+  SpawnAgentRequest,
+  SpawnAgentResult,
+  AgentColorName,
+  AgentSource,
+  AgentIsolation,
+  AgentMemory,
+  AgentModel,
+  PermissionMode,
+  AgentMcpServerSpec,
+  HooksSetting,
+} from "./agents/index.js";
+
+// A2A SIN Agents
+export {
+  sinAgentRegistry,
+  registerBuiltInAgents,
+  registerAllAgents,
+  BUILT_IN_AGENTS,
+  SIN_EXPLORER,
+  SIN_PLANNER,
+  SIN_VERIFIER,
+  SIN_CREATOR,
+  SIN_IMAGE_GEN,
+  SIN_VIDEO_GEN,
+  SIN_TEAM_LEAD,
+  SIN_RESEARCHER,
+  SIN_GUIDE,
+} from "./agents/index.js";
+export type {
+  SinAgentDefinition,
+  SpawnedAgent,
+  SpawnAgentRequest,
+  SpawnAgentResult,
+  AgentColorName,
+  AgentSource,
+  AgentIsolation,
+  AgentMemory,
+  AgentModel,
+  PermissionMode,
+  AgentMcpServerSpec,
+  HooksSetting,
+} from "./agents/index.js";

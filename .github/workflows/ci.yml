@@ -1,10 +1,4 @@
-name: CI → n8n OCI Runner
-
-# ╔══════════════════════════════════════════════════════════════════╗
-# ║  ZERO BILLING CI — delegates all work to n8n on OCI VM          ║
-# ║  Runner cost: ~2s (curl only) instead of 10+ min paid runners   ║
-# ║  Build/test/lint runs on: OCI VM via n8n @ n8n.delqhi.com       ║
-# ╚══════════════════════════════════════════════════════════════════╝
+name: CI
 
 on:
   push:
@@ -12,19 +6,36 @@ on:
   pull_request:
     branches: [main]
 
-permissions:
-  statuses: write   # required: post commit status (pending → success/failure)
-  contents: read    # required: checkout / clone
-
 jobs:
-  dispatch:
-    # Self-hosted OCI runner — zero billing, ARM64, always-free Oracle Cloud
-    runs-on: [self-hosted, linux, arm64, oci]
-    timeout-minutes: 2
+  lint:
+    runs-on: ubuntu-latest
     steps:
-      - name: Dispatch CI to n8n OCI Runner
-        uses: OpenSIN-AI/sin-github-action@main
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          n8n_webhook_url: ${{ secrets.N8N_CI_WEBHOOK_URL }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pipeline: all
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm test
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm audit --audit-level=high

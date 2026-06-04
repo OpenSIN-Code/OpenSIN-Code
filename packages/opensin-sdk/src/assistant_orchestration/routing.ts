@@ -11,7 +11,7 @@ import type {
   TaskDescription,
   RoutingRule,
   RoutingDecision,
-} from './types'
+} from './types.js'
 
 export class TaskRouter {
   private rules: Map<string, RoutingRule> = new Map()

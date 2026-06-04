@@ -21,9 +21,9 @@ import type {
   KillOptions,
   Orchestrator,
   OrchestratorEvents,
-} from './types'
-import { AssistantLifecycle } from './lifecycle'
-import { TaskRouter, createDefaultRouter } from './routing'
+} from './types.js'
+import { AssistantLifecycle } from './lifecycle.js'
+import { TaskRouter, createDefaultRouter } from './routing.js'
 
 const DEFAULT_CONFIG: OrchestrationConfig = {
   maxConcurrentAssistants: 10,
@@ -362,4 +362,4 @@ class AssistantRegistryImpl {
 }
 
 // Named export for the orchestrator class
-export { OpenSINOrchestrator as OrchestratorClass }
+export const Orchestrator = OpenSINOrchestrator

@@ -7,7 +7,7 @@
  * Branding: Fully OpenSIN — no Claude references
  */
 
-import type { SinAgentDefinition } from '../types'
+import type { SinAgentDefinition } from '../types.js'
 
 function getSinVideoGenSystemPrompt(): string {
   return `You are SIN-VideoGen, an AI video generation specialist for OpenSIN-Code. You create brand-compliant videos with full packaging.

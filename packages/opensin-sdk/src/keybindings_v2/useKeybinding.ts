@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-declare const window: any;
-declare type KeyboardEvent = any;
-
 import { useCallback, useEffect, useRef, useState } from 'react'
-import type { KeyBinding, KeybindingContext, ResolvedBinding } from './types'
-import { KeybindingResolver } from './resolver'
-import { DEFAULT_KEYBINDINGS } from './defaultBindings'
+import type { KeyBinding, KeybindingContext, ResolvedBinding } from './types.js'
+import { KeybindingResolver } from './resolver.js'
+import { DEFAULT_KEYBINDINGS } from './defaultBindings.js'
 
 interface UseKeybindingOptions { context?: KeybindingContext; customBindings?: KeyBinding[]; enabled?: boolean; onCommand?: (command: string, args?: Record<string, unknown>) => void }
 
@@ -20,7 +16,7 @@ export function useKeybinding(options: UseKeybindingOptions = {}) {
   useEffect(() => {
     if (!enabled) return
     const handleKeyDown = (e: KeyboardEvent) => {
-      const targetTag = (e.target as any)?.tagName?.toLowerCase(); if (targetTag === 'input' || targetTag === 'textarea') { if (context !== 'input') return }
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) { if (context !== 'input') return }
       const modifiers: string[] = []
       if (e.ctrlKey) modifiers.push('Ctrl'); if (e.altKey) modifiers.push('Alt')
       if (e.metaKey) modifiers.push('Meta'); if (e.shiftKey) modifiers.push('Shift')

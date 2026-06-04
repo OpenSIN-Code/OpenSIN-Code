@@ -6,8 +6,8 @@
  * on-brand instead of generic (per 2026 best practices).
  */
 
-import { OPENSIN_BRAND } from './guidelines'
-import { BrandEnforcer } from './enforcer'
+import { OPENSIN_BRAND } from './guidelines.js'
+import { BrandEnforcer } from './enforcer.js'
 
 export interface PackageOptions {
   type: 'image' | 'video'
@@ -145,7 +145,7 @@ export class MediaPackager {
       }
     )
 
-    const data: any = await response.json()
+    const data = await response.json()
     if (data.error) {
       throw new Error(`TTS generation failed: ${data.error.message}`)
     }

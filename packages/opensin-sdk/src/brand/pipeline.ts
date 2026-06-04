@@ -10,9 +10,9 @@
  * - One source, many platform variants
  */
 
-import { OPENSIN_BRAND } from './guidelines'
-import { BrandEnforcer } from './enforcer'
-import { MediaPackager } from './packager'
+import { OPENSIN_BRAND } from './guidelines.js'
+import { BrandEnforcer } from './enforcer.js'
+import { MediaPackager } from './packager.js'
 
 export interface ContentBrief {
   topic: string
@@ -128,7 +128,7 @@ Write the content now:`
       }
     )
 
-    const data: any = await response.json()
+    const data = await response.json()
     if (data.error) throw new Error(`Script generation failed: ${data.error.message}`)
 
     return data.candidates?.[0]?.content?.parts?.[0]?.text || ''
@@ -150,7 +150,7 @@ Write the content now:`
       }
     )
 
-    const data: any = await response.json()
+    const data = await response.json()
     if (data.error) throw new Error(`Image generation failed: ${data.error.message}`)
 
     const parts = data.candidates?.[0]?.content?.parts || []
@@ -182,7 +182,7 @@ Write the content now:`
       }
     )
 
-    const data: any = await response.json()
+    const data = await response.json()
     if (data.error) throw new Error(`Video generation failed: ${data.error.message}`)
 
     return { path: data.name || '', prompt: enhancedPrompt }

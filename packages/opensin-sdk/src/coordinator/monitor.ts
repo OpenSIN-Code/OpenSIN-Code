@@ -12,7 +12,7 @@ import type {
   MonitorReport,
   CoordinatorConfig,
   TaskStatus,
-} from './types';
+} from './types.js';
 
 export class CoordinatorMonitor extends EventEmitter {
   private config: CoordinatorConfig;

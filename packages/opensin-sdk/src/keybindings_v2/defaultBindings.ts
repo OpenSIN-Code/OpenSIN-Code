@@ -1,4 +1,4 @@
-import type { KeyBinding } from './types'
+import type { KeyBinding } from './types.js'
 
 export const DEFAULT_KEYBINDINGS: KeyBinding[] = [
   { keys: 'Ctrl+C', command: 'cancel', description: 'Cancel current operation', when: 'global' },

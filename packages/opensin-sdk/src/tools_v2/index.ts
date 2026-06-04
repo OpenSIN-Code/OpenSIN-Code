@@ -1,6 +1,2 @@
-// tools_v2 — Placeholder for upcoming tool system v2
-// This module is intentionally minimal until the next major release.
-
-export const tools_v2 = { placeholder: true };
-
-export type ToolsV2Config = Record<string, unknown>;
+export type { ToolDefinition, ToolResult, ToolCall, ToolCategory } from './types.js'
+export { AskUserQuestionTool, BriefTool, EnterPlanModeTool, EnterWorktreeTool, ExitPlanModeTool, ExitWorktreeTool, NotebookEditTool, REPLTool, RemoteTriggerTool, ScheduleCronTool, SendMessageTool, SkillTool, SleepTool, TaskCreateTool, TaskGetTool, TodoWriteTool, ToolSearchTool, WebFetchTool, WebSearchTool, ALL_TOOLS } from './tools.js'

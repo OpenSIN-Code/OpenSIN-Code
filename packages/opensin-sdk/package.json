@@ -5,9 +5,6 @@
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "bin": {
-    "opensin": "./dist/standalone_cli/index.js"
-  },
   "exports": {
     ".": {
       "import": "./dist/index.js",
@@ -51,41 +48,20 @@
     "dev": "tsc --watch",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "test": "vitest run --config src/__tests__/vitest.config.ts",
-    "lint": "echo 'No linter configured yet' && exit 0",
-    "start": "node dist/standalone_cli/index.js",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test": "echo 'No tests yet — add test suite' && exit 0",
+    "lint": "echo 'No linter configured yet' && exit 0"
   },
   "keywords": [
     "opensin",
     "a2a",
     "sdk",
     "typescript",
-    "ai",
-    "cli"
+    "ai"
   ],
   "license": "MIT",
-  "dependencies": {
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@types/ws": "^8.18.1",
-    "commander": "^12.0.0",
-    "fflate": "^0.8.2",
-    "lodash-es": "^4.17.21",
-    "node-fetch": "^3.3.0",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
-    "smol-toml": "^1.6.1",
-    "ws": "^8.20.0",
-    "yaml": "^2.8.3"
-  },
   "devDependencies": {
-    "@types/bun": "^1.3.11",
-    "@types/node": "^20.19.39",
-    "@vitest/coverage-v8": "^1.6.1",
-    "typescript": "^5.9.3",
-    "vitest": "^1.6.1"
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
   },
   "engines": {
     "node": ">=18.0.0"

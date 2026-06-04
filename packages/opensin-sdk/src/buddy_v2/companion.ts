@@ -1,8 +1,8 @@
-import type { Companion, CompanionBones, Rarity, StatName } from './types'
+import type { Companion, CompanionBones, Rarity, StatName } from './types.js'
 import {
   EYES, HATS, RARITIES, RARITY_WEIGHTS, SPECIES, STAT_NAMES,
   XP_PER_LEVEL, MAX_LEVEL,
-} from './types'
+} from './types.js'
 
 function mulberry32(seed: number): () => number {
   let a = seed >>> 0

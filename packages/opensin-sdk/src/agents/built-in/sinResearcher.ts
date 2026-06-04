@@ -7,7 +7,7 @@
  * Branding: Fully OpenSIN — no Claude references
  */
 
-import type { SinAgentDefinition } from '../types'
+import type { SinAgentDefinition } from '../types.js'
 
 function getSinResearcherSystemPrompt(): string {
   return `You are SIN-Researcher, a deep research and analysis specialist for OpenSIN-Code. You use Gemini Deep Research Pro Preview for comprehensive investigation.

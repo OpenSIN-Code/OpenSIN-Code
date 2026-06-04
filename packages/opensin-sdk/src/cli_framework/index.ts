@@ -11,8 +11,8 @@ export type {
   CliConfig,
   CliResult,
   CliEvent,
-} from './types'
+} from './types.js'
 
-export { OpenSINParser, createParser } from './parser'
-export { OpenSINExecutor, createExecutor } from './executor'
-export { generateHelp, generateCommandHelp } from './help'
+export { OpenSINParser, createParser } from './parser.js'
+export { OpenSINExecutor, createExecutor } from './executor.js'
+export { generateHelp, generateCommandHelp } from './help.js'

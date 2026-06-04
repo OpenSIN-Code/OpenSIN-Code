@@ -10,7 +10,7 @@ import type {
   CommandOption,
   ParsedCommand,
   ArgType,
-} from './types'
+} from './types.js'
 
 export class OpenSINParser {
   private commands: Map<string, CommandDefinition> = new Map()

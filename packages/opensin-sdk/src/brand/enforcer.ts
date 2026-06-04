@@ -3,7 +3,7 @@
  * Ensures every image, video, and text content follows brand rules.
  */
 
-import { OPENSIN_BRAND } from './guidelines'
+import { OPENSIN_BRAND } from './guidelines.js'
 
 export interface BrandViolation {
   severity: 'critical' | 'warning' | 'info'

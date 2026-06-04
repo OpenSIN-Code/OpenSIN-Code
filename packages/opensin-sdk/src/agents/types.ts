@@ -6,7 +6,7 @@
  * but rebranded for the OpenSIN ecosystem.
  */
 
-export type EffortValue = 'minimal' | 'low' | 'medium' | 'high' | 'maximum'
+import type { EffortValue } from '../effort_control/types.js'
 
 export type AgentColorName =
   | 'red' | 'green' | 'blue' | 'yellow' | 'cyan' | 'magenta' | 'white' | 'gray'
