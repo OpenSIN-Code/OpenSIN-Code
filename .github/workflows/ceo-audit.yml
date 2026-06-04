@@ -2,20 +2,10 @@
 # Docs: https://github.com/OpenSIN-Code/SIN-Code-Bundle/tree/main/src/sin_code_bundle/skills/ceo-audit
 #
 # Runs the full CEO Audit on every push and PR. Posts a Markdown
-# comment on the PR via TWO channels:
-#   1. Sticky comment via marocchino/sticky-pull-request-comment (GitHub Action)
-#   2. Official comment via SIN-GitHub-Issues-Prod-2026 GitHub App (OAuth)
+# comment on the PR with the grade, top 3 risks, and a link to the
+# full report. Fails if grade < B (configurable via --grade flag).
 #
-# The App comment shows up as the bot identity (better UX, can be replied
-# to, gets the "App" badge). Fails if grade < B (configurable).
-#
-# Required secrets (optional, for App commenter):
-#   SIN_GITHUB_INSTALLATION_TOKEN — pre-generated App installation token (expires 1h)
-#   SIN_GITHUB_APP_CLIENT_SECRET  — for OAuth code exchange (advanced)
-#
-# If neither is set, the workflow falls back to GITHUB_TOKEN and the
-# sticky-comment-only path (still works, just no App identity).
-#
+# Required secrets: none (uses built-in GITHUB_TOKEN)
 # Optional inputs: profile (default: QUICK), grade (default: B)
 
 name: ceo-audit
@@ -51,7 +41,11 @@ jobs:
       AUDIT_GRADE: ${{ inputs.grade || 'B' }}
       AUDIT_REPO: ${{ github.workspace }}
       AUDIT_RUN_ID: ${{ github.run_id }}
-      AUDIT SHA: ${{ github.sha }}
+      AUDIT_SHA: ${{ github.sha }}
+      CEO_AUDIT_OUTPUT: ${{ github.workspace }}/ceo-audit-output
+      # The bundle's audit.sh defaults to $HOME/ceo-audits; we override to
+      # match the workflow's expected ceo-audit-output/ path so score.json
+      # lands where the next steps (upload-sarif, comment) expect it.
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -65,7 +59,39 @@ jobs:
           cache: 'pip'
 
       - name: Install SIN-Code Bundle (with ceo-audit skill)
-        run: pip install "sin-code-bundle[ceo-audit,dev]"
+        # Try PyPI first, fall back to GitHub (bundle is not yet on PyPI).
+        # Once published: pip install "sin-code-bundle[ceo-audit,dev]"
+        run: |
+          pip install "sin-code-bundle[ceo-audit,dev]" || \
+            pip install "sin-code-bundle[ceo-audit,dev] @ git+https://github.com/OpenSIN-Code/SIN-Code-Bundle.git@v0.4.4"
+
+      - name: Install ceo-audit skill
+        run: |
+          # sin-code-bundle does not yet ship the skill scripts.
+          # Clone the SSOT (Infra-SIN-OpenCode-Stack) to get audit.sh + axis scripts.
+          git clone --depth 1 --branch main https://github.com/OpenSIN-Code/Infra-SIN-OpenCode-Stack.git /tmp/infra
+          mkdir -p ~/.config/opencode/skills/ceo-audit
+          cp -r /tmp/infra/skills/ceo-audit/scripts ~/.config/opencode/skills/ceo-audit/
+          cp -r /tmp/infra/skills/ceo-audit/lib ~/.config/opencode/skills/ceo-audit/
+          chmod +x ~/.config/opencode/skills/ceo-audit/scripts/audit.sh
+          ls ~/.config/opencode/skills/ceo-audit/scripts/audit.sh
+
+      - name: Locate audit.sh on PATH
+        id: locate
+        run: |
+          # After 'pip install sin-code-bundle[ceo-audit,dev]', audit.sh is
+          # shipped at <site-packages>/sin_code_bundle/resources/ceo-audit/scripts/audit.sh.
+          # We also accept a git-clone of the skill to ~/.config/opencode/skills/.
+          SITE_PKG_SCRIPT=$(python3 -c "import sin_code_bundle, os; root=os.path.dirname(sin_code_bundle.__file__); p=os.path.join(root,'resources','ceo-audit','scripts','audit.sh'); print(p if os.path.isfile(p) else '')" 2>/dev/null)
+          if [ -n "$SITE_PKG_SCRIPT" ] && [ -f "$SITE_PKG_SCRIPT" ]; then
+            echo "script=$SITE_PKG_SCRIPT" >> $GITHUB_OUTPUT
+          elif [ -f ~/.config/opencode/skills/ceo-audit/scripts/audit.sh ]; then
+            echo "script=~/.config/opencode/skills/ceo-audit/scripts/audit.sh" >> $GITHUB_OUTPUT
+          else
+            echo '::error::Could not locate audit.sh (not in site-packages, not on disk)'
+            exit 1
+          fi
+          echo "Located audit script: $SITE_PKG_SCRIPT"
 
       - name: Run CEO Audit
         id: audit
@@ -73,7 +99,7 @@ jobs:
           mkdir -p ceo-audit-output
           # Run audit; capture exit code (allow failure so we can still post the report)
           set +e
-          ~/.config/opencode/skills/ceo-audit/scripts/audit.sh \
+          ${{ steps.locate.outputs.script }} \
             "$AUDIT_REPO" \
             --profile="$AUDIT_PROFILE" \
             --grade="$AUDIT_GRADE" \
@@ -115,7 +141,7 @@ jobs:
           echo "high=$HIGH" >> $GITHUB_OUTPUT
           echo "::notice::CEO Audit: $GRADE ($SCORE/100) | critical=$CRITICAL high=$HIGH"
 
-      - name: Post PR comment (sticky via Action)
+      - name: Post PR comment
         if: github.event_name == 'pull_request' && always()
         uses: marocchino/sticky-pull-request-comment@v2
         with:
@@ -136,28 +162,6 @@ jobs:
             📊 [Download SARIF (for Code Scanning)](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts)
 
             > Run `${{ env.AUDIT_PROFILE == 'FULL' && '~/.config/opencode/skills/ceo-audit/scripts/audit.sh . --profile=FULL' || '~/.config/opencode/skills/ceo-audit/scripts/audit.sh . --profile=QUICK' }}` locally to reproduce.
-
-      - name: Post PR comment (official via SIN-GitHub-Issues-Prod-2026 App)
-        if: github.event_name == 'pull_request' && always()
-        env:
-          SIN_GITHUB_INSTALLATION_TOKEN: ${{ secrets.SIN_GITHUB_INSTALLATION_TOKEN }}
-          SIN_GITHUB_APP_CLIENT_ID: ${{ secrets.SIN_GITHUB_APP_CLIENT_ID }}
-          SIN_GITHUB_APP_CLIENT_SECRET: ${{ secrets.SIN_GITHUB_APP_CLIENT_SECRET }}
-        run: |
-          # Skip if no App credentials configured
-          if [ -z "$SIN_GITHUB_INSTALLATION_TOKEN" ] && [ -z "$SIN_GITHUB_APP_CLIENT_SECRET" ]; then
-            echo "::notice::No SIN-GitHub-Issues-Prod-2026 credentials found, skipping App commenter (sticky comment is sufficient)"
-            exit 0
-          fi
-          # Post the official comment via the App (idempotent via <!-- ceo-audit --> marker)
-          python3 ~/.config/opencode/skills/ceo-audit/scripts/post_audit_pr.py \
-            --repo "${{ github.repository }}" \
-            --pr "${{ github.event.pull_request.number }}" \
-            --score-json ceo-audit-output/score.json \
-            --artifact-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}#artifacts" \
-            --run-id "${{ github.run_id }}" \
-            --profile "${{ env.AUDIT_PROFILE }}" \
-            --grade "${{ env.AUDIT_GRADE }}" || echo "::warning::App commenter failed (probably missing creds), continuing with sticky-only"
 
       - name: Fail if grade below gate
         if: github.event_name == 'pull_request'
