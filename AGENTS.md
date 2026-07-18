@@ -50,4 +50,5 @@ For all OCI / Oracle Cloud / Cloudflare Tunnel / sinchat / Aura-Call / secret-di
 - All cloudflared calls use `--config ~/.cloudflared/config-<opensin|sin-code-webui|infrastructure|sinator>.yml`.
 - No agent-spawn SSH to OCI VMs — emit recovery runbooks for the operator instead.
 
-The full ruleset lives in global `~/.config/opencode/AGENTS.md §18`.
+The full ruleset lives in the `skill-oci-oracle-cloud` SKILL.md (source of truth);
+the global `~/.config/opencode/AGENTS.md` "Secrets & OCI / Infisical" section holds the summary.
