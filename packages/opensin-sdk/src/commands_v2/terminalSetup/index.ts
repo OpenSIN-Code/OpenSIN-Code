@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { env } from '../../utils/env'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { env } from '../../utils_v2/env.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Terminals that natively support CSI u / Kitty keyboard protocol
 const NATIVE_CSIU_TERMINALS: Record<string, string> = {

@@ -3,6 +3,7 @@ import { isDeepStrictEqual } from 'util'
 import { useRegisterOverlay } from '../../context/overlayContext'
 import type { InputEvent } from '../../ink/events/input-event'
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- raw space/arrow multiselect input
+<<<<<<< HEAD
 import { useInput } from '../../ink'
 import {
   normalizeFullWidthDigits,
@@ -10,6 +11,15 @@ import {
 } from '../../utils/stringUtils'
 import type { OptionWithDescription } from './select'
 import { useSelectNavigation } from './use-select-navigation'
+=======
+import { useInput } from '../../ink_v2/index.js'
+import {
+  normalizeFullWidthDigits,
+  normalizeFullWidthSpace,
+} from '../../utils_v2/stringUtils.js'
+import type { OptionWithDescription } from './select.js'
+import { useSelectNavigation } from './use-select-navigation.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type UseMultiSelectStateProps<T> = {
   /**

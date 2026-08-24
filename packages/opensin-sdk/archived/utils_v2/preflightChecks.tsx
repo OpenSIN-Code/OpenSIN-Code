@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { logEvent } from 'src/services/analytics/index.js';
-import { Spinner } from '../components/Spinner.js';
+import { logEvent } from '../services/analytics/index.js';
+import { Spinner } from '../../components_v2/Spinner.js';
 import { getOauthConfig } from '../constants/oauth.js';
-import { useTimeout } from '../hooks/useTimeout.js';
-import { Box, Text } from '../ink.js';
+import { useTimeout } from '../../hooks_v2/useTimeout.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { getSSLErrorHint } from '../services/api/errorUtils.js';
 import { getUserAgent } from './http.js';
 import { logError } from './log.js';

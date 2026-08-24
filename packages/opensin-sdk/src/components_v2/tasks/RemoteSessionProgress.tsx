@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useRef } from 'react';
 import type { RemoteAgentTaskState } from 'src/tasks/RemoteAgentTask/RemoteAgentTask.js';
-import type { DeepImmutable } from 'src/types/utils.js';
+import type { DeepImmutable } from '../../types/utils.js';
 import { DIAMOND_FILLED, DIAMOND_OPEN } from '../../constants/figures.js';
-import { useSettings } from '../../hooks/useSettings.js';
-import { Text, useAnimationFrame } from '../../ink.js';
-import { count } from '../../utils/array.js';
-import { getRainbowColor } from '../../utils/thinking.js';
+import { useSettings } from '../../hooks_v2/useSettings.js';
+import { Text, useAnimationFrame } from '../../ink_v2/index.js';
+import { count } from '../../utils_v2/array.js';
+import { getRainbowColor } from '../../utils_v2/thinking.js';
 const TICK_MS = 80;
 type ReviewStage = NonNullable<NonNullable<RemoteAgentTaskState['reviewProgress']>['stage']>;
 

@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { Box } from '../../ink.js';
-import { getInitialSettings } from '../../utils/settings/settings.js';
+import { Box } from '../../ink_v2/index.js';
+import { getInitialSettings } from '../../utils_v2/settings/settings.js';
 import { Clawd, type ClawdPose } from './Clawd.js';
 type Frame = {
   pose: ClawdPose;

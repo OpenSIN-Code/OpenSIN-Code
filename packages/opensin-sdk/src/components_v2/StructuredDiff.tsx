@@ -2,10 +2,10 @@ import { c as _c } from "react/compiler-runtime";
 import type { StructuredPatchHunk } from 'diff';
 import * as React from 'react';
 import { memo } from 'react';
-import { useSettings } from '../hooks/useSettings.js';
-import { Box, NoSelect, RawAnsi, useTheme } from '../ink.js';
-import { isFullscreenEnvEnabled } from '../utils/fullscreen.js';
-import sliceAnsi from '../utils/sliceAnsi.js';
+import { useSettings } from '../../hooks_v2/useSettings.js';
+import { Box, NoSelect, RawAnsi, useTheme } from '../../ink_v2/index.js';
+import { isFullscreenEnvEnabled } from '../../utils_v2/fullscreen.js';
+import sliceAnsi from '../../utils_v2/sliceAnsi.js';
 import { expectColorDiff } from './StructuredDiff/colorDiff.js';
 import { StructuredDiffFallback } from './StructuredDiff/Fallback.js';
 type Props = {

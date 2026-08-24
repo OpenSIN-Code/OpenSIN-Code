@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useCallback } from 'react';
-import { logEvent } from 'src/services/analytics/index.js';
-import { Box, Link, Text } from '../ink.js';
-import type { ExternalOpenSINMdInclude } from '../utils/opensinmd.js';
-import { saveCurrentProjectConfig } from '../utils/config.js';
+import { logEvent } from '../services/analytics/index.js';
+import { Box, Link, Text } from '../../ink_v2/index.js';
+import type { ExternalOpenSINMdInclude } from '../../utils_v2/opensinmd.js';
+import { saveCurrentProjectConfig } from '../../utils_v2/config.js';
 import { Select } from './CustomSelect/index.js';
 import { Dialog } from './design-system/Dialog.js';
 type Props = {

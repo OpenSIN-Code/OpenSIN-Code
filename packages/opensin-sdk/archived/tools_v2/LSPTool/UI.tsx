@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import React from 'react';
-import { CtrlOToExpand } from '../../components/CtrlOToExpand.js';
-import { FallbackToolUseErrorMessage } from '../../components/FallbackToolUseErrorMessage.js';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { Box, Text } from '../../ink.js';
-import { getDisplayPath } from '../../utils/file.js';
-import { extractTag } from '../../utils/messages.js';
+import { CtrlOToExpand } from '../../components_v2/CtrlOToExpand.js';
+import { FallbackToolUseErrorMessage } from '../../components_v2/FallbackToolUseErrorMessage.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getDisplayPath } from '../../utils_v2/file.js';
+import { extractTag } from '../../utils_v2/messages.js';
 import type { Input, Output } from './LSPTool.js';
 import { getSymbolAtPosition } from './symbolContext.js';
 

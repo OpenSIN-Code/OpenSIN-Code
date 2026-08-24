@@ -1,11 +1,20 @@
 import noop from 'lodash-es/noop'
 import type { ReactElement } from 'react'
+<<<<<<< HEAD
 import { LegacyRoot } from 'react-reconciler/constants'
 import { logForDebugging } from '../utils/debug'
 import { createNode, type DOMElement } from './dom'
 import { FocusManager } from './focus'
 import Output from './output'
 import reconciler from './reconciler'
+=======
+import { LegacyRoot } from 'react-reconciler/constants.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { createNode, type DOMElement } from './dom.js'
+import { FocusManager } from './focus.js'
+import Output from './output.js'
+import reconciler from './reconciler.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import renderNodeToOutput, {
   resetLayoutShifted,
 } from './render-node-to-output'

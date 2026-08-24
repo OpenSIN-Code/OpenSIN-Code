@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Text } from '../ink.js';
-import { isOpenSINAISubscriber } from '../utils/auth.js';
-import { isChromeExtensionInstalled, shouldEnableOpenSINInChrome } from '../utils/opensinInChrome/setup.js';
-import { isRunningOnHomespace } from '../utils/envUtils.js';
+import { Text } from '../../ink_v2/index.js';
+import { isOpenSINAISubscriber } from '../../utils_v2/auth.js';
+import { isChromeExtensionInstalled, shouldEnableOpenSINInChrome } from '../../utils_v2/opensinInChrome/setup.js';
+import { isRunningOnHomespace } from '../../utils_v2/envUtils.js';
 import { useStartupNotification } from './notifs/useStartupNotification.js';
 function getChromeFlag(): boolean | undefined {
   if (process.argv.includes('--chrome')) {

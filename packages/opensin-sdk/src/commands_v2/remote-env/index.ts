@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { isPolicyAllowed } from '../../services/policyLimits/index'
 import { isOpenSINAISubscriber } from '../../utils/auth'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+import { isOpenSINAISubscriber } from '../../utils_v2/auth.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export default {
   type: 'local-jsx',

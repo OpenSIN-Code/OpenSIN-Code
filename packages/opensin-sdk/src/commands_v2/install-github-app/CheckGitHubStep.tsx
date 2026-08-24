@@ -1,6 +1,6 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Text } from '../../ink.js';
+import { Text } from '../../ink_v2/index.js';
 export function CheckGitHubStep() {
   const $ = _c(1);
   let t0;

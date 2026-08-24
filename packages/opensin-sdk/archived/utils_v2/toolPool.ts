@@ -3,7 +3,7 @@ import partition from 'lodash-es/partition.js'
 import uniqBy from 'lodash-es/uniqBy.js'
 import { COORDINATOR_MODE_ALLOWED_TOOLS } from '../constants/tools.js'
 import { isMcpTool } from '../services/mcp/utils.js'
-import type { Tool, ToolPermissionContext, Tools } from '../Tool.js'
+import type { Tool, ToolPermissionContext, Tools } from '../../tools_v2/Tool.js'
 
 // MCP tool name suffixes for PR activity subscription. These are lightweight
 // orchestration actions the coordinator calls directly rather than delegating

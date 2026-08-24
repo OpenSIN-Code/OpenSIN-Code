@@ -1,7 +1,7 @@
 import { feature } from 'bun:bundle'
 import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs'
-import type { Permutations } from 'src/types/utils.js'
-import { getSessionId } from '../bootstrap/state.js'
+import type { Permutations } from '../../types/utils.js'
+import { getSessionId } from '../../bootstrap_system/state.js'
 import type { AppState } from '../state/AppState.js'
 import type {
   QueueOperation,

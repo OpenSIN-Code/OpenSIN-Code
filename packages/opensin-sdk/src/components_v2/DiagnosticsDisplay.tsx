@@ -1,10 +1,10 @@
 import { c as _c } from "react/compiler-runtime";
 import { relative } from 'path';
 import React from 'react';
-import { Box, Text } from '../ink.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { DiagnosticTrackingService } from '../services/diagnosticTracking.js';
-import type { Attachment } from '../utils/attachments.js';
-import { getCwd } from '../utils/cwd.js';
+import type { Attachment } from '../../utils_v2/attachments.js';
+import { getCwd } from '../../utils_v2/cwd.js';
 import { CtrlOToExpand } from './CtrlOToExpand.js';
 import { MessageResponse } from './MessageResponse.js';
 type DiagnosticsAttachment = Extract<Attachment, {

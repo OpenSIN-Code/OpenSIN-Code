@@ -7,16 +7,16 @@ import { c as _c } from "react/compiler-runtime";
 
 import { cwd } from 'process';
 import React from 'react';
-import { WelcomeV2 } from '../../components/LogoV2/WelcomeV2.js';
-import { useManagePlugins } from '../../hooks/useManagePlugins.js';
-import type { Root } from '../../ink.js';
-import { Box, Text } from '../../ink.js';
-import { KeybindingSetup } from '../../keybindings/KeybindingProviderSetup.js';
+import { WelcomeV2 } from '../../components_v2/LogoV2/WelcomeV2.js';
+import { useManagePlugins } from '../../hooks_v2/useManagePlugins.js';
+import type { Root } from '../../ink_v2/index.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { KeybindingSetup } from '../../keybindings_v2/KeybindingProviderSetup.js';
 import { logEvent } from '../../services/analytics/index.js';
 import { MCPConnectionManager } from '../../services/mcp/MCPConnectionManager.js';
 import { AppStateProvider } from '../../state/AppState.js';
 import { onChangeAppState } from '../../state/onChangeAppState.js';
-import { isOpenSINAuthEnabled } from '../../utils/auth.js';
+import { isOpenSINAuthEnabled } from '../../utils_v2/auth.js';
 export async function setupTokenHandler(root: Root): Promise<void> {
   logEvent('tengu_setup_token_command', {});
   const showAuthWarning = !isOpenSINAuthEnabled();

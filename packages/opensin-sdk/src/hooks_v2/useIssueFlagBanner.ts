@@ -1,7 +1,13 @@
 import { useMemo, useRef } from 'react'
+<<<<<<< HEAD
 import { BASH_TOOL_NAME } from '../tools/BashTool/toolName'
 import type { Message } from '../types/message'
 import { getUserMessageText } from '../utils/messages'
+=======
+import { BASH_TOOL_NAME } from '../tools/BashTool/toolName.js'
+import type { Message } from '../../types/message.js'
+import { getUserMessageText } from '../../utils_v2/messages.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const EXTERNAL_COMMAND_PATTERNS = [
   /\bcurl\b/,

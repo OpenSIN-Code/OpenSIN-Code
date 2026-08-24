@@ -11,7 +11,11 @@
 
 import { randomUUID } from 'crypto'
 import { useCallback, useEffect, useMemo, useRef } from 'react'
+<<<<<<< HEAD
 import type { ToolUseConfirm } from '../components/permissions/PermissionRequest'
+=======
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   createSyntheticAssistantMessage,
   createToolStub,
@@ -19,6 +23,7 @@ import {
 import {
   convertSDKMessage,
   isSessionEndMessage,
+<<<<<<< HEAD
 } from '../remote/sdkMessageAdapter'
 import type { SSHSession } from '../ssh/createSSHSession'
 import type { SSHSessionManager } from '../ssh/SSHSessionManager'
@@ -29,6 +34,18 @@ import type { PermissionAskDecision } from '../types/permissions'
 import { logForDebugging } from '../utils/debug'
 import { gracefulShutdown } from '../utils/gracefulShutdown'
 import type { RemoteMessageContent } from '../utils/teleport/api'
+=======
+} from '../remote/sdkMessageAdapter.js'
+import type { SSHSession } from '../ssh/createSSHSession.js'
+import type { SSHSessionManager } from '../ssh/SSHSessionManager.js'
+import type { Tool } from '../../tools_v2/Tool.js'
+import { findToolByName } from '../../tools_v2/Tool.js'
+import type { Message as MessageType } from '../../types/message.js'
+import type { PermissionAskDecision } from '../types/permissions.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { gracefulShutdown } from '../../utils_v2/gracefulShutdown.js'
+import type { RemoteMessageContent } from '../../utils_v2/teleport/api.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type UseSSHSessionResult = {
   isRemoteMode: boolean

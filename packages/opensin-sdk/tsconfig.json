@@ -15,6 +15,7 @@
     "declaration": true,
     "declarationMap": true,
     "sourceMap": true,
+<<<<<<< HEAD
     "moduleResolution": "node",
     "types": [
       "node",
@@ -24,6 +25,21 @@
   },
   "include": [
     "src/**/*.ts"
+=======
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@opensin/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "src/state/**/*",
+    "src/services/**/*",
+    "src/types/**/*"
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
   ],
   "exclude": [
     "src/__tests__",
@@ -38,12 +54,43 @@
     "src/commands",
     "src/commands_v2",
     "src/components_v2",
+<<<<<<< HEAD
+=======
+    "src/hooks_v2",
+    "src/tools_v2",
+    "src/utils_v2",
+    "src/ink_v2",
+    "src/cli_v2",
+    "src/agents",
+    "src/assistant_orchestration",
+    "src/bootstrap_system",
+    "src/bridge_system",
+    "src/buddy_v2",
+    "src/color_picker",
+    "src/context_mgmt",
+    "src/coordinator",
+    "src/design_mode",
+    "src/effort_control",
+    "src/file_changes_panel",
+    "src/jetbrains",
+    "src/keybindings_v2",
+    "src/live_status",
+    "src/named_subagents",
+    "src/plugin_state",
+    "src/prompt_interrupt",
+    "src/skills_v2",
+    "src/subtask_tree",
+    "src/terminal_notifications",
+    "src/vim_mode",
+    "src/voice_v2",
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
     "src/continue_work",
     "src/coordinator",
     "src/core",
     "src/design_mode",
     "src/design-canvas",
     "src/design-mode",
+<<<<<<< HEAD
     "src/hooks",
     "src/hooks_v2",
     "src/i18n",
@@ -58,5 +105,13 @@
     "src/powerup",
     "src/runtime",
     "src/utils"
+=======
+    "src/jetbrains-plugin",
+    "src/standalone_cli",
+    "src/entrypoints",
+    "src/kairos-vscode",
+    "src/opensin-code-vscode",
+    "src/packages"
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
   ]
 }

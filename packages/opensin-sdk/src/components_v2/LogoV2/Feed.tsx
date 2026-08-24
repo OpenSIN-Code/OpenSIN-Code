@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { stringWidth } from '../../ink/stringWidth.js';
-import { Box, Text } from '../../ink.js';
-import { truncate } from '../../utils/format.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { truncate } from '../../utils_v2/format.js';
 export type FeedLine = {
   text: string;
   timestamp?: string;

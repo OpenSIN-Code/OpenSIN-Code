@@ -5,7 +5,11 @@ import {
   fetchGitDiffHunks,
   type GitDiffResult,
   type GitDiffStats,
+<<<<<<< HEAD
 } from '../utils/gitDiff'
+=======
+} from '../../utils_v2/gitDiff.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const MAX_LINES_PER_FILE = 400
 

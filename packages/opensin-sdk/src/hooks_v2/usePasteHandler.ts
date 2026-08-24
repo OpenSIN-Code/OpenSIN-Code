@@ -1,16 +1,28 @@
 import { basename } from 'path'
 import React from 'react'
+<<<<<<< HEAD
 import { logError } from 'src/utils/log'
 import { useDebounceCallback } from 'usehooks-ts'
 import type { InputEvent, Key } from '../ink'
+=======
+import { logError } from '../../utils_v2/log.js'
+import { useDebounceCallback } from 'usehooks-ts'
+import type { InputEvent, Key } from '../../ink_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getImageFromClipboard,
   isImageFilePath,
   PASTE_THRESHOLD,
   tryReadImageFromPath,
+<<<<<<< HEAD
 } from '../utils/imagePaste'
 import type { ImageDimensions } from '../utils/imageResizer'
 import { getPlatform } from '../utils/platform'
+=======
+} from '../../utils_v2/imagePaste.js'
+import type { ImageDimensions } from '../../utils_v2/imageResizer.js'
+import { getPlatform } from '../../utils_v2/platform.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const CLIPBOARD_CHECK_DEBOUNCE_MS = 50
 const PASTE_COMPLETION_TIMEOUT_MS = 100

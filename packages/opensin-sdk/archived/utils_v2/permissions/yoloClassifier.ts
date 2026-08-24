@@ -9,14 +9,14 @@ import {
   getLastClassifierRequests,
   getSessionId,
   setLastClassifierRequests,
-} from '../../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js'
 import { logEvent } from '../../services/analytics/index.js'
 import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from '../../services/analytics/metadata.js'
 import { getCacheControl } from '../../services/api/opensin.js'
 import { parsePromptTooLongTokenCounts } from '../../services/api/errors.js'
 import { getDefaultMaxRetries } from '../../services/api/withRetry.js'
-import type { Tool, ToolPermissionContext, Tools } from '../../Tool.js'
+import type { Tool, ToolPermissionContext, Tools } from '../../tools_v2/Tool.js'
 import type { Message } from '../../types/message.js'
 import type {
   ClassifierUsage,

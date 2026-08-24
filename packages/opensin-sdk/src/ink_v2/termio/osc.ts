@@ -3,10 +3,17 @@
  */
 
 import { Buffer } from 'buffer'
+<<<<<<< HEAD
 import { env } from '../../utils/env'
 import { execFileNoThrow } from '../../utils/execFileNoThrow'
 import { BEL, ESC, ESC_TYPE, SEP } from './ansi'
 import type { Action, Color, TabStatusAction } from './types'
+=======
+import { env } from '../../utils_v2/env.js'
+import { execFileNoThrow } from '../../utils_v2/execFileNoThrow.js'
+import { BEL, ESC, ESC_TYPE, SEP } from './ansi.js'
+import type { Action, Color, TabStatusAction } from './types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export const OSC_PREFIX = ESC + String.fromCharCode(ESC_TYPE.OSC)
 

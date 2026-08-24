@@ -12,6 +12,11 @@ export default defineConfig({
       include: ['../src/**/*'],
       exclude: ['../src/**/*.d', '../src/__tests__/**'],
     },
+    server: {
+      deps: {
+        inline: ['bun:bundle'],
+      },
+    },
   },
   resolve: {
     alias: {

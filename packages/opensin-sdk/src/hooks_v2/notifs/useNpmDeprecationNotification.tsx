@@ -1,6 +1,6 @@
-import { isInBundledMode } from 'src/utils/bundledMode.js';
-import { getCurrentInstallationType } from 'src/utils/doctorDiagnostic.js';
-import { isEnvTruthy } from 'src/utils/envUtils.js';
+import { isInBundledMode } from '../../utils_v2/bundledMode.js';
+import { getCurrentInstallationType } from '../../utils_v2/doctorDiagnostic.js';
+import { isEnvTruthy } from '../../utils_v2/envUtils.js';
 import { useStartupNotification } from './useStartupNotification.js';
 const NPM_DEPRECATION_MESSAGE = 'OpenSIN Code has switched from npm to native installer. Run `opensin install` or see https://docs.opensin.com/en/docs/opensin-code/getting-started for more options.';
 export function useNpmDeprecationNotification() {

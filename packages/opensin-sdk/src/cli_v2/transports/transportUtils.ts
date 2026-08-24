@@ -1,9 +1,17 @@
 import { URL } from 'url'
+<<<<<<< HEAD
 import { isEnvTruthy } from '../../utils/envUtils'
 import { HybridTransport } from './HybridTransport'
 import { SSETransport } from './SSETransport'
 import type { Transport } from './Transport'
 import { WebSocketTransport } from './WebSocketTransport'
+=======
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { HybridTransport } from './HybridTransport.js'
+import { SSETransport } from './SSETransport.js'
+import type { Transport } from './Transport.js'
+import { WebSocketTransport } from './WebSocketTransport.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Helper function to get the appropriate transport for a URL.

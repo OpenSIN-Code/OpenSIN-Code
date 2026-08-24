@@ -1,6 +1,6 @@
 import * as React from 'react';
-import type { CommandResultDisplay, LocalJSXCommandContext } from '../../commands.js';
-import { Feedback } from '../../components/Feedback.js';
+import type { CommandResultDisplay, LocalJSXCommandContext } from '../../commands_v2/index.js';
+import { Feedback } from '../../components_v2/Feedback.js';
 import type { LocalJSXCommandOnDone } from '../../types/command.js';
 import type { Message } from '../../types/message.js';
 

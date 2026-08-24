@@ -1,4 +1,5 @@
 import { feature } from 'bun:bundle'
+<<<<<<< HEAD
 import { microcompactMessages } from '../../services/compact/microCompact'
 import type { AppState } from '../../state/AppStateStore'
 import type { Tools, ToolUseContext } from '../../Tool'
@@ -12,6 +13,21 @@ import { formatTokens } from '../../utils/format'
 import { getMessagesAfterCompactBoundary } from '../../utils/messages'
 import { getSourceDisplayName } from '../../utils/settings/constants'
 import { plural } from '../../utils/stringUtils'
+=======
+import { microcompactMessages } from '../../services/compact/microCompact.js'
+import type { AppState } from '../../state/AppStateStore.js'
+import type { Tools, ToolUseContext } from '../../tools_v2/Tool.js'
+import type { AgentDefinitionsResult } from '../../tools/AgentTool/loadAgentsDir.js'
+import type { Message } from '../../types/message.js'
+import {
+  analyzeContextUsage,
+  type ContextData,
+} from '../../utils_v2/analyzeContext.js'
+import { formatTokens } from '../../utils_v2/format.js'
+import { getMessagesAfterCompactBoundary } from '../../utils_v2/messages.js'
+import { getSourceDisplayName } from '../../utils_v2/settings/constants.js'
+import { plural } from '../../utils_v2/stringUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Shared data-collection path for `/context` (slash command) and the SDK

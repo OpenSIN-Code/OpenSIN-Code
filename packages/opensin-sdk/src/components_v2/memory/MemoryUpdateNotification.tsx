@@ -2,8 +2,8 @@ import { c as _c } from "react/compiler-runtime";
 import { homedir } from 'os';
 import { relative } from 'path';
 import React from 'react';
-import { Box, Text } from '../../ink.js';
-import { getCwd } from '../../utils/cwd.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getCwd } from '../../utils_v2/cwd.js';
 export function getRelativeMemoryPath(path: string): string {
   const homeDir = homedir();
   const cwd = getCwd();

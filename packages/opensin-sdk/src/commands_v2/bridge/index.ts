@@ -1,6 +1,11 @@
 import { feature } from 'bun:bundle'
+<<<<<<< HEAD
 import { isBridgeEnabled } from '../../bridge/bridgeEnabled'
 import type { Command } from '../../commands'
+=======
+import { isBridgeEnabled } from '../../bridge/bridgeEnabled.js'
+import type { Command } from '../../commands_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 function isEnabled(): boolean {
   if (!feature('BRIDGE_MODE')) {

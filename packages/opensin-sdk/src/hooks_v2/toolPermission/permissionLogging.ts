@@ -5,6 +5,7 @@ import { feature } from 'bun:bundle'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from 'src/services/analytics/index'
 import { sanitizeToolNameForAnalytics } from 'src/services/analytics/metadata'
 import { getCodeEditToolDecisionCounter } from '../../bootstrap/state'
@@ -12,6 +13,15 @@ import type { Tool as ToolType, ToolUseContext } from '../../Tool'
 import { getLanguageName } from '../../utils/cliHighlight'
 import { SandboxManager } from '../../utils/sandbox/sandbox-adapter'
 import { logOTelEvent } from '../../utils/telemetry/events'
+=======
+} from '../services/analytics/index.js'
+import { sanitizeToolNameForAnalytics } from '../services/analytics/metadata.js'
+import { getCodeEditToolDecisionCounter } from '../../bootstrap_system/state.js'
+import type { Tool as ToolType, ToolUseContext } from '../../tools_v2/Tool.js'
+import { getLanguageName } from '../../utils_v2/cliHighlight.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+import { logOTelEvent } from '../../utils_v2/telemetry/events.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   PermissionApprovalSource,
   PermissionRejectionSource,

@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import type { Command } from '../commands.js';
-import { Box } from '../ink.js';
+import type { Command } from '../../commands_v2/index.js';
+import { Box } from '../../ink_v2/index.js';
 import type { Screen } from '../screens/REPL.js';
-import type { Tools } from '../Tool.js';
+import type { Tools } from '../../tools_v2/Tool.js';
 import type { RenderableMessage } from '../types/message.js';
-import { getDisplayMessageFromCollapsed, getToolSearchOrReadInfo, getToolUseIdsFromCollapsedGroup, hasAnyToolInProgress } from '../utils/collapseReadSearch.js';
-import { type buildMessageLookups, EMPTY_STRING_SET, getProgressMessagesFromLookup, getSiblingToolUseIDsFromLookup, getToolUseID } from '../utils/messages.js';
+import { getDisplayMessageFromCollapsed, getToolSearchOrReadInfo, getToolUseIdsFromCollapsedGroup, hasAnyToolInProgress } from '../../utils_v2/collapseReadSearch.js';
+import { type buildMessageLookups, EMPTY_STRING_SET, getProgressMessagesFromLookup, getSiblingToolUseIDsFromLookup, getToolUseID } from '../../utils_v2/messages.js';
 import { hasThinkingContent, Message } from './Message.js';
 import { MessageModel } from './MessageModel.js';
 import { shouldRenderStatically } from './Messages.js';

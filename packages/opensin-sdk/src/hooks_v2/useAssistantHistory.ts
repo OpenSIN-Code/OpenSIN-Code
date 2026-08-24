@@ -12,12 +12,21 @@ import {
   fetchOlderEvents,
   type HistoryAuthCtx,
   type HistoryPage,
+<<<<<<< HEAD
 } from '../assistant/sessionHistory'
 import type { ScrollBoxHandle } from '../ink/components/ScrollBox'
 import type { RemoteSessionConfig } from '../remote/RemoteSessionManager'
 import { convertSDKMessage } from '../remote/sdkMessageAdapter'
 import type { Message, SystemInformationalMessage } from '../types/message'
 import { logForDebugging } from '../utils/debug'
+=======
+} from '../assistant/sessionHistory.js'
+import type { ScrollBoxHandle } from '../ink/components/ScrollBox.js'
+import type { RemoteSessionConfig } from '../remote/RemoteSessionManager.js'
+import { convertSDKMessage } from '../remote/sdkMessageAdapter.js'
+import type { Message, SystemInformationalMessage } from '../../types/message.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type Props = {
   /** Gated on viewerOnly — non-viewer sessions have no remote history to page. */

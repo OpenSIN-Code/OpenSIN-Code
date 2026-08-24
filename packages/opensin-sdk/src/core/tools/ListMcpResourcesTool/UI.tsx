@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { OutputLine } from '../../components/shell/OutputLine.js';
-import { Text } from '../../ink.js';
-import type { ToolProgressData } from '../../Tool.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { OutputLine } from '../../components_v2/shell/OutputLine.js';
+import { Text } from '../../ink_v2/index.js';
+import type { ToolProgressData } from '../../tools_v2/Tool.js';
 import type { ProgressMessage } from '../../types/message.js';
-import { jsonStringify } from '../../utils/slowOperations.js';
+import { jsonStringify } from '../../utils_v2/slowOperations.js';
 import type { Output } from './ListMcpResourcesTool.js';
 export function renderToolUseMessage(input: Partial<{
   server?: string;

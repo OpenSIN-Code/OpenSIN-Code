@@ -1,5 +1,5 @@
 import { dirname, isAbsolute, sep } from 'path'
-import { logEvent } from 'src/services/analytics/index.js'
+import { logEvent } from '../services/analytics/index.js'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js'
 import { diagnosticTracker } from '../../services/diagnosticTracking.js'
 import { clearDeliveredDiagnosticsForFile } from '../../services/lsp/LSPDiagnosticRegistry.js'
@@ -11,44 +11,44 @@ import {
   addSkillDirectories,
   discoverSkillDirsForPaths,
 } from '../../skills/loadSkillsDir.js'
-import type { ToolUseContext } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { getCwd } from '../../utils/cwd.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { countLinesChanged } from '../../utils/diff.js'
-import { isEnvTruthy } from '../../utils/envUtils.js'
-import { isENOENT } from '../../utils/errors.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { countLinesChanged } from '../../utils_v2/diff.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { isENOENT } from '../../utils_v2/errors.js'
 import {
   FILE_NOT_FOUND_CWD_NOTE,
   findSimilarFile,
   getFileModificationTime,
   suggestPathUnderCwd,
   writeTextContent,
-} from '../../utils/file.js'
+} from '../../utils_v2/file.js'
 import {
   fileHistoryEnabled,
   fileHistoryTrackEdit,
-} from '../../utils/fileHistory.js'
-import { logFileOperation } from '../../utils/fileOperationAnalytics.js'
+} from '../../utils_v2/fileHistory.js'
+import { logFileOperation } from '../../utils_v2/fileOperationAnalytics.js'
 import {
   type LineEndingType,
   readFileSyncWithMetadata,
-} from '../../utils/fileRead.js'
-import { formatFileSize } from '../../utils/format.js'
-import { getFsImplementation } from '../../utils/fsOperations.js'
+} from '../../utils_v2/fileRead.js'
+import { formatFileSize } from '../../utils_v2/format.js'
+import { getFsImplementation } from '../../utils_v2/fsOperations.js'
 import {
   fetchSingleFileGitDiff,
   type ToolUseDiff,
-} from '../../utils/gitDiff.js'
-import { logError } from '../../utils/log.js'
-import { expandPath } from '../../utils/path.js'
+} from '../../utils_v2/gitDiff.js'
+import { logError } from '../../utils_v2/log.js'
+import { expandPath } from '../../utils_v2/path.js'
 import {
   checkWritePermissionForTool,
   matchingRuleForInput,
-} from '../../utils/permissions/filesystem.js'
-import type { PermissionDecision } from '../../utils/permissions/PermissionResult.js'
-import { matchWildcardPattern } from '../../utils/permissions/shellRuleMatching.js'
-import { validateInputForSettingsFileEdit } from '../../utils/settings/validateEditTool.js'
+} from '../../utils_v2/permissions/filesystem.js'
+import type { PermissionDecision } from '../../utils_v2/permissions/PermissionResult.js'
+import { matchWildcardPattern } from '../../utils_v2/permissions/shellRuleMatching.js'
+import { validateInputForSettingsFileEdit } from '../../utils_v2/settings/validateEditTool.js'
 import { NOTEBOOK_EDIT_TOOL_NAME } from '../NotebookEditTool/constants.js'
 import {
   FILE_EDIT_TOOL_NAME,

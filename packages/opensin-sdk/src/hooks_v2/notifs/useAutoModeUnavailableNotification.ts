@@ -1,5 +1,6 @@
 import { feature } from 'bun:bundle'
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { useNotifications } from 'src/context/notifications'
 import { getIsRemoteMode } from '../../bootstrap/state'
 import { useAppState } from '../../state/AppState'
@@ -9,6 +10,17 @@ import {
   getAutoModeUnavailableReason,
 } from '../../utils/permissions/permissionSetup'
 import { hasAutoModeOptIn } from '../../utils/settings/settings'
+=======
+import { useNotifications } from 'src/context/notifications.js'
+import { getIsRemoteMode } from '../../bootstrap_system/state.js'
+import { useAppState } from '../../state/AppState.js'
+import type { PermissionMode } from '../../utils_v2/permissions/PermissionMode.js'
+import {
+  getAutoModeUnavailableNotification,
+  getAutoModeUnavailableReason,
+} from '../../utils_v2/permissions/permissionSetup.js'
+import { hasAutoModeOptIn } from '../../utils_v2/settings/settings.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Shows a one-shot notification when the shift-tab carousel wraps past where

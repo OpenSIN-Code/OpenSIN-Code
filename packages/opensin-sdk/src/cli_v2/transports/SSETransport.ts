@@ -1,4 +1,5 @@
 import axios, { type AxiosError } from 'axios'
+<<<<<<< HEAD
 import type { StdoutMessage } from 'src/entrypoints/sdk/controlTypes'
 import { logForDebugging } from '../../utils/debug'
 import { logForDiagnosticsNoPII } from '../../utils/diagLogs'
@@ -8,6 +9,17 @@ import { sleep } from '../../utils/sleep'
 import { jsonParse, jsonStringify } from '../../utils/slowOperations'
 import { getOpenSINCodeUserAgent } from '../../utils/userAgent'
 import type { Transport } from './Transport'
+=======
+import type { StdoutMessage } from '../entrypoints/sdk/controlTypes.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { getSessionIngressAuthHeaders } from '../../utils_v2/sessionIngressAuth.js'
+import { sleep } from '../../utils_v2/sleep.js'
+import { jsonParse, jsonStringify } from '../../utils_v2/slowOperations.js'
+import { getOpenSINCodeUserAgent } from '../../utils_v2/userAgent.js'
+import type { Transport } from './Transport.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // ---------------------------------------------------------------------------
 // Configuration

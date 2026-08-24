@@ -1,8 +1,15 @@
 import { join } from 'path'
+<<<<<<< HEAD
 import type { LocalCommandResult } from '../../commands'
 import { loadInstalledPluginsV2 } from '../../utils/plugins/installedPluginsManager'
 import { OFFICIAL_MARKETPLACE_NAME } from '../../utils/plugins/officialMarketplace'
 import { playAnimation } from '../thinkback/thinkback'
+=======
+import type { LocalCommandResult } from '../../commands_v2/index.js'
+import { loadInstalledPluginsV2 } from '../../utils_v2/plugins/installedPluginsManager.js'
+import { OFFICIAL_MARKETPLACE_NAME } from '../../utils_v2/plugins/officialMarketplace.js'
+import { playAnimation } from '../thinkback/thinkback.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const INTERNAL_MARKETPLACE_NAME = 'opensin-code-marketplace'
 const SKILL_NAME = 'thinkback'

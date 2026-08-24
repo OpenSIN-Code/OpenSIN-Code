@@ -1,7 +1,11 @@
 import { useCallback, useState } from 'react'
 import { KeyboardEvent } from '../ink/events/keyboard-event'
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- backward-compat bridge until consumers wire handleKeyDown to <Box onKeyDown>
+<<<<<<< HEAD
 import { useInput } from '../ink'
+=======
+import { useInput } from '../../ink_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   Cursor,
   getLastKill,
@@ -11,8 +15,13 @@ import {
   resetYankState,
   updateYankLength,
   yankPop,
+<<<<<<< HEAD
 } from '../utils/Cursor'
 import { useTerminalSize } from './useTerminalSize'
+=======
+} from '../../utils_v2/Cursor.js'
+import { useTerminalSize } from './useTerminalSize.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type UseSearchInputOptions = {
   isActive: boolean

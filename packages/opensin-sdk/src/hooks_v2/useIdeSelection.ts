@@ -1,12 +1,22 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { logError } from 'src/utils/log'
+=======
+import { logError } from '../../utils_v2/log.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import { z } from 'zod/v4'
 import type {
   ConnectedMCPServer,
   MCPServerConnection,
+<<<<<<< HEAD
 } from '../services/mcp/types'
 import { getConnectedIdeClient } from '../utils/ide'
 import { lazySchema } from '../utils/lazySchema'
+=======
+} from '../services/mcp/types.js'
+import { getConnectedIdeClient } from '../../utils_v2/ide.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 export type SelectionPoint = {
   line: number
   character: number

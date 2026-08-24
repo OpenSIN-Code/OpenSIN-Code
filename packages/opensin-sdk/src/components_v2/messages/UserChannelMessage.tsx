@@ -3,8 +3,8 @@ import type { TextBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import * as React from 'react';
 import { CHANNEL_ARROW } from '../../constants/figures.js';
 import { CHANNEL_TAG } from '../../constants/xml.js';
-import { Box, Text } from '../../ink.js';
-import { truncateToWidth } from '../../utils/format.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { truncateToWidth } from '../../utils_v2/format.js';
 type Props = {
   addMargin: boolean;
   param: TextBlockParam;

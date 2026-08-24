@@ -1,7 +1,13 @@
 import { useMemo } from 'react'
+<<<<<<< HEAD
 import { stringWidth } from '../../ink/stringWidth'
 import { type DOMElement, useAnimationFrame } from '../../ink'
 import type { SpinnerMode } from './types'
+=======
+import { stringWidth } from '../../ink/stringWidth.js'
+import { type DOMElement, useAnimationFrame } from '../../ink_v2/index.js'
+import type { SpinnerMode } from './types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export function useShimmerAnimation(
   mode: SpinnerMode,

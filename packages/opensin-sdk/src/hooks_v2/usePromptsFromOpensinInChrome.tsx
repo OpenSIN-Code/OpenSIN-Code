@@ -1,14 +1,14 @@
 import { c as _c } from "react/compiler-runtime";
 import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs';
 import { useEffect, useRef } from 'react';
-import { logError } from 'src/utils/log.js';
+import { logError } from '../../utils_v2/log.js';
 import { z } from 'zod/v4';
 import { callIdeRpc } from '../services/mcp/client.js';
 import type { ConnectedMCPServer, MCPServerConnection } from '../services/mcp/types.js';
 import type { PermissionMode } from '../types/permissions.js';
-import { OPENSIN_IN_CHROME_MCP_SERVER_NAME, isTrackedOpenSINInChromeTabId } from '../utils/opensinInChrome/common.js';
-import { lazySchema } from '../utils/lazySchema.js';
-import { enqueuePendingNotification } from '../utils/messageQueueManager.js';
+import { OPENSIN_IN_CHROME_MCP_SERVER_NAME, isTrackedOpenSINInChromeTabId } from '../../utils_v2/opensinInChrome/common.js';
+import { lazySchema } from '../../utils_v2/lazySchema.js';
+import { enqueuePendingNotification } from '../../utils_v2/messageQueueManager.js';
 
 // Schema for the prompt notification from Chrome extension (JSON-RPC 2.0 format)
 const OpenSINInChromePromptNotificationSchema = lazySchema(() => z.object({

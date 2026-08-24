@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, color, Link, Text, useTheme } from '../../ink.js';
-import { useKeybindings } from '../../keybindings/useKeybinding.js';
+import { Box, color, Link, Text, useTheme } from '../../ink_v2/index.js';
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js';
 import type { CommandResultDisplay } from '../../types/command.js';
-import type { SandboxDependencyCheck } from '../../utils/sandbox/sandbox-adapter.js';
-import { SandboxManager } from '../../utils/sandbox/sandbox-adapter.js';
-import { getSettings_DEPRECATED } from '../../utils/settings/settings.js';
+import type { SandboxDependencyCheck } from '../../utils_v2/sandbox/sandbox-adapter.js';
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js';
+import { getSettings_DEPRECATED } from '../../utils_v2/settings/settings.js';
 import { Select } from '../CustomSelect/select.js';
 import { Pane } from '../design-system/Pane.js';
 import { Tab, Tabs, useTabHeaderFocus } from '../design-system/Tabs.js';

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { isOpenSINAISubscriber } from '../../utils/auth'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { isOpenSINAISubscriber } from '../../utils_v2/auth.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const rateLimitOptions = {
   type: 'local-jsx',

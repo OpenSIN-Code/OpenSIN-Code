@@ -3,9 +3,9 @@ import * as React from 'react';
 import { pathToFileURL } from 'url';
 import Link from '../ink/components/Link.js';
 import { supportsHyperlinks } from '../ink/supports-hyperlinks.js';
-import { Text } from '../ink.js';
-import { getStoredImagePath } from '../utils/imageStore.js';
-import type { Theme } from '../utils/theme.js';
+import { Text } from '../../ink_v2/index.js';
+import { getStoredImagePath } from '../../utils_v2/imageStore.js';
+import type { Theme } from '../../utils_v2/theme.js';
 type Props = {
   imageId: number;
   backgroundColor?: keyof Theme;

@@ -1,15 +1,15 @@
 import { feature } from 'bun:bundle';
 import * as React from 'react';
 import { useMemo } from 'react';
-import { Box } from 'src/ink.js';
-import { useAppState } from 'src/state/AppState.js';
+import { Box } from '../../ink_v2/index.js';
+import { useAppState } from '../../state/AppState.js';
 import { STATUS_TAG, SUMMARY_TAG, TASK_NOTIFICATION_TAG } from '../../constants/xml.js';
 import { QueuedMessageProvider } from '../../context/QueuedMessageContext.js';
-import { useCommandQueue } from '../../hooks/useCommandQueue.js';
+import { useCommandQueue } from '../../hooks_v2/useCommandQueue.js';
 import type { QueuedCommand } from '../../types/textInputTypes.js';
-import { isQueuedCommandVisible } from '../../utils/messageQueueManager.js';
-import { createUserMessage, EMPTY_LOOKUPS, normalizeMessages } from '../../utils/messages.js';
-import { jsonParse } from '../../utils/slowOperations.js';
+import { isQueuedCommandVisible } from '../../utils_v2/messageQueueManager.js';
+import { createUserMessage, EMPTY_LOOKUPS, normalizeMessages } from '../../utils_v2/messages.js';
+import { jsonParse } from '../../utils_v2/slowOperations.js';
 import { Message } from '../Message.js';
 const EMPTY_SET = new Set<string>();
 

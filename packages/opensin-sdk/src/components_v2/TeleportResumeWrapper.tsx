@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useEffect } from 'react';
-import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from 'src/services/analytics/index.js';
-import type { TeleportRemoteResponse } from 'src/utils/conversationRecovery.js';
-import type { CodeSession } from 'src/utils/teleport/api.js';
-import { type TeleportSource, useTeleportResume } from '../hooks/useTeleportResume.js';
-import { Box, Text } from '../ink.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
+import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from '../services/analytics/index.js';
+import type { TeleportRemoteResponse } from '../../utils_v2/conversationRecovery.js';
+import type { CodeSession } from '../../utils_v2/teleport/api.js';
+import { type TeleportSource, useTeleportResume } from '../../hooks_v2/useTeleportResume.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
 import { ResumeTask } from './ResumeTask.js';
 import { Spinner } from './Spinner.js';
 interface TeleportResumeWrapperProps {

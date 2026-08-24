@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { logEvent } from 'src/services/analytics/index.js';
-import { logForDebugging } from 'src/utils/debug.js';
-import { logError } from 'src/utils/log.js';
+import { logEvent } from '../services/analytics/index.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { logError } from '../../utils_v2/log.js';
 import { useInterval } from 'usehooks-ts';
-import { useUpdateNotification } from '../hooks/useUpdateNotification.js';
-import { Box, Text } from '../ink.js';
-import type { AutoUpdaterResult } from '../utils/autoUpdater.js';
-import { getMaxVersion, getMaxVersionMessage } from '../utils/autoUpdater.js';
-import { isAutoUpdaterDisabled } from '../utils/config.js';
-import { installLatest } from '../utils/nativeInstaller/index.js';
-import { gt } from '../utils/semver.js';
-import { getInitialSettings } from '../utils/settings/settings.js';
+import { useUpdateNotification } from '../../hooks_v2/useUpdateNotification.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { AutoUpdaterResult } from '../../utils_v2/autoUpdater.js';
+import { getMaxVersion, getMaxVersionMessage } from '../../utils_v2/autoUpdater.js';
+import { isAutoUpdaterDisabled } from '../../utils_v2/config.js';
+import { installLatest } from '../../utils_v2/nativeInstaller/index.js';
+import { gt } from '../../utils_v2/semver.js';
+import { getInitialSettings } from '../../utils_v2/settings/settings.js';
 
 /**
  * Categorize error messages for analytics

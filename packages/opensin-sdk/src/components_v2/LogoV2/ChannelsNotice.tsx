@@ -7,14 +7,14 @@ import { c as _c } from "react/compiler-runtime";
 
 import * as React from 'react';
 import { useState } from 'react';
-import { type ChannelEntry, getAllowedChannels, getHasDevChannels } from '../../bootstrap/state.js';
-import { Box, Text } from '../../ink.js';
+import { type ChannelEntry, getAllowedChannels, getHasDevChannels } from '../../bootstrap_system/state.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { isChannelsEnabled } from '../../services/mcp/channelAllowlist.js';
 import { getEffectiveChannelAllowlist } from '../../services/mcp/channelNotification.js';
 import { getMcpConfigsByScope } from '../../services/mcp/config.js';
-import { getOpenSINAIOAuthTokens, getSubscriptionType } from '../../utils/auth.js';
-import { loadInstalledPluginsV2 } from '../../utils/plugins/installedPluginsManager.js';
-import { getSettingsForSource } from '../../utils/settings/settings.js';
+import { getOpenSINAIOAuthTokens, getSubscriptionType } from '../../utils_v2/auth.js';
+import { loadInstalledPluginsV2 } from '../../utils_v2/plugins/installedPluginsManager.js';
+import { getSettingsForSource } from '../../utils_v2/settings/settings.js';
 export function ChannelsNotice() {
   const $ = _c(32);
   const [t0] = useState(_temp);

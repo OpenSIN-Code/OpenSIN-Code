@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useEffect, useMemo } from 'react';
-import type { CommandResultDisplay } from '../../commands.js';
+import type { CommandResultDisplay } from '../../commands_v2/index.js';
 import { OpenSINAuthProvider } from '../../services/mcp/auth.js';
 import type { McpOpenSINAIProxyServerConfig, McpHTTPServerConfig, McpSSEServerConfig, McpStdioServerConfig } from '../../services/mcp/types.js';
 import { extractAgentMcpServers, filterToolsByServer } from '../../services/mcp/utils.js';
 import { useAppState } from '../../state/AppState.js';
-import { getSessionIngressAuthToken } from '../../utils/sessionIngressAuth.js';
+import { getSessionIngressAuthToken } from '../../utils_v2/sessionIngressAuth.js';
 import { MCPAgentServerMenu } from './MCPAgentServerMenu.js';
 import { MCPListPanel } from './MCPListPanel.js';
 import { MCPRemoteServerMenu } from './MCPRemoteServerMenu.js';

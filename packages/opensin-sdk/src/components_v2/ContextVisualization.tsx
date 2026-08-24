@@ -1,13 +1,13 @@
 import { c as _c } from "react/compiler-runtime";
 import { feature } from 'bun:bundle';
 import * as React from 'react';
-import { Box, Text } from '../ink.js';
-import type { ContextData } from '../utils/analyzeContext.js';
-import { generateContextSuggestions } from '../utils/contextSuggestions.js';
-import { getDisplayPath } from '../utils/file.js';
-import { formatTokens } from '../utils/format.js';
-import { getSourceDisplayName, type SettingSource } from '../utils/settings/constants.js';
-import { plural } from '../utils/stringUtils.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { ContextData } from '../../utils_v2/analyzeContext.js';
+import { generateContextSuggestions } from '../../utils_v2/contextSuggestions.js';
+import { getDisplayPath } from '../../utils_v2/file.js';
+import { formatTokens } from '../../utils_v2/format.js';
+import { getSourceDisplayName, type SettingSource } from '../../utils_v2/settings/constants.js';
+import { plural } from '../../utils_v2/stringUtils.js';
 import { ContextSuggestions } from './ContextSuggestions.js';
 const RESERVED_CATEGORY_NAME = 'Autocompact buffer';
 

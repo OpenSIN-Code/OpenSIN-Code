@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { useSearchInput } from '../../hooks/useSearchInput.js';
-import { useTerminalSize } from '../../hooks/useTerminalSize.js';
+import { useSearchInput } from '../../hooks_v2/useSearchInput.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 import type { KeyboardEvent } from '../../ink/events/keyboard-event.js';
 import { clamp } from '../../ink/layout/geometry.js';
-import { Box, Text, useTerminalFocus } from '../../ink.js';
+import { Box, Text, useTerminalFocus } from '../../ink_v2/index.js';
 import { SearchBox } from '../SearchBox.js';
 import { Byline } from './Byline.js';
 import { KeyboardShortcutHint } from './KeyboardShortcutHint.js';

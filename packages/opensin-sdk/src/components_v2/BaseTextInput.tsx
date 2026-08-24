@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { renderPlaceholder } from '../hooks/renderPlaceholder.js';
-import { usePasteHandler } from '../hooks/usePasteHandler.js';
+import { renderPlaceholder } from '../../hooks_v2/renderPlaceholder.js';
+import { usePasteHandler } from '../../hooks_v2/usePasteHandler.js';
 import { useDeclaredCursor } from '../ink/hooks/use-declared-cursor.js';
-import { Ansi, Box, Text, useInput } from '../ink.js';
+import { Ansi, Box, Text, useInput } from '../../ink_v2/index.js';
 import type { BaseInputState, BaseTextInputProps } from '../types/textInputTypes.js';
-import type { TextHighlight } from '../utils/textHighlighting.js';
+import type { TextHighlight } from '../../utils_v2/textHighlighting.js';
 import { HighlightedInput } from './PromptInput/ShimmeredInput.js';
 type BaseTextInputComponentProps = BaseTextInputProps & {
   inputState: BaseInputState;

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import type { LocalCommandResult } from '../../commands'
 import { logEvent } from '../../services/analytics/index'
 import { openBrowser } from '../../utils/browser'
 import { saveGlobalConfig } from '../../utils/config'
+=======
+import type { LocalCommandResult } from '../../commands_v2/index.js'
+import { logEvent } from '../../services/analytics/index.js'
+import { openBrowser } from '../../utils_v2/browser.js'
+import { saveGlobalConfig } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const SLACK_APP_URL = 'https://slack.com/marketplace/A08SF47R6P4-opensin'
 

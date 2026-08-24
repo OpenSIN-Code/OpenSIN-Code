@@ -1,7 +1,7 @@
 import type { BetaUsage as Usage } from '@opensin-ai/sdk/resources/beta/messages/messages.mjs'
-import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from 'src/services/analytics/index.js'
-import { logEvent } from 'src/services/analytics/index.js'
-import { setHasUnknownModelCost } from '../bootstrap/state.js'
+import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from '../services/analytics/index.js'
+import { logEvent } from '../services/analytics/index.js'
+import { setHasUnknownModelCost } from '../../bootstrap_system/state.js'
 import { isFastModeEnabled } from './fastMode.js'
 import {
   OPENSIN_3_5_HAIKU_CONFIG,

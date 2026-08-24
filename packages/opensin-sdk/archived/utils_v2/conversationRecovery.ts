@@ -1,8 +1,8 @@
 import { feature } from 'bun:bundle'
 import type { UUID } from 'crypto'
 import { relative } from 'path'
-import { getCwd } from 'src/utils/cwd.js'
-import { addInvokedSkill } from '../bootstrap/state.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { addInvokedSkill } from '../../bootstrap_system/state.js'
 import { asSessionId } from '../types/ids.js'
 import type {
   AttributionSnapshotMessage,

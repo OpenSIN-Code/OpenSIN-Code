@@ -12,7 +12,7 @@
 import { mkdirSync } from 'fs'
 import { readdir, rm, stat } from 'fs/promises'
 import { delimiter, join } from 'path'
-import { getUseCoworkPlugins } from '../../bootstrap/state.js'
+import { getUseCoworkPlugins } from '../../bootstrap_system/state.js'
 import { logForDebugging } from '../debug.js'
 import { getOpenSINConfigHomeDir, isEnvTruthy } from '../envUtils.js'
 import { errorMessage, isFsInaccessible } from '../errors.js'

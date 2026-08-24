@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { isBridgeEnabled } from '../bridge/bridgeEnabled.js';
-import { Box, Text } from '../ink.js';
-import { getOpenSINAIOAuthTokens } from '../utils/auth.js';
-import { getGlobalConfig, saveGlobalConfig } from '../utils/config.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getOpenSINAIOAuthTokens } from '../../utils_v2/auth.js';
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js';
 import type { OptionWithDescription } from './CustomSelect/select.js';
 import { Select } from './CustomSelect/select.js';
 import { PermissionDialog } from './permissions/PermissionDialog.js';

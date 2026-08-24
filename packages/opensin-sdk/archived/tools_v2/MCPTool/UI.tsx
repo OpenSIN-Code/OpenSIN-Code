@@ -3,18 +3,18 @@ import { feature } from 'bun:bundle';
 import figures from 'figures';
 import * as React from 'react';
 import type { z } from 'zod/v4';
-import { ProgressBar } from '../../components/design-system/ProgressBar.js';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { linkifyUrlsInText, OutputLine } from '../../components/shell/OutputLine.js';
+import { ProgressBar } from '../../components_v2/design-system/ProgressBar.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { linkifyUrlsInText, OutputLine } from '../../components_v2/shell/OutputLine.js';
 import { stringWidth } from '../../ink/stringWidth.js';
-import { Ansi, Box, Text } from '../../ink.js';
-import type { ToolProgressData } from '../../Tool.js';
+import { Ansi, Box, Text } from '../../ink_v2/index.js';
+import type { ToolProgressData } from '../../tools_v2/Tool.js';
 import type { ProgressMessage } from '../../types/message.js';
 import type { MCPProgress } from '../../types/tools.js';
-import { formatNumber } from '../../utils/format.js';
-import { createHyperlink } from '../../utils/hyperlink.js';
-import { getContentSizeEstimate, type MCPToolResult } from '../../utils/mcpValidation.js';
-import { jsonParse, jsonStringify } from '../../utils/slowOperations.js';
+import { formatNumber } from '../../utils_v2/format.js';
+import { createHyperlink } from '../../utils_v2/hyperlink.js';
+import { getContentSizeEstimate, type MCPToolResult } from '../../utils_v2/mcpValidation.js';
+import { jsonParse, jsonStringify } from '../../utils_v2/slowOperations.js';
 import type { inputSchema } from './MCPTool.js';
 
 // Threshold for displaying warning about large MCP responses

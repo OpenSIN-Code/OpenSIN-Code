@@ -1,21 +1,21 @@
 import { c as _c } from "react/compiler-runtime";
 import { feature } from 'bun:bundle';
 import * as React from 'react';
-import { resetCostState } from '../../bootstrap/state.js';
+import { resetCostState } from '../../bootstrap_system/state.js';
 import { clearTrustedDeviceToken, enrollTrustedDevice } from '../../bridge/trustedDevice.js';
-import type { LocalJSXCommandContext } from '../../commands.js';
-import { ConfigurableShortcutHint } from '../../components/ConfigurableShortcutHint.js';
-import { ConsoleOAuthFlow } from '../../components/ConsoleOAuthFlow.js';
-import { Dialog } from '../../components/design-system/Dialog.js';
-import { useMainLoopModel } from '../../hooks/useMainLoopModel.js';
-import { Text } from '../../ink.js';
+import type { LocalJSXCommandContext } from '../../commands_v2/index.js';
+import { ConfigurableShortcutHint } from '../../components_v2/ConfigurableShortcutHint.js';
+import { ConsoleOAuthFlow } from '../../components_v2/ConsoleOAuthFlow.js';
+import { Dialog } from '../../components_v2/design-system/Dialog.js';
+import { useMainLoopModel } from '../../hooks_v2/useMainLoopModel.js';
+import { Text } from '../../ink_v2/index.js';
 import { refreshGrowthBookAfterAuthChange } from '../../services/analytics/growthbook.js';
 import { refreshPolicyLimits } from '../../services/policyLimits/index.js';
 import { refreshRemoteManagedSettings } from '../../services/remoteManagedSettings/index.js';
 import type { LocalJSXCommandOnDone } from '../../types/command.js';
-import { stripSignatureBlocks } from '../../utils/messages.js';
-import { checkAndDisableAutoModeIfNeeded, checkAndDisableBypassPermissionsIfNeeded, resetAutoModeGateCheck, resetBypassPermissionsCheck } from '../../utils/permissions/bypassPermissionsKillswitch.js';
-import { resetUserCache } from '../../utils/user.js';
+import { stripSignatureBlocks } from '../../utils_v2/messages.js';
+import { checkAndDisableAutoModeIfNeeded, checkAndDisableBypassPermissionsIfNeeded, resetAutoModeGateCheck, resetBypassPermissionsCheck } from '../../utils_v2/permissions/bypassPermissionsKillswitch.js';
+import { resetUserCache } from '../../utils_v2/user.js';
 export async function call(onDone: LocalJSXCommandOnDone, context: LocalJSXCommandContext): Promise<React.ReactNode> {
   return <Login onDone={async success => {
     context.onChangeAPIKey();

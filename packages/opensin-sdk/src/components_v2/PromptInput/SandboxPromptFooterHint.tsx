@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { type ReactNode, useEffect, useRef, useState } from 'react';
-import { Box, Text } from '../../ink.js';
-import { useShortcutDisplay } from '../../keybindings/useShortcutDisplay.js';
-import { SandboxManager } from '../../utils/sandbox/sandbox-adapter.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js';
 export function SandboxPromptFooterHint() {
   const $ = _c(6);
   const [recentViolationCount, setRecentViolationCount] = useState(0);

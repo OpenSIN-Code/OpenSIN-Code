@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
 import { TEARDROP_ASTERISK } from '../../constants/figures.js';
-import { Box, Text, useAnimationFrame } from '../../ink.js';
-import { getInitialSettings } from '../../utils/settings/settings.js';
+import { Box, Text, useAnimationFrame } from '../../ink_v2/index.js';
+import { getInitialSettings } from '../../utils_v2/settings/settings.js';
 import { hueToRgb, toRGBColor } from '../Spinner/utils.js';
 const SWEEP_DURATION_MS = 1500;
 const SWEEP_COUNT = 2;

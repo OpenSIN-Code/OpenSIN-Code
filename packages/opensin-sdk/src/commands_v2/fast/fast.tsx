@@ -1,18 +1,18 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useState } from 'react';
-import type { CommandResultDisplay, LocalJSXCommandContext } from '../../commands.js';
-import { Dialog } from '../../components/design-system/Dialog.js';
-import { FastIcon, getFastIconString } from '../../components/FastIcon.js';
-import { Box, Link, Text } from '../../ink.js';
-import { useKeybindings } from '../../keybindings/useKeybinding.js';
+import type { CommandResultDisplay, LocalJSXCommandContext } from '../../commands_v2/index.js';
+import { Dialog } from '../../components_v2/design-system/Dialog.js';
+import { FastIcon, getFastIconString } from '../../components_v2/FastIcon.js';
+import { Box, Link, Text } from '../../ink_v2/index.js';
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js';
 import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from '../../services/analytics/index.js';
 import { type AppState, useAppState, useSetAppState } from '../../state/AppState.js';
 import type { LocalJSXCommandOnDone } from '../../types/command.js';
-import { clearFastModeCooldown, FAST_MODE_MODEL_DISPLAY, getFastModeModel, getFastModeRuntimeState, getFastModeUnavailableReason, isFastModeEnabled, isFastModeSupportedByModel, prefetchFastModeStatus } from '../../utils/fastMode.js';
-import { formatDuration } from '../../utils/format.js';
-import { formatModelPricing, getOpus46CostTier } from '../../utils/modelCost.js';
-import { updateSettingsForSource } from '../../utils/settings/settings.js';
+import { clearFastModeCooldown, FAST_MODE_MODEL_DISPLAY, getFastModeModel, getFastModeRuntimeState, getFastModeUnavailableReason, isFastModeEnabled, isFastModeSupportedByModel, prefetchFastModeStatus } from '../../utils_v2/fastMode.js';
+import { formatDuration } from '../../utils_v2/format.js';
+import { formatModelPricing, getOpus46CostTier } from '../../utils_v2/modelCost.js';
+import { updateSettingsForSource } from '../../utils_v2/settings/settings.js';
 function applyFastMode(enable: boolean, setAppState: (f: (prev: AppState) => AppState) => void): void {
   clearFastModeCooldown();
   updateSettingsForSource('userSettings', {

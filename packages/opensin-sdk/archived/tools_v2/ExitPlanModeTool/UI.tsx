@@ -1,15 +1,15 @@
 import * as React from 'react';
-import { Markdown } from 'src/components/Markdown.js';
-import { MessageResponse } from 'src/components/MessageResponse.js';
-import { RejectedPlanMessage } from 'src/components/messages/UserToolResultMessage/RejectedPlanMessage.js';
-import { BLACK_CIRCLE } from 'src/constants/figures.js';
-import { getModeColor } from 'src/utils/permissions/PermissionMode.js';
-import { Box, Text } from '../../ink.js';
-import type { ToolProgressData } from '../../Tool.js';
+import { Markdown } from '../../components_v2/Markdown.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { RejectedPlanMessage } from '../../components_v2/messages/UserToolResultMessage/RejectedPlanMessage.js';
+import { BLACK_CIRCLE } from '../../constants/figures.js';
+import { getModeColor } from '../../utils_v2/permissions/PermissionMode.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { ToolProgressData } from '../../tools_v2/Tool.js';
 import type { ProgressMessage } from '../../types/message.js';
-import { getDisplayPath } from '../../utils/file.js';
-import { getPlan } from '../../utils/plans.js';
-import type { ThemeName } from '../../utils/theme.js';
+import { getDisplayPath } from '../../utils_v2/file.js';
+import { getPlan } from '../../utils_v2/plans.js';
+import type { ThemeName } from '../../utils_v2/theme.js';
 import type { Output } from './ExitPlanModeV2Tool.js';
 export function renderToolUseMessage(): React.ReactNode {
   return null;

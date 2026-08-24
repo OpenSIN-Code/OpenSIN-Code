@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { Ansi, Box, Text, useAnimationFrame } from '../../ink.js';
-import { segmentTextByHighlights, type TextHighlight } from '../../utils/textHighlighting.js';
+import { Ansi, Box, Text, useAnimationFrame } from '../../ink_v2/index.js';
+import { segmentTextByHighlights, type TextHighlight } from '../../utils_v2/textHighlighting.js';
 import { ShimmerChar } from '../Spinner/ShimmerChar.js';
 type Props = {
   text: string;

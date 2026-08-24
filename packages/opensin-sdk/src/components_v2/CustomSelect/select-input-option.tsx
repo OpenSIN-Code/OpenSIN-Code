@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { type ReactNode, useEffect, useRef, useState } from 'react';
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- UP arrow exit not in Attachments bindings
-import { Box, Text, useInput } from '../../ink.js';
-import { useKeybinding, useKeybindings } from '../../keybindings/useKeybinding.js';
-import type { PastedContent } from '../../utils/config.js';
-import { getImageFromClipboard } from '../../utils/imagePaste.js';
-import type { ImageDimensions } from '../../utils/imageResizer.js';
+import { Box, Text, useInput } from '../../ink_v2/index.js';
+import { useKeybinding, useKeybindings } from '../../keybindings_v2/useKeybinding.js';
+import type { PastedContent } from '../../utils_v2/config.js';
+import { getImageFromClipboard } from '../../utils_v2/imagePaste.js';
+import type { ImageDimensions } from '../../utils_v2/imageResizer.js';
 import { ClickableImageRef } from '../ClickableImageRef.js';
 import { ConfigurableShortcutHint } from '../ConfigurableShortcutHint.js';
 import { Byline } from '../design-system/Byline.js';

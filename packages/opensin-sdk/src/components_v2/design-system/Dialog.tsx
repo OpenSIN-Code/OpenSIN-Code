@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { type ExitState, useExitOnCtrlCDWithKeybindings } from '../../hooks/useExitOnCtrlCDWithKeybindings.js';
-import { Box, Text } from '../../ink.js';
-import { useKeybinding } from '../../keybindings/useKeybinding.js';
-import type { Theme } from '../../utils/theme.js';
+import { type ExitState, useExitOnCtrlCDWithKeybindings } from '../../hooks_v2/useExitOnCtrlCDWithKeybindings.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
+import type { Theme } from '../../utils_v2/theme.js';
 import { ConfigurableShortcutHint } from '../ConfigurableShortcutHint.js';
 import { Byline } from './Byline.js';
 import { KeyboardShortcutHint } from './KeyboardShortcutHint.js';

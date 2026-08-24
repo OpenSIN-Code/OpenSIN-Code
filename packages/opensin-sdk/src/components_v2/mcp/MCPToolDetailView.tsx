@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text } from '../../ink.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { extractMcpToolDisplayName, getMcpDisplayName } from '../../services/mcp/mcpStringUtils.js';
-import type { Tool } from '../../Tool.js';
+import type { Tool } from '../../tools_v2/Tool.js';
 import { ConfigurableShortcutHint } from '../ConfigurableShortcutHint.js';
 import { Dialog } from '../design-system/Dialog.js';
 import type { ServerInfo } from './types.js';

@@ -3,10 +3,17 @@ import { dirname } from 'path'
 import {
   getKeybindingsPath,
   isKeybindingCustomizationEnabled,
+<<<<<<< HEAD
 } from '../../keybindings/loadUserBindings'
 import { generateKeybindingsTemplate } from '../../keybindings/template'
 import { getErrnoCode } from '../../utils/errors'
 import { editFileInEditor } from '../../utils/promptEditor'
+=======
+} from '../../keybindings_v2/loadUserBindings.js'
+import { generateKeybindingsTemplate } from '../../keybindings_v2/template.js'
+import { getErrnoCode } from '../../utils_v2/errors.js'
+import { editFileInEditor } from '../../utils_v2/promptEditor.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export async function call(): Promise<{ type: 'text'; value: string }> {
   if (!isKeybindingCustomizationEnabled()) {

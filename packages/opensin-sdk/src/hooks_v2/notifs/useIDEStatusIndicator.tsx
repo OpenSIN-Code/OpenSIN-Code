@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useEffect, useRef } from 'react';
 import { useNotifications } from 'src/context/notifications.js';
-import { Text } from 'src/ink.js';
-import type { MCPServerConnection } from 'src/services/mcp/types.js';
-import { getGlobalConfig, saveGlobalConfig } from 'src/utils/config.js';
-import { detectIDEs, type IDEExtensionInstallationStatus, isJetBrainsIde, isSupportedTerminal } from 'src/utils/ide.js';
-import { getIsRemoteMode } from '../../bootstrap/state.js';
+import { Text } from '../../ink_v2/index.js';
+import type { MCPServerConnection } from '../services/mcp/types.js';
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js';
+import { detectIDEs, type IDEExtensionInstallationStatus, isJetBrainsIde, isSupportedTerminal } from '../../utils_v2/ide.js';
+import { getIsRemoteMode } from '../../bootstrap_system/state.js';
 import { useIdeConnectionStatus } from '../useIdeConnectionStatus.js';
 import type { IDESelection } from '../useIdeSelection.js';
 const MAX_IDE_HINT_SHOW_COUNT = 5;

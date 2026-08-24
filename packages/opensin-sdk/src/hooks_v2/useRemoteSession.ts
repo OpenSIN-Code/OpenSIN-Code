@@ -1,7 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
+<<<<<<< HEAD
 import { BoundedUUIDSet } from '../bridge/bridgeMessaging'
 import type { ToolUseConfirm } from '../components/permissions/PermissionRequest'
 import type { SpinnerMode } from '../components/Spinner/types'
+=======
+import { BoundedUUIDSet } from '../bridge/bridgeMessaging.js'
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import type { SpinnerMode } from '../../components_v2/Spinner/types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type RemotePermissionResponse,
   type RemoteSessionConfig,
@@ -14,6 +20,7 @@ import {
 import {
   convertSDKMessage,
   isSessionEndMessage,
+<<<<<<< HEAD
 } from '../remote/sdkMessageAdapter'
 import { useSetAppState } from '../state/AppState'
 import type { AppState } from '../state/AppStateStore'
@@ -23,15 +30,33 @@ import type { Message as MessageType } from '../types/message'
 import type { PermissionAskDecision } from '../types/permissions'
 import { logForDebugging } from '../utils/debug'
 import { truncateToWidth } from '../utils/format'
+=======
+} from '../remote/sdkMessageAdapter.js'
+import { useSetAppState } from '../state/AppState.js'
+import type { AppState } from '../state/AppStateStore.js'
+import type { Tool } from '../../tools_v2/Tool.js'
+import { findToolByName } from '../../tools_v2/Tool.js'
+import type { Message as MessageType } from '../../types/message.js'
+import type { PermissionAskDecision } from '../types/permissions.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { truncateToWidth } from '../../utils_v2/format.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   createSystemMessage,
   extractTextContent,
   handleMessageFromStream,
   type StreamingToolUse,
+<<<<<<< HEAD
 } from '../utils/messages'
 import { generateSessionTitle } from '../utils/sessionTitle'
 import type { RemoteMessageContent } from '../utils/teleport/api'
 import { updateSessionTitle } from '../utils/teleport/api'
+=======
+} from '../../utils_v2/messages.js'
+import { generateSessionTitle } from '../../utils_v2/sessionTitle.js'
+import type { RemoteMessageContent } from '../../utils_v2/teleport/api.js'
+import { updateSessionTitle } from '../../utils_v2/teleport/api.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // How long to wait for a response before showing a warning
 const RESPONSE_TIMEOUT_MS = 60000 // 60 seconds

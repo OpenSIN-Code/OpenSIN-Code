@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { StdoutMessage } from 'src/entrypoints/sdk/controlTypes'
 import { PassThrough } from 'stream'
 import { URL } from 'url'
@@ -27,6 +28,37 @@ import { CCRClient, CCRInitError } from './transports/ccrClient'
 import { SSETransport } from './transports/SSETransport'
 import type { Transport } from './transports/Transport'
 import { getTransportForUrl } from './transports/transportUtils'
+=======
+import type { StdoutMessage } from '../entrypoints/sdk/controlTypes.js'
+import { PassThrough } from 'stream'
+import { URL } from 'url'
+import { getSessionId } from '../../bootstrap_system/state.js'
+import { getPollIntervalConfig } from '../bridge/pollConfig.js'
+import { registerCleanup } from '../../utils_v2/cleanupRegistry.js'
+import { setCommandLifecycleListener } from '../../utils_v2/commandLifecycle.js'
+import { isDebugMode, logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { gracefulShutdown } from '../../utils_v2/gracefulShutdown.js'
+import { logError } from '../../utils_v2/log.js'
+import { writeToStdout } from '../../utils_v2/process.js'
+import { getSessionIngressAuthToken } from '../../utils_v2/sessionIngressAuth.js'
+import {
+  setSessionMetadataChangedListener,
+  setSessionStateChangedListener,
+} from '../../utils_v2/sessionState.js'
+import {
+  setInternalEventReader,
+  setInternalEventWriter,
+} from '../../utils_v2/sessionStorage.js'
+import { ndjsonSafeStringify } from './ndjsonSafeStringify.js'
+import { StructuredIO } from './structuredIO.js'
+import { CCRClient, CCRInitError } from './transports/ccrClient.js'
+import { SSETransport } from './transports/SSETransport.js'
+import type { Transport } from './transports/Transport.js'
+import { getTransportForUrl } from './transports/transportUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Bidirectional streaming for SDK mode with session tracking

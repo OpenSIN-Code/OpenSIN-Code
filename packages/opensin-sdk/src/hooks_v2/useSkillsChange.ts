@@ -1,13 +1,24 @@
 import { useCallback, useEffect } from 'react'
+<<<<<<< HEAD
 import type { Command } from '../commands'
+=======
+import type { Command } from '../../commands_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   clearCommandMemoizationCaches,
   clearCommandsCache,
   getCommands,
+<<<<<<< HEAD
 } from '../commands'
 import { onGrowthBookRefresh } from '../services/analytics/growthbook'
 import { logError } from '../utils/log'
 import { skillChangeDetector } from '../utils/skills/skillChangeDetector'
+=======
+} from '../../commands_v2/index.js'
+import { onGrowthBookRefresh } from '../services/analytics/growthbook.js'
+import { logError } from '../../utils_v2/log.js'
+import { skillChangeDetector } from '../../utils_v2/skills/skillChangeDetector.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Keep the commands list fresh across two triggers:

@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text } from '../ink.js';
-import { formatTokens } from '../utils/format.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { formatTokens } from '../../utils_v2/format.js';
 import { Select } from './CustomSelect/index.js';
 import { Dialog } from './design-system/Dialog.js';
 type IdleReturnAction = 'continue' | 'clear' | 'dismiss' | 'never';

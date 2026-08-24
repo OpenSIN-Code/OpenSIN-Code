@@ -1,18 +1,33 @@
 import { mkdir, open, unlink } from 'fs/promises'
 import { join } from 'path'
+<<<<<<< HEAD
 import type { SettingSource } from 'src/utils/settings/constants'
 import { getManagedFilePath } from 'src/utils/settings/managedPath'
 import type { AgentMemoryScope } from '../../tools/AgentTool/agentMemory'
+=======
+import type { SettingSource } from '../../utils_v2/settings/constants.js'
+import { getManagedFilePath } from '../../utils_v2/settings/managedPath.js'
+import type { AgentMemoryScope } from '../../tools/AgentTool/agentMemory.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AgentDefinition,
   isBuiltInAgent,
   isPluginAgent,
+<<<<<<< HEAD
 } from '../../tools/AgentTool/loadAgentsDir'
 import { getCwd } from '../../utils/cwd'
 import type { EffortValue } from '../../utils/effort'
 import { getOpenSINConfigHomeDir } from '../../utils/envUtils'
 import { getErrnoCode } from '../../utils/errors'
 import { AGENT_PATHS } from './types'
+=======
+} from '../../tools/AgentTool/loadAgentsDir.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import type { EffortValue } from '../../utils_v2/effort.js'
+import { getOpenSINConfigHomeDir } from '../../utils_v2/envUtils.js'
+import { getErrnoCode } from '../../utils_v2/errors.js'
+import { AGENT_PATHS } from './types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Formats agent data as markdown file content

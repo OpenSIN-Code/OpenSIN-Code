@@ -1,8 +1,15 @@
 import { useContext, useMemo } from 'react'
+<<<<<<< HEAD
 import StdinContext from '../components/StdinContext'
 import type { DOMElement } from '../dom'
 import instances from '../instances'
 import type { MatchPosition } from '../render-to-screen'
+=======
+import StdinContext from '../../components_v2/StdinContext.js'
+import type { DOMElement } from '../dom.js'
+import instances from '../instances.js'
+import type { MatchPosition } from '../render-to-screen.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Set the search highlight query on the Ink instance. Non-empty → all

@@ -1,7 +1,13 @@
 import { useContext, useEffect, useState } from 'react'
+<<<<<<< HEAD
 import { ClockContext } from '../components/ClockContext'
 import type { DOMElement } from '../dom'
 import { useTerminalViewport } from './use-terminal-viewport'
+=======
+import { ClockContext } from '../../components_v2/ClockContext.js'
+import type { DOMElement } from '../dom.js'
+import { useTerminalViewport } from './use-terminal-viewport.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Hook for synchronized animations that pause when offscreen.

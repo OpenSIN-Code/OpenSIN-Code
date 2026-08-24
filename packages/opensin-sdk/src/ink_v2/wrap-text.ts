@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import sliceAnsi from '../utils/sliceAnsi'
 import { stringWidth } from './stringWidth'
 import type { Styles } from './styles'
 import { wrapAnsi } from './wrapAnsi'
+=======
+import sliceAnsi from '../../utils_v2/sliceAnsi.js'
+import { stringWidth } from './stringWidth.js'
+import type { Styles } from './styles.js'
+import { wrapAnsi } from './wrapAnsi.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const ELLIPSIS = '…'
 

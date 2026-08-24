@@ -7,8 +7,8 @@ import { dirname, join, resolve, sep } from 'path'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
-} from 'src/services/analytics/index.js'
-import { getProjectRoot } from '../bootstrap/state.js'
+} from '../services/analytics/index.js'
+import { getProjectRoot } from '../../bootstrap_system/state.js'
 import { logForDebugging } from './debug.js'
 import { getOpenSINConfigHomeDir, isEnvTruthy } from './envUtils.js'
 import { isFsInaccessible } from './errors.js'

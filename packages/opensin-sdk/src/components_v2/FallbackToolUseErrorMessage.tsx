@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/messages/messages.mjs';
 import * as React from 'react';
-import { stripUnderlineAnsi } from 'src/components/shell/OutputLine.js';
-import { extractTag } from 'src/utils/messages.js';
-import { removeSandboxViolationTags } from 'src/utils/sandbox/sandbox-ui-utils.js';
-import { Box, Text } from '../ink.js';
-import { useShortcutDisplay } from '../keybindings/useShortcutDisplay.js';
-import { countCharInString } from '../utils/stringUtils.js';
+import { stripUnderlineAnsi } from '../../components_v2/shell/OutputLine.js';
+import { extractTag } from '../../utils_v2/messages.js';
+import { removeSandboxViolationTags } from '../../utils_v2/sandbox/sandbox-ui-utils.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
+import { countCharInString } from '../../utils_v2/stringUtils.js';
 import { MessageResponse } from './MessageResponse.js';
 const MAX_RENDERED_LINES = 10;
 type Props = {

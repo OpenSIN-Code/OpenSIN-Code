@@ -17,9 +17,15 @@ import {
   issuerKey,
   saveIdpClientSecret,
   saveIdpIdTokenFromJwt,
+<<<<<<< HEAD
 } from '../../services/mcp/xaaIdpLogin'
 import { errorMessage } from '../../utils/errors'
 import { updateSettingsForSource } from '../../utils/settings/settings'
+=======
+} from '../../services/mcp/xaaIdpLogin.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { updateSettingsForSource } from '../../utils_v2/settings/settings.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export function registerMcpXaaIdpCommand(mcp: Command): void {
   const xaaIdp = mcp

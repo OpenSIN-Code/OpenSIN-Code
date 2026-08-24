@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { type ColorType, colorize } from '../../ink/colorize'
 import type { Color } from '../../ink/styles'
 import { getTheme, type Theme, type ThemeName } from '../../utils/theme'
+=======
+import { type ColorType, colorize } from '../../ink/colorize.js'
+import type { Color } from '../../ink/styles.js'
+import { getTheme, type Theme, type ThemeName } from '../../utils_v2/theme.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Curried theme-aware color function. Resolves theme keys to raw color

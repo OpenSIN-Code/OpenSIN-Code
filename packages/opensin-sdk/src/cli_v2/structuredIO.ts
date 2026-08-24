@@ -11,13 +11,19 @@ import type {
   PermissionUpdate,
   SDKMessage,
   SDKUserMessage,
+<<<<<<< HEAD
 } from 'src/entrypoints/agentSdkTypes'
 import { SDKControlElicitationResponseSchema } from 'src/entrypoints/sdk/controlSchemas'
+=======
+} from '../entrypoints/agentSdkTypes.js'
+import { SDKControlElicitationResponseSchema } from '../entrypoints/sdk/controlSchemas.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   SDKControlRequest,
   SDKControlResponse,
   StdinMessage,
   StdoutMessage,
+<<<<<<< HEAD
 } from 'src/entrypoints/sdk/controlTypes'
 import type { CanUseToolFn } from 'src/hooks/useCanUseTool'
 import type { Tool, ToolUseContext } from 'src/Tool'
@@ -25,10 +31,20 @@ import { type HookCallback, hookJSONOutputSchema } from 'src/types/hooks'
 import { logForDebugging } from 'src/utils/debug'
 import { logForDiagnosticsNoPII } from 'src/utils/diagLogs'
 import { AbortError } from 'src/utils/errors'
+=======
+} from '../entrypoints/sdk/controlTypes.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
+import type { Tool, ToolUseContext } from '../../tools_v2/Tool.js'
+import { type HookCallback, hookJSONOutputSchema } from '../../types/hooks.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { AbortError } from '../../utils_v2/errors.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type Output as PermissionToolOutput,
   permissionPromptToolResultToPermissionDecision,
   outputSchema as permissionToolOutputSchema,
+<<<<<<< HEAD
 } from 'src/utils/permissions/PermissionPromptToolResultSchema'
 import type {
   PermissionDecision,
@@ -45,14 +61,39 @@ import {
   applyPermissionUpdates,
   persistPermissionUpdates,
 } from '../utils/permissions/PermissionUpdate'
+=======
+} from '../../utils_v2/permissions/PermissionPromptToolResultSchema.js'
+import type {
+  PermissionDecision,
+  PermissionDecisionReason,
+} from '../../utils_v2/permissions/PermissionResult.js'
+import { hasPermissionsToUseTool } from '../../utils_v2/permissions/permissions.js'
+import { writeToStdout } from '../../utils_v2/process.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { z } from 'zod/v4'
+import { notifyCommandLifecycle } from '../../utils_v2/commandLifecycle.js'
+import { normalizeControlMessageKeys } from '../../utils_v2/controlMessageCompat.js'
+import { executePermissionRequestHooks } from '../../utils_v2/hooks.js'
+import {
+  applyPermissionUpdates,
+  persistPermissionUpdates,
+} from '../../utils_v2/permissions/PermissionUpdate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   notifySessionStateChanged,
   type RequiresActionDetails,
   type SessionExternalMetadata,
+<<<<<<< HEAD
 } from '../utils/sessionState'
 import { jsonParse } from '../utils/slowOperations'
 import { Stream } from '../utils/stream'
 import { ndjsonSafeStringify } from './ndjsonSafeStringify'
+=======
+} from '../../utils_v2/sessionState.js'
+import { jsonParse } from '../../utils_v2/slowOperations.js'
+import { Stream } from '../../utils_v2/stream.js'
+import { ndjsonSafeStringify } from './ndjsonSafeStringify.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Synthetic tool name used when forwarding sandbox network permission

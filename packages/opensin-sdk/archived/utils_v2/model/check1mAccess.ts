@@ -1,4 +1,4 @@
-import type { OverageDisabledReason } from 'src/services/opensinAiLimits.js'
+import type { OverageDisabledReason } from '../services/opensinAiLimits.js'
 import { isOpenSINAISubscriber } from '../auth.js'
 import { getGlobalConfig } from '../config.js'
 import { is1mContextDisabled } from '../context.js'

@@ -3,10 +3,10 @@ import type { OpenSIN } from '@opensin-ai/sdk'
 import {
   getSystemPrompt,
   SYSTEM_PROMPT_DYNAMIC_BOUNDARY,
-} from 'src/constants/prompts.js'
-import { microcompactMessages } from 'src/services/compact/microCompact.js'
-import { getSdkBetas } from '../bootstrap/state.js'
-import { getCommandName } from '../commands.js'
+} from '../../constants/prompts.js'
+import { microcompactMessages } from '../services/compact/microCompact.js'
+import { getSdkBetas } from '../../bootstrap_system/state.js'
+import { getCommandName } from '../../commands_v2/index.js'
 import { getSystemContext } from '../context.js'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../services/analytics/growthbook.js'
 import {
@@ -28,7 +28,7 @@ import {
   type Tools,
   type ToolUseContext,
   toolMatchesName,
-} from '../Tool.js'
+} from '../../tools_v2/Tool.js'
 import type {
   AgentDefinition,
   AgentDefinitionsResult,

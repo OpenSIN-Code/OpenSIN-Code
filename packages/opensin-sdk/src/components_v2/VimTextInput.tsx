@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import chalk from 'chalk';
 import React from 'react';
-import { useClipboardImageHint } from '../hooks/useClipboardImageHint.js';
-import { useVimInput } from '../hooks/useVimInput.js';
-import { Box, color, useTerminalFocus, useTheme } from '../ink.js';
+import { useClipboardImageHint } from '../../hooks_v2/useClipboardImageHint.js';
+import { useVimInput } from '../../hooks_v2/useVimInput.js';
+import { Box, color, useTerminalFocus, useTheme } from '../../ink_v2/index.js';
 import type { VimTextInputProps } from '../types/textInputTypes.js';
-import type { TextHighlight } from '../utils/textHighlighting.js';
+import type { TextHighlight } from '../../utils_v2/textHighlighting.js';
 import { BaseTextInput } from './BaseTextInput.js';
 export type Props = VimTextInputProps & {
   highlights?: TextHighlight[];

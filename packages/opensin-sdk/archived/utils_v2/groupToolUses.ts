@@ -1,6 +1,6 @@
 import type { BetaToolUseBlock } from '@opensin-ai/sdk/resources/beta/messages/messages.mjs'
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/messages/messages.mjs'
-import type { Tools } from '../Tool.js'
+import type { Tools } from '../../tools_v2/Tool.js'
 import type {
   GroupedToolUseMessage,
   NormalizedAssistantMessage,

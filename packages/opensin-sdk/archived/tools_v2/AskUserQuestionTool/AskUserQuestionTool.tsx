@@ -1,15 +1,15 @@
 import { c as _c } from "react/compiler-runtime";
 import { feature } from 'bun:bundle';
 import * as React from 'react';
-import { getAllowedChannels, getQuestionPreviewFormat } from 'src/bootstrap/state.js';
-import { MessageResponse } from 'src/components/MessageResponse.js';
-import { BLACK_CIRCLE } from 'src/constants/figures.js';
-import { getModeColor } from 'src/utils/permissions/PermissionMode.js';
+import { getAllowedChannels, getQuestionPreviewFormat } from '../../bootstrap_system/state.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { BLACK_CIRCLE } from '../../constants/figures.js';
+import { getModeColor } from '../../utils_v2/permissions/PermissionMode.js';
 import { z } from 'zod/v4';
-import { Box, Text } from '../../ink.js';
-import type { Tool } from '../../Tool.js';
-import { buildTool, type ToolDef } from '../../Tool.js';
-import { lazySchema } from '../../utils/lazySchema.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { Tool } from '../../tools_v2/Tool.js';
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js';
+import { lazySchema } from '../../utils_v2/lazySchema.js';
 import { ASK_USER_QUESTION_TOOL_CHIP_WIDTH, ASK_USER_QUESTION_TOOL_NAME, ASK_USER_QUESTION_TOOL_PROMPT, DESCRIPTION, PREVIEW_FEATURE_PROMPT } from './prompt.js';
 const questionOptionSchema = lazySchema(() => z.object({
   label: z.string().describe('The display text for this option that the user will see and select. Should be concise (1-5 words) and clearly describe the choice.'),

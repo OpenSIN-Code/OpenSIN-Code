@@ -9,7 +9,11 @@ import {
   type EffortValue,
   getDisplayedEffortLevel,
   modelSupportsEffort,
+<<<<<<< HEAD
 } from '../utils/effort'
+=======
+} from '../../utils_v2/effort.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Build the text for the effort-changed notification, e.g. "◐ medium · /effort".

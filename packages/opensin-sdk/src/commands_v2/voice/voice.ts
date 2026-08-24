@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { normalizeLanguageForSTT } from '../../hooks/useVoice'
 import { getShortcutDisplay } from '../../keybindings/shortcutFormat'
 import { logEvent } from '../../services/analytics/index'
@@ -10,6 +11,20 @@ import {
   updateSettingsForSource,
 } from '../../utils/settings/settings'
 import { isVoiceModeEnabled } from '../../voice/voiceModeEnabled'
+=======
+import { normalizeLanguageForSTT } from '../../hooks_v2/useVoice.js'
+import { getShortcutDisplay } from '../../keybindings_v2/shortcutFormat.js'
+import { logEvent } from '../../services/analytics/index.js'
+import type { LocalCommandCall } from '../../types/command.js'
+import { isOpenSINAuthEnabled } from '../../utils_v2/auth.js'
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js'
+import { settingsChangeDetector } from '../../utils_v2/settings/changeDetector.js'
+import {
+  getInitialSettings,
+  updateSettingsForSource,
+} from '../../utils_v2/settings/settings.js'
+import { isVoiceModeEnabled } from '../../voice/voiceModeEnabled.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const LANG_HINT_MAX_SHOWS = 2
 

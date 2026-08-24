@@ -1,9 +1,17 @@
 import { useEffect } from 'react'
+<<<<<<< HEAD
 import { logEvent } from 'src/services/analytics/index'
 import { z } from 'zod/v4'
 import type { MCPServerConnection } from '../services/mcp/types'
 import { getConnectedIdeClient } from '../utils/ide'
 import { lazySchema } from '../utils/lazySchema'
+=======
+import { logEvent } from '../services/analytics/index.js'
+import { z } from 'zod/v4'
+import type { MCPServerConnection } from '../services/mcp/types.js'
+import { getConnectedIdeClient } from '../../utils_v2/ide.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const LogEventSchema = lazySchema(() =>
   z.object({

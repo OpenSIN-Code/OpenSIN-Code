@@ -1,5 +1,5 @@
 import type { Buffer } from 'buffer'
-import { isInBundledMode } from '../../utils/bundledMode.js'
+import { isInBundledMode } from '../../utils_v2/bundledMode.js'
 
 export type SharpInstance = {
   metadata(): Promise<{ width: number; height: number; format: string }>

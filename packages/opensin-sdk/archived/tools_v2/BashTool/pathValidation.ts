@@ -1,25 +1,25 @@
 import { homedir } from 'os'
 import { isAbsolute, resolve } from 'path'
 import type { z } from 'zod/v4'
-import type { ToolPermissionContext } from '../../Tool.js'
-import type { Redirect, SimpleCommand } from '../../utils/bash/ast.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import type { Redirect, SimpleCommand } from '../../utils_v2/bash/ast.js'
 import {
   extractOutputRedirections,
   splitCommand_DEPRECATED,
-} from '../../utils/bash/commands.js'
-import { tryParseShellCommand } from '../../utils/bash/shellQuote.js'
-import { getDirectoryForPath } from '../../utils/path.js'
-import { allWorkingDirectories } from '../../utils/permissions/filesystem.js'
-import type { PermissionResult } from '../../utils/permissions/PermissionResult.js'
-import { createReadRuleSuggestion } from '../../utils/permissions/PermissionUpdate.js'
-import type { PermissionUpdate } from '../../utils/permissions/PermissionUpdateSchema.js'
+} from '../../utils_v2/bash/commands.js'
+import { tryParseShellCommand } from '../../utils_v2/bash/shellQuote.js'
+import { getDirectoryForPath } from '../../utils_v2/path.js'
+import { allWorkingDirectories } from '../../utils_v2/permissions/filesystem.js'
+import type { PermissionResult } from '../../utils_v2/permissions/PermissionResult.js'
+import { createReadRuleSuggestion } from '../../utils_v2/permissions/PermissionUpdate.js'
+import type { PermissionUpdate } from '../../utils_v2/permissions/PermissionUpdateSchema.js'
 import {
   expandTilde,
   type FileOperationType,
   formatDirectoryList,
   isDangerousRemovalPath,
   validatePath,
-} from '../../utils/permissions/pathValidation.js'
+} from '../../utils_v2/permissions/pathValidation.js'
 import type { BashTool } from './BashTool.js'
 import { stripSafeWrappers } from './bashPermissions.js'
 import { sedCommandIsAllowedByAllowlist } from './sedValidation.js'

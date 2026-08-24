@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { use } from 'react';
-import { Box } from '../ink.js';
+import { Box } from '../../ink_v2/index.js';
 import type { AgentDefinitionsResult } from '../tools/AgentTool/loadAgentsDir.js';
-import { getMemoryFiles } from '../utils/opensinmd.js';
-import { getGlobalConfig } from '../utils/config.js';
-import { getActiveNotices, type StatusNoticeContext } from '../utils/statusNoticeDefinitions.js';
+import { getMemoryFiles } from '../../utils_v2/opensinmd.js';
+import { getGlobalConfig } from '../../utils_v2/config.js';
+import { getActiveNotices, type StatusNoticeContext } from '../../utils_v2/statusNoticeDefinitions.js';
 type Props = {
   agentDefinitions?: AgentDefinitionsResult;
 };

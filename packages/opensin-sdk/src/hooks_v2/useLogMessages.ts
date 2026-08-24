@@ -1,13 +1,23 @@
 import type { UUID } from 'crypto'
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { useAppState } from '../state/AppState'
 import type { Message } from '../types/message'
 import { isAgentSwarmsEnabled } from '../utils/agentSwarmsEnabled'
+=======
+import { useAppState } from '../state/AppState.js'
+import type { Message } from '../../types/message.js'
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   cleanMessagesForLogging,
   isChainParticipant,
   recordTranscript,
+<<<<<<< HEAD
 } from '../utils/sessionStorage'
+=======
+} from '../../utils_v2/sessionStorage.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Hook that logs messages to the transcript

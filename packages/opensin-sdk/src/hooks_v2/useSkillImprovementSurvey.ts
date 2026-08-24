@@ -1,15 +1,28 @@
 import { useCallback, useRef, useState } from 'react'
+<<<<<<< HEAD
 import type { FeedbackSurveyResponse } from '../components/FeedbackSurvey/utils'
+=======
+import type { FeedbackSurveyResponse } from '../../components_v2/FeedbackSurvey/utils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_PII_TAGGED,
   logEvent,
+<<<<<<< HEAD
 } from '../services/analytics/index'
 import { useAppState, useSetAppState } from '../state/AppState'
 import type { Message } from '../types/message'
 import type { SkillUpdate } from '../utils/hooks/skillImprovement'
 import { applySkillImprovement } from '../utils/hooks/skillImprovement'
 import { createSystemMessage } from '../utils/messages'
+=======
+} from '../services/analytics/index.js'
+import { useAppState, useSetAppState } from '../state/AppState.js'
+import type { Message } from '../../types/message.js'
+import type { SkillUpdate } from '../../utils_v2/hooks/skillImprovement.js'
+import { applySkillImprovement } from '../../utils_v2/hooks/skillImprovement.js'
+import { createSystemMessage } from '../../utils_v2/messages.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type SkillImprovementSuggestion = {
   skillName: string

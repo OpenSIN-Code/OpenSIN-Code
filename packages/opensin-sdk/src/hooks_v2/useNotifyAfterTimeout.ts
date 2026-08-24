@@ -2,9 +2,15 @@ import { useEffect } from 'react'
 import {
   getLastInteractionTime,
   updateLastInteractionTime,
+<<<<<<< HEAD
 } from '../bootstrap/state'
 import { useTerminalNotification } from '../ink/useTerminalNotification'
 import { sendNotification } from '../services/notifier'
+=======
+} from '../../bootstrap_system/state.js'
+import { useTerminalNotification } from '../ink/useTerminalNotification.js'
+import { sendNotification } from '../services/notifier.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 // The time threshold in milliseconds for considering an interaction "recent" (6 seconds)
 export const DEFAULT_INTERACTION_THRESHOLD_MS = 6000
 

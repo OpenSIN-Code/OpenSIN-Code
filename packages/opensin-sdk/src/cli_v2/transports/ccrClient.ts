@@ -2,6 +2,7 @@ import { randomUUID } from 'crypto'
 import type {
   SDKPartialAssistantMessage,
   StdoutMessage,
+<<<<<<< HEAD
 } from 'src/entrypoints/sdk/controlTypes'
 import { decodeJwtExpiry } from '../../bridge/jwtUtils'
 import { logForDebugging } from '../../utils/debug'
@@ -22,6 +23,28 @@ import type {
 } from '../../utils/sessionState'
 import { sleep } from '../../utils/sleep'
 import { getOpenSINCodeUserAgent } from '../../utils/userAgent'
+=======
+} from '../entrypoints/sdk/controlTypes.js'
+import { decodeJwtExpiry } from '../../bridge/jwtUtils.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { errorMessage, getErrnoCode } from '../../utils_v2/errors.js'
+import { createAxiosInstance } from '../../utils_v2/proxy.js'
+import {
+  registerSessionActivityCallback,
+  unregisterSessionActivityCallback,
+} from '../../utils_v2/sessionActivity.js'
+import {
+  getSessionIngressAuthHeaders,
+  getSessionIngressAuthToken,
+} from '../../utils_v2/sessionIngressAuth.js'
+import type {
+  RequiresActionDetails,
+  SessionState,
+} from '../../utils_v2/sessionState.js'
+import { sleep } from '../../utils_v2/sleep.js'
+import { getOpenSINCodeUserAgent } from '../../utils_v2/userAgent.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   RetryableError,
   SerialBatchEventUploader,

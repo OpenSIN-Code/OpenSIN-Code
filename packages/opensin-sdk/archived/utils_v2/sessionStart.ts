@@ -1,4 +1,4 @@
-import { getMainThreadAgentType } from '../bootstrap/state.js'
+import { getMainThreadAgentType } from '../../bootstrap_system/state.js'
 import type { HookResultMessage } from '../types/message.js'
 import { createAttachmentMessage } from './attachments.js'
 import { logForDebugging } from './debug.js'

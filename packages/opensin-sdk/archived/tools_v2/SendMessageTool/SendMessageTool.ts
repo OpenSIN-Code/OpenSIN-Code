@@ -1,9 +1,9 @@
 import { feature } from 'bun:bundle'
 import { z } from 'zod/v4'
-import { isReplBridgeActive } from '../../bootstrap/state.js'
+import { isReplBridgeActive } from '../../bootstrap_system/state.js'
 import { getReplBridgeHandle } from '../../bridge/replBridgeHandle.js'
-import type { Tool, ToolUseContext } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
+import type { Tool, ToolUseContext } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
 import { findTeammateTaskByAgentId } from '../../tasks/InProcessTeammateTask/InProcessTeammateTask.js'
 import {
   isLocalAgentTask,
@@ -11,19 +11,19 @@ import {
 } from '../../tasks/LocalAgentTask/LocalAgentTask.js'
 import { isMainSessionTask } from '../../tasks/LocalMainSessionTask.js'
 import { toAgentId } from '../../types/ids.js'
-import { generateRequestId } from '../../utils/agentId.js'
-import { isAgentSwarmsEnabled } from '../../utils/agentSwarmsEnabled.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { errorMessage } from '../../utils/errors.js'
-import { truncate } from '../../utils/format.js'
-import { gracefulShutdown } from '../../utils/gracefulShutdown.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { parseAddress } from '../../utils/peerAddress.js'
-import { semanticBoolean } from '../../utils/semanticBoolean.js'
-import { jsonStringify } from '../../utils/slowOperations.js'
-import type { BackendType } from '../../utils/swarm/backends/types.js'
-import { TEAM_LEAD_NAME } from '../../utils/swarm/constants.js'
-import { readTeamFileAsync } from '../../utils/swarm/teamHelpers.js'
+import { generateRequestId } from '../../utils_v2/agentId.js'
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { truncate } from '../../utils_v2/format.js'
+import { gracefulShutdown } from '../../utils_v2/gracefulShutdown.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { parseAddress } from '../../utils_v2/peerAddress.js'
+import { semanticBoolean } from '../../utils_v2/semanticBoolean.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import type { BackendType } from '../../utils_v2/swarm/backends/types.js'
+import { TEAM_LEAD_NAME } from '../../utils_v2/swarm/constants.js'
+import { readTeamFileAsync } from '../../utils_v2/swarm/teamHelpers.js'
 import {
   getAgentId,
   getAgentName,
@@ -31,13 +31,13 @@ import {
   getTeamName,
   isTeamLead,
   isTeammate,
-} from '../../utils/teammate.js'
+} from '../../utils_v2/teammate.js'
 import {
   createShutdownApprovedMessage,
   createShutdownRejectedMessage,
   createShutdownRequestMessage,
   writeToMailbox,
-} from '../../utils/teammateMailbox.js'
+} from '../../utils_v2/teammateMailbox.js'
 import { resumeAgentBackground } from '../AgentTool/resumeAgent.js'
 import { SEND_MESSAGE_TOOL_NAME } from './constants.js'
 import { DESCRIPTION, getPrompt } from './prompt.js'

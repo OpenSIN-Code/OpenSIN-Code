@@ -1,8 +1,8 @@
 import memoize from 'lodash-es/memoize.js'
 import { homedir } from 'os'
 import { dirname, isAbsolute, resolve } from 'path'
-import type { ToolPermissionContext } from '../../Tool.js'
-import { getPlatform } from '../../utils/platform.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import { getPlatform } from '../../utils_v2/platform.js'
 import {
   getFsImplementation,
   getPathsForPermissionCheck,

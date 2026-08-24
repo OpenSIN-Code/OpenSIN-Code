@@ -3,15 +3,15 @@ import type { ElicitRequestFormParams, ElicitRequestURLParams, ElicitResult, Pri
 import figures from 'figures';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useRegisterOverlay } from '../../context/overlayContext.js';
-import { useNotifyAfterTimeout } from '../../hooks/useNotifyAfterTimeout.js';
-import { useTerminalSize } from '../../hooks/useTerminalSize.js';
+import { useNotifyAfterTimeout } from '../../hooks_v2/useNotifyAfterTimeout.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- raw text input for elicitation form
-import { Box, Text, useInput } from '../../ink.js';
-import { useKeybinding } from '../../keybindings/useKeybinding.js';
+import { Box, Text, useInput } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
 import type { ElicitationRequestEvent } from '../../services/mcp/elicitationHandler.js';
-import { openBrowser } from '../../utils/browser.js';
-import { getEnumLabel, getEnumValues, getMultiSelectLabel, getMultiSelectValues, isDateTimeSchema, isEnumSchema, isMultiSelectEnumSchema, validateElicitationInput, validateElicitationInputAsync } from '../../utils/mcp/elicitationValidation.js';
-import { plural } from '../../utils/stringUtils.js';
+import { openBrowser } from '../../utils_v2/browser.js';
+import { getEnumLabel, getEnumValues, getMultiSelectLabel, getMultiSelectValues, isDateTimeSchema, isEnumSchema, isMultiSelectEnumSchema, validateElicitationInput, validateElicitationInputAsync } from '../../utils_v2/mcp/elicitationValidation.js';
+import { plural } from '../../utils_v2/stringUtils.js';
 import { ConfigurableShortcutHint } from '../ConfigurableShortcutHint.js';
 import { Byline } from '../design-system/Byline.js';
 import { Dialog } from '../design-system/Dialog.js';

@@ -1,13 +1,13 @@
 import { z } from 'zod/v4'
-import type { ValidationResult } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
+import type { ValidationResult } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
 import {
   getCronFilePath,
   listAllCronTasks,
   removeCronTasks,
-} from '../../utils/cronTasks.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { getTeammateContext } from '../../utils/teammateContext.js'
+} from '../../utils_v2/cronTasks.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { getTeammateContext } from '../../utils_v2/teammateContext.js'
 import {
   buildCronDeletePrompt,
   CRON_DELETE_DESCRIPTION,

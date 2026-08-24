@@ -14,8 +14,13 @@ import {
 import {
   getActiveAgentsFromList,
   getAgentDefinitionsWithOverrides,
+<<<<<<< HEAD
 } from '../../tools/AgentTool/loadAgentsDir'
 import { getCwd } from '../../utils/cwd'
+=======
+} from '../../tools/AgentTool/loadAgentsDir.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 function formatAgent(agent: ResolvedAgent): string {
   const model = resolveAgentModelDisplay(agent)

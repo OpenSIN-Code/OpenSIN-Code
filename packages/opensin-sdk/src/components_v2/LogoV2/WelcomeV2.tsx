@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text, useTheme } from 'src/ink.js';
-import { env } from '../../utils/env.js';
+import { Box, Text, useTheme } from '../../ink_v2/index.js';
+import { env } from '../../utils_v2/env.js';
 const WELCOME_V2_WIDTH = 58;
 export function WelcomeV2() {
   const $ = _c(35);

@@ -1,17 +1,17 @@
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import * as React from 'react';
-import type { Message, ProgressMessage } from 'src/types/message.js';
-import { extractTag } from 'src/utils/messages.js';
-import type { ThemeName } from 'src/utils/theme.js';
+import type { Message, ProgressMessage } from '../../types/message.js';
+import { extractTag } from '../../utils_v2/messages.js';
+import type { ThemeName } from '../../utils_v2/theme.js';
 import type { z } from 'zod/v4';
-import { FallbackToolUseErrorMessage } from '../../components/FallbackToolUseErrorMessage.js';
-import { FilePathLink } from '../../components/FilePathLink.js';
-import { HighlightedCode } from '../../components/HighlightedCode.js';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { NotebookEditToolUseRejectedMessage } from '../../components/NotebookEditToolUseRejectedMessage.js';
-import { Box, Text } from '../../ink.js';
-import type { Tools } from '../../Tool.js';
-import { getDisplayPath } from '../../utils/file.js';
+import { FallbackToolUseErrorMessage } from '../../components_v2/FallbackToolUseErrorMessage.js';
+import { FilePathLink } from '../../components_v2/FilePathLink.js';
+import { HighlightedCode } from '../../components_v2/HighlightedCode.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { NotebookEditToolUseRejectedMessage } from '../../components_v2/NotebookEditToolUseRejectedMessage.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { Tools } from '../../tools_v2/Tool.js';
+import { getDisplayPath } from '../../utils_v2/file.js';
 import type { inputSchema, Output } from './NotebookEditTool.js';
 export function getToolUseSummary(input: Partial<z.infer<ReturnType<typeof inputSchema>>> | undefined): string | null {
   if (!input?.notebook_path) {

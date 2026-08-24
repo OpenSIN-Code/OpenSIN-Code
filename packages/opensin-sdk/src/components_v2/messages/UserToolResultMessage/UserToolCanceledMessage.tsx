@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { InterruptedByUser } from 'src/components/InterruptedByUser.js';
-import { MessageResponse } from 'src/components/MessageResponse.js';
+import { InterruptedByUser } from '../../components_v2/InterruptedByUser.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
 export function UserToolCanceledMessage() {
   const $ = _c(1);
   let t0;

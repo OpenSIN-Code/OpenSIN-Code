@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { LocalCommandResult } from '../../types/command'
 import { openBrowser } from '../../utils/browser'
+=======
+import type { LocalCommandResult } from '../../types/command.js'
+import { openBrowser } from '../../utils_v2/browser.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export async function call(): Promise<LocalCommandResult> {
   const url = 'https://www.stickermule.com/opensincode'

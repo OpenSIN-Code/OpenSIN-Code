@@ -1,16 +1,16 @@
 import { mkdir, writeFile } from 'fs/promises';
 import * as React from 'react';
-import type { CommandResultDisplay } from '../../commands.js';
-import { Dialog } from '../../components/design-system/Dialog.js';
-import { MemoryFileSelector } from '../../components/memory/MemoryFileSelector.js';
-import { getRelativeMemoryPath } from '../../components/memory/MemoryUpdateNotification.js';
-import { Box, Link, Text } from '../../ink.js';
+import type { CommandResultDisplay } from '../../commands_v2/index.js';
+import { Dialog } from '../../components_v2/design-system/Dialog.js';
+import { MemoryFileSelector } from '../../components_v2/memory/MemoryFileSelector.js';
+import { getRelativeMemoryPath } from '../../components_v2/memory/MemoryUpdateNotification.js';
+import { Box, Link, Text } from '../../ink_v2/index.js';
 import type { LocalJSXCommandCall } from '../../types/command.js';
-import { clearMemoryFileCaches, getMemoryFiles } from '../../utils/opensinmd.js';
-import { getOpenSINConfigHomeDir } from '../../utils/envUtils.js';
-import { getErrnoCode } from '../../utils/errors.js';
-import { logError } from '../../utils/log.js';
-import { editFileInEditor } from '../../utils/promptEditor.js';
+import { clearMemoryFileCaches, getMemoryFiles } from '../../utils_v2/opensinmd.js';
+import { getOpenSINConfigHomeDir } from '../../utils_v2/envUtils.js';
+import { getErrnoCode } from '../../utils_v2/errors.js';
+import { logError } from '../../utils_v2/log.js';
+import { editFileInEditor } from '../../utils_v2/promptEditor.js';
 function MemoryCommand({
   onDone
 }: {

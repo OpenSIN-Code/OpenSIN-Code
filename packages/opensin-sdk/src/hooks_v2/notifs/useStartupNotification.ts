@@ -1,10 +1,19 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { getIsRemoteMode } from '../../bootstrap/state'
 import {
   type Notification,
   useNotifications,
 } from '../../context/notifications'
 import { logError } from '../../utils/log'
+=======
+import { getIsRemoteMode } from '../../bootstrap_system/state.js'
+import {
+  type Notification,
+  useNotifications,
+} from '../../context/notifications.js'
+import { logError } from '../../utils_v2/log.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type Result = Notification | Notification[] | null
 

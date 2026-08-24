@@ -4,25 +4,25 @@ import {
   getProjectRoot,
   setOriginalCwd,
   setProjectRoot,
-} from '../../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { clearSystemPromptSections } from '../../constants/systemPromptSections.js'
 import { logEvent } from '../../services/analytics/index.js'
-import type { Tool } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { count } from '../../utils/array.js'
-import { clearMemoryFileCaches } from '../../utils/opensinmd.js'
-import { execFileNoThrow } from '../../utils/execFileNoThrow.js'
-import { updateHooksConfigSnapshot } from '../../utils/hooks/hooksConfigSnapshot.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { getPlansDirectory } from '../../utils/plans.js'
-import { setCwd } from '../../utils/Shell.js'
-import { saveWorktreeState } from '../../utils/sessionStorage.js'
+import type { Tool } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { count } from '../../utils_v2/array.js'
+import { clearMemoryFileCaches } from '../../utils_v2/opensinmd.js'
+import { execFileNoThrow } from '../../utils_v2/execFileNoThrow.js'
+import { updateHooksConfigSnapshot } from '../../utils_v2/hooks/hooksConfigSnapshot.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { getPlansDirectory } from '../../utils_v2/plans.js'
+import { setCwd } from '../../utils_v2/Shell.js'
+import { saveWorktreeState } from '../../utils_v2/sessionStorage.js'
 import {
   cleanupWorktree,
   getCurrentWorktreeSession,
   keepWorktree,
   killTmuxSession,
-} from '../../utils/worktree.js'
+} from '../../utils_v2/worktree.js'
 import { EXIT_WORKTREE_TOOL_NAME } from './constants.js'
 import { getExitWorktreeToolPrompt } from './prompt.js'
 import { renderToolResultMessage, renderToolUseMessage } from './UI.js'

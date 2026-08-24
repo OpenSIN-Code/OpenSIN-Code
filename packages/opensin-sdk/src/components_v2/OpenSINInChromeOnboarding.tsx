@@ -1,10 +1,10 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { logEvent } from 'src/services/analytics/index.js';
+import { logEvent } from '../services/analytics/index.js';
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- enter to continue
-import { Box, Link, Newline, Text, useInput } from '../ink.js';
-import { isChromeExtensionInstalled } from '../utils/opensinInChrome/setup.js';
-import { saveGlobalConfig } from '../utils/config.js';
+import { Box, Link, Newline, Text, useInput } from '../../ink_v2/index.js';
+import { isChromeExtensionInstalled } from '../../utils_v2/opensinInChrome/setup.js';
+import { saveGlobalConfig } from '../../utils_v2/config.js';
 import { Dialog } from './design-system/Dialog.js';
 const CHROME_EXTENSION_URL = 'https://opensin.ai/chrome';
 const CHROME_PERMISSIONS_URL = 'https://clau.de/chrome/permissions';

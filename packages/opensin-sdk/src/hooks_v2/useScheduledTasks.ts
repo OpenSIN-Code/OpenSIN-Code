@@ -4,6 +4,7 @@ import { isTerminalTaskStatus } from '../Task'
 import {
   findTeammateTaskByAgentId,
   injectUserMessageToTeammate,
+<<<<<<< HEAD
 } from '../tasks/InProcessTeammateTask/InProcessTeammateTask'
 import { isKairosCronEnabled } from '../tools/ScheduleCronTool/prompt'
 import type { Message } from '../types/message'
@@ -14,6 +15,18 @@ import { logForDebugging } from '../utils/debug'
 import { enqueuePendingNotification } from '../utils/messageQueueManager'
 import { createScheduledTaskFireMessage } from '../utils/messages'
 import { WORKLOAD_CRON } from '../utils/workloadContext'
+=======
+} from '../tasks/InProcessTeammateTask/InProcessTeammateTask.js'
+import { isKairosCronEnabled } from '../tools/ScheduleCronTool/prompt.js'
+import type { Message } from '../../types/message.js'
+import { getCronJitterConfig } from '../../utils_v2/cronJitterConfig.js'
+import { createCronScheduler } from '../../utils_v2/cronScheduler.js'
+import { removeCronTasks } from '../../utils_v2/cronTasks.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { enqueuePendingNotification } from '../../utils_v2/messageQueueManager.js'
+import { createScheduledTaskFireMessage } from '../../utils_v2/messages.js'
+import { WORKLOAD_CRON } from '../../utils_v2/workloadContext.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type Props = {
   isLoading: boolean

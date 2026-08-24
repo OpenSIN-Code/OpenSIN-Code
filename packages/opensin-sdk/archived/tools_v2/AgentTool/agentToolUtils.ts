@@ -1,6 +1,6 @@
 import { feature } from 'bun:bundle'
 import { z } from 'zod/v4'
-import { clearInvokedSkillsForAgent } from '../../bootstrap/state.js'
+import { clearInvokedSkillsForAgent } from '../../bootstrap_system/state.js'
 import {
   ALL_AGENT_DISALLOWED_TOOLS,
   ASYNC_AGENT_ALLOWED_TOOLS,
@@ -19,8 +19,8 @@ import type {
   ToolPermissionContext,
   Tools,
   ToolUseContext,
-} from '../../Tool.js'
-import { toolMatchesName } from '../../Tool.js'
+} from '../../tools_v2/Tool.js'
+import { toolMatchesName } from '../../tools_v2/Tool.js'
 import {
   completeAgentTask as completeAsyncAgent,
   createActivityDescriptionResolver,
@@ -37,25 +37,25 @@ import {
 } from '../../tasks/LocalAgentTask/LocalAgentTask.js'
 import { asAgentId } from '../../types/ids.js'
 import type { Message as MessageType } from '../../types/message.js'
-import { isAgentSwarmsEnabled } from '../../utils/agentSwarmsEnabled.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { isInProtectedNamespace } from '../../utils/envUtils.js'
-import { AbortError, errorMessage } from '../../utils/errors.js'
-import type { CacheSafeParams } from '../../utils/forkedAgent.js'
-import { lazySchema } from '../../utils/lazySchema.js'
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { isInProtectedNamespace } from '../../utils_v2/envUtils.js'
+import { AbortError, errorMessage } from '../../utils_v2/errors.js'
+import type { CacheSafeParams } from '../../utils_v2/forkedAgent.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
 import {
   extractTextContent,
   getLastAssistantMessage,
-} from '../../utils/messages.js'
-import type { PermissionMode } from '../../utils/permissions/PermissionMode.js'
-import { permissionRuleValueFromString } from '../../utils/permissions/permissionRuleParser.js'
+} from '../../utils_v2/messages.js'
+import type { PermissionMode } from '../../utils_v2/permissions/PermissionMode.js'
+import { permissionRuleValueFromString } from '../../utils_v2/permissions/permissionRuleParser.js'
 import {
   buildTranscriptForClassifier,
   classifyYoloAction,
-} from '../../utils/permissions/yoloClassifier.js'
-import { emitTaskProgress as emitTaskProgressEvent } from '../../utils/task/sdkProgress.js'
-import { isInProcessTeammate } from '../../utils/teammateContext.js'
-import { getTokenCountFromUsage } from '../../utils/tokens.js'
+} from '../../utils_v2/permissions/yoloClassifier.js'
+import { emitTaskProgress as emitTaskProgressEvent } from '../../utils_v2/task/sdkProgress.js'
+import { isInProcessTeammate } from '../../utils_v2/teammateContext.js'
+import { getTokenCountFromUsage } from '../../utils_v2/tokens.js'
 import { EXIT_PLAN_MODE_V2_TOOL_NAME } from '../ExitPlanModeTool/constants.js'
 import { AGENT_TOOL_NAME, LEGACY_AGENT_TOOL_NAME } from './constants.js'
 import type { AgentDefinition } from './loadAgentsDir.js'

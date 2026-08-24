@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import { isInputModeCharacter } from 'src/components/PromptInput/inputModes'
 import { useNotifications } from 'src/context/notifications'
 import stripAnsi from 'strip-ansi'
 import { markBackslashReturnUsed } from '../commands/terminalSetup/terminalSetup'
 import { addToHistory } from '../history'
 import type { Key } from '../ink'
+=======
+import { isInputModeCharacter } from '../../components_v2/PromptInput/inputModes.js'
+import { useNotifications } from 'src/context/notifications.js'
+import stripAnsi from 'strip-ansi'
+import { markBackslashReturnUsed } from '../commands/terminalSetup/terminalSetup.js'
+import { addToHistory } from '../history.js'
+import type { Key } from '../../ink_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   InlineGhostText,
   TextInputState,
@@ -17,12 +26,21 @@ import {
   resetYankState,
   updateYankLength,
   yankPop,
+<<<<<<< HEAD
 } from '../utils/Cursor'
 import { env } from '../utils/env'
 import { isFullscreenEnvEnabled } from '../utils/fullscreen'
 import type { ImageDimensions } from '../utils/imageResizer'
 import { isModifierPressed, prewarmModifiers } from '../utils/modifiers'
 import { useDoublePress } from './useDoublePress'
+=======
+} from '../../utils_v2/Cursor.js'
+import { env } from '../../utils_v2/env.js'
+import { isFullscreenEnvEnabled } from '../../utils_v2/fullscreen.js'
+import type { ImageDimensions } from '../../utils_v2/imageResizer.js'
+import { isModifierPressed, prewarmModifiers } from '../../utils_v2/modifiers.js'
+import { useDoublePress } from './useDoublePress.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type MaybeCursor = void | Cursor
 type InputHandler = (input: string) => MaybeCursor

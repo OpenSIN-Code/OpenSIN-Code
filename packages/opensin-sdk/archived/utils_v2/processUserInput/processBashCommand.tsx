@@ -1,11 +1,11 @@
 import type { ContentBlockParam } from '@opensin-ai/sdk/resources';
 import { randomUUID } from 'crypto';
 import * as React from 'react';
-import { BashModeProgress } from 'src/components/BashModeProgress.js';
-import type { SetToolJSXFn } from 'src/Tool.js';
-import { BashTool } from 'src/tools/BashTool/BashTool.js';
-import type { AttachmentMessage, SystemMessage, UserMessage } from 'src/types/message.js';
-import type { ShellProgress } from 'src/types/tools.js';
+import { BashModeProgress } from '../../components_v2/BashModeProgress.js';
+import type { SetToolJSXFn } from '../../tools_v2/Tool.js';
+import { BashTool } from '../../tools_v2/BashTool/BashTool.js';
+import type { AttachmentMessage, SystemMessage, UserMessage } from '../../types/message.js';
+import type { ShellProgress } from '../../types/tools.js';
 import { logEvent } from '../../services/analytics/index.js';
 import { errorMessage, ShellError } from '../errors.js';
 import { createSyntheticUserCaveatMessage, createUserInterruptionMessage, createUserMessage, prepareUserContent } from '../messages.js';

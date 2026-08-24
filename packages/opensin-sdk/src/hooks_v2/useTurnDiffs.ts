@@ -1,8 +1,14 @@
 import type { StructuredPatchHunk } from 'diff'
 import { useMemo, useRef } from 'react'
+<<<<<<< HEAD
 import type { FileEditOutput } from '../tools/FileEditTool/types'
 import type { Output as FileWriteOutput } from '../tools/FileWriteTool/FileWriteTool'
 import type { Message } from '../types/message'
+=======
+import type { FileEditOutput } from '../tools/FileEditTool/types.js'
+import type { Output as FileWriteOutput } from '../tools/FileWriteTool/FileWriteTool.js'
+import type { Message } from '../../types/message.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type TurnFileDiff = {
   filePath: string

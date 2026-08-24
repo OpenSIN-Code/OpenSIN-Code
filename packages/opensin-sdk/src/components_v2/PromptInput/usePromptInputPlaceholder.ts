@@ -1,10 +1,18 @@
 import { feature } from 'bun:bundle'
 import { useMemo } from 'react'
+<<<<<<< HEAD
 import { useCommandQueue } from 'src/hooks/useCommandQueue'
 import { useAppState } from 'src/state/AppState'
 import { getGlobalConfig } from 'src/utils/config'
 import { getExampleCommandFromCache } from 'src/utils/exampleCommands'
 import { isQueuedCommandEditable } from 'src/utils/messageQueueManager'
+=======
+import { useCommandQueue } from '../../hooks_v2/useCommandQueue.js'
+import { useAppState } from '../../state/AppState.js'
+import { getGlobalConfig } from '../../utils_v2/config.js'
+import { getExampleCommandFromCache } from '../../utils_v2/exampleCommands.js'
+import { isQueuedCommandEditable } from '../../utils_v2/messageQueueManager.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Dead code elimination: conditional import for proactive mode
 /* eslint-disable @typescript-eslint/no-require-imports */

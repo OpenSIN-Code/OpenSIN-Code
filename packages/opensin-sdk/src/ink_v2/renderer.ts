@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { logForDebugging } from 'src/utils/debug'
 import { type DOMElement, markDirty } from './dom'
 import type { Frame } from './frame'
 import { consumeAbsoluteRemovedFlag } from './node-cache'
 import Output from './output'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { type DOMElement, markDirty } from './dom.js'
+import type { Frame } from './frame.js'
+import { consumeAbsoluteRemovedFlag } from './node-cache.js'
+import Output from './output.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import renderNodeToOutput, {
   getScrollDrainNode,
   getScrollHint,

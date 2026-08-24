@@ -1,7 +1,7 @@
-import type { ToolPermissionContext } from '../../Tool.js'
-import { splitCommand_DEPRECATED } from '../../utils/bash/commands.js'
-import { tryParseShellCommand } from '../../utils/bash/shellQuote.js'
-import type { PermissionResult } from '../../utils/permissions/PermissionResult.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import { splitCommand_DEPRECATED } from '../../utils_v2/bash/commands.js'
+import { tryParseShellCommand } from '../../utils_v2/bash/shellQuote.js'
+import type { PermissionResult } from '../../utils_v2/permissions/PermissionResult.js'
 
 /**
  * Helper: Validate flags against an allowlist

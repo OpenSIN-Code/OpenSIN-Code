@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { jsonStringify } from '../../utils/slowOperations'
+=======
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Serial ordered event uploader with batching, retry, and backpressure.

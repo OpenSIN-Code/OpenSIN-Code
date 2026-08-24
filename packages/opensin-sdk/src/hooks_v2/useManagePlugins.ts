@@ -1,4 +1,5 @@
 import { useCallback, useEffect } from 'react'
+<<<<<<< HEAD
 import type { Command } from '../commands'
 import { useNotifications } from '../context/notifications'
 import {
@@ -21,6 +22,30 @@ import { loadPluginMcpServers } from '../utils/plugins/mcpPluginIntegration'
 import { detectAndUninstallDelistedPlugins } from '../utils/plugins/pluginBlocklist'
 import { getFlaggedPlugins } from '../utils/plugins/pluginFlagging'
 import { loadAllPlugins } from '../utils/plugins/pluginLoader'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { useNotifications } from '../context/notifications.js'
+import {
+  type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
+  logEvent,
+} from '../services/analytics/index.js'
+import { reinitializeLspServerManager } from '../services/lsp/manager.js'
+import { useAppState, useSetAppState } from '../state/AppState.js'
+import type { AgentDefinition } from '../tools/AgentTool/loadAgentsDir.js'
+import { count } from '../../utils_v2/array.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { toError } from '../../utils_v2/errors.js'
+import { logError } from '../../utils_v2/log.js'
+import { loadPluginAgents } from '../../utils_v2/plugins/loadPluginAgents.js'
+import { getPluginCommands } from '../../utils_v2/plugins/loadPluginCommands.js'
+import { loadPluginHooks } from '../../utils_v2/plugins/loadPluginHooks.js'
+import { loadPluginLspServers } from '../../utils_v2/plugins/lspPluginIntegration.js'
+import { loadPluginMcpServers } from '../../utils_v2/plugins/mcpPluginIntegration.js'
+import { detectAndUninstallDelistedPlugins } from '../../utils_v2/plugins/pluginBlocklist.js'
+import { getFlaggedPlugins } from '../../utils_v2/plugins/pluginFlagging.js'
+import { loadAllPlugins } from '../../utils_v2/plugins/pluginLoader.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Hook to manage plugin state and synchronize with AppState.

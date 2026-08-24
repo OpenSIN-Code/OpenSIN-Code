@@ -1,18 +1,18 @@
 import { type StructuredPatchHunk, structuredPatch } from 'diff'
-import { logError } from 'src/utils/log.js'
-import { expandPath } from 'src/utils/path.js'
-import { countCharInString } from 'src/utils/stringUtils.js'
+import { logError } from '../../utils_v2/log.js'
+import { expandPath } from '../../utils_v2/path.js'
+import { countCharInString } from '../../utils_v2/stringUtils.js'
 import {
   DIFF_TIMEOUT_MS,
   getPatchForDisplay,
   getPatchFromContents,
-} from '../../utils/diff.js'
-import { errorMessage, isENOENT } from '../../utils/errors.js'
+} from '../../utils_v2/diff.js'
+import { errorMessage, isENOENT } from '../../utils_v2/errors.js'
 import {
   addLineNumbers,
   convertLeadingTabsToSpaces,
   readFileSyncCached,
-} from '../../utils/file.js'
+} from '../../utils_v2/file.js'
 import type { EditInput, FileEdit } from './types.js'
 
 // OpenSIN can't output curly quotes, so we define them as constants here for OpenSIN to use

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { Box, Text } from '../../ink.js';
-import type { ToolProgressData } from '../../Tool.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { ToolProgressData } from '../../tools_v2/Tool.js';
 import type { ProgressMessage } from '../../types/message.js';
-import type { ThemeName } from '../../utils/theme.js';
+import type { ThemeName } from '../../utils_v2/theme.js';
 import type { Output } from './EnterWorktreeTool.js';
 export function renderToolUseMessage(): React.ReactNode {
   return 'Creating worktree…';

@@ -4,11 +4,19 @@ import {
   styledCharsFromTokens,
   tokenize,
 } from '@alcalzone/ansi-tokenize'
+<<<<<<< HEAD
 import { logForDebugging } from '../utils/debug'
 import { getGraphemeSegmenter } from '../utils/intl'
 import sliceAnsi from '../utils/sliceAnsi'
 import { reorderBidi } from './bidi'
 import { type Rectangle, unionRect } from './layout/geometry'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { getGraphemeSegmenter } from '../../utils_v2/intl.js'
+import sliceAnsi from '../../utils_v2/sliceAnsi.js'
+import { reorderBidi } from './bidi.js'
+import { type Rectangle, unionRect } from './layout/geometry.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   blitRegion,
   CellWidth,

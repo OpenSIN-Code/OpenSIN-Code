@@ -1,6 +1,7 @@
 import chalk from 'chalk'
 import { stat } from 'fs/promises'
 import { dirname, resolve } from 'path'
+<<<<<<< HEAD
 import type { ToolPermissionContext } from '../../Tool'
 import { getErrnoCode } from '../../utils/errors'
 import { expandPath } from '../../utils/path'
@@ -8,6 +9,15 @@ import {
   allWorkingDirectories,
   pathInWorkingPath,
 } from '../../utils/permissions/filesystem'
+=======
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import { getErrnoCode } from '../../utils_v2/errors.js'
+import { expandPath } from '../../utils_v2/path.js'
+import {
+  allWorkingDirectories,
+  pathInWorkingPath,
+} from '../../utils_v2/permissions/filesystem.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type AddDirectoryResult =
   | {

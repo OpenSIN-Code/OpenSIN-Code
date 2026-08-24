@@ -1,5 +1,9 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { getIsRemoteMode } from '../../bootstrap/state'
+=======
+import { getIsRemoteMode } from '../../bootstrap_system/state.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type Notification,
   useNotifications,

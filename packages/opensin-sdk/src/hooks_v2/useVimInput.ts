@@ -1,8 +1,15 @@
 import React, { useCallback, useState } from 'react'
+<<<<<<< HEAD
 import type { Key } from '../ink'
 import type { VimInputState, VimMode } from '../types/textInputTypes'
 import { Cursor } from '../utils/Cursor'
 import { lastGrapheme } from '../utils/intl'
+=======
+import type { Key } from '../../ink_v2/index.js'
+import type { VimInputState, VimMode } from '../types/textInputTypes.js'
+import { Cursor } from '../../utils_v2/Cursor.js'
+import { lastGrapheme } from '../../utils_v2/intl.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   executeIndent,
   executeJoin,

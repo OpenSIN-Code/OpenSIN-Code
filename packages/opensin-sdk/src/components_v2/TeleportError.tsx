@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useCallback, useEffect, useState } from 'react';
-import { checkIsGitClean, checkNeedsOpenSINAiLogin } from 'src/utils/background/remote/preconditions.js';
-import { gracefulShutdownSync } from 'src/utils/gracefulShutdown.js';
-import { Box, Text } from '../ink.js';
+import { checkIsGitClean, checkNeedsOpenSINAiLogin } from '../../utils_v2/background/remote/preconditions.js';
+import { gracefulShutdownSync } from '../../utils_v2/gracefulShutdown.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { ConsoleOAuthFlow } from './ConsoleOAuthFlow.js';
 import { Select } from './CustomSelect/index.js';
 import { Dialog } from './design-system/Dialog.js';

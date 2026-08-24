@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react'
+<<<<<<< HEAD
 import type { ToolUseConfirm } from '../components/permissions/PermissionRequest'
 import type { RemotePermissionResponse } from '../remote/RemoteSessionManager'
+=======
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import type { RemotePermissionResponse } from '../remote/RemoteSessionManager.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   createSyntheticAssistantMessage,
   createToolStub,
@@ -12,6 +17,7 @@ import {
 import {
   type DirectConnectConfig,
   DirectConnectSessionManager,
+<<<<<<< HEAD
 } from '../server/directConnectManager'
 import type { Tool } from '../Tool'
 import { findToolByName } from '../Tool'
@@ -20,6 +26,16 @@ import type { PermissionAskDecision } from '../types/permissions'
 import { logForDebugging } from '../utils/debug'
 import { gracefulShutdown } from '../utils/gracefulShutdown'
 import type { RemoteMessageContent } from '../utils/teleport/api'
+=======
+} from '../server/directConnectManager.js'
+import type { Tool } from '../../tools_v2/Tool.js'
+import { findToolByName } from '../../tools_v2/Tool.js'
+import type { Message as MessageType } from '../../types/message.js'
+import type { PermissionAskDecision } from '../types/permissions.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { gracefulShutdown } from '../../utils_v2/gracefulShutdown.js'
+import type { RemoteMessageContent } from '../../utils_v2/teleport/api.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type UseDirectConnectResult = {
   isRemoteMode: boolean

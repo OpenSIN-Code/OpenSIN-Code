@@ -3,11 +3,11 @@ import last from 'lodash-es/last.js'
 import {
   getSessionId,
   isSessionPersistenceDisabled,
-} from 'src/bootstrap/state.js'
-import type { SDKMessage } from 'src/entrypoints/agentSdkTypes.js'
-import type { CanUseToolFn } from '../hooks/useCanUseTool.js'
+} from '../../bootstrap_system/state.js'
+import type { SDKMessage } from '../entrypoints/agentSdkTypes.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
 import { runTools } from '../services/tools/toolOrchestration.js'
-import { findToolByName, type Tool, type Tools } from '../Tool.js'
+import { findToolByName, type Tool, type Tools } from '../../tools_v2/Tool.js'
 import { BASH_TOOL_NAME } from '../tools/BashTool/toolName.js'
 import { FILE_EDIT_TOOL_NAME } from '../tools/FileEditTool/constants.js'
 import type { Input as FileReadInput } from '../tools/FileReadTool/FileReadTool.js'

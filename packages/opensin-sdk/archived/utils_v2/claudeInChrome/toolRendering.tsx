@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { MessageResponse } from '../../components/MessageResponse.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
 import { supportsHyperlinks } from '../../ink/supports-hyperlinks.js';
-import { Link, Text } from '../../ink.js';
+import { Link, Text } from '../../ink_v2/index.js';
 import { renderToolResultMessage as renderDefaultMCPToolResultMessage } from '../../tools/MCPTool/UI.js';
-import type { MCPToolResult } from '../../utils/mcpValidation.js';
+import type { MCPToolResult } from '../../utils_v2/mcpValidation.js';
 import { truncateToWidth } from '../format.js';
 import { trackOpenSINInChromeTabId } from './common.js';
 export type { Tool } from '@modelcontextprotocol/sdk/types.js';

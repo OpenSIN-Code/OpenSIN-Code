@@ -1,16 +1,16 @@
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import * as React from 'react';
-import { KeyboardShortcutHint } from '../../components/design-system/KeyboardShortcutHint.js';
-import { FallbackToolUseErrorMessage } from '../../components/FallbackToolUseErrorMessage.js';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { OutputLine } from '../../components/shell/OutputLine.js';
-import { ShellProgressMessage } from '../../components/shell/ShellProgressMessage.js';
-import { ShellTimeDisplay } from '../../components/shell/ShellTimeDisplay.js';
-import { Box, Text } from '../../ink.js';
-import type { Tool } from '../../Tool.js';
+import { KeyboardShortcutHint } from '../../components_v2/design-system/KeyboardShortcutHint.js';
+import { FallbackToolUseErrorMessage } from '../../components_v2/FallbackToolUseErrorMessage.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { OutputLine } from '../../components_v2/shell/OutputLine.js';
+import { ShellProgressMessage } from '../../components_v2/shell/ShellProgressMessage.js';
+import { ShellTimeDisplay } from '../../components_v2/shell/ShellTimeDisplay.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { Tool } from '../../tools_v2/Tool.js';
 import type { ProgressMessage } from '../../types/message.js';
 import type { PowerShellProgress } from '../../types/tools.js';
-import type { ThemeName } from '../../utils/theme.js';
+import type { ThemeName } from '../../utils_v2/theme.js';
 import type { Out, PowerShellToolInput } from './PowerShellTool.js';
 
 // Constants for command display

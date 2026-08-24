@@ -1,12 +1,12 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { getModeFromInput } from 'src/components/PromptInput/inputModes.js';
+import { getModeFromInput } from '../../components_v2/PromptInput/inputModes.js';
 import { useNotifications } from 'src/context/notifications.js';
-import { ConfigurableShortcutHint } from '../components/ConfigurableShortcutHint.js';
-import { FOOTER_TEMPORARY_STATUS_TIMEOUT } from '../components/PromptInput/Notifications.js';
+import { ConfigurableShortcutHint } from '../../components_v2/ConfigurableShortcutHint.js';
+import { FOOTER_TEMPORARY_STATUS_TIMEOUT } from '../../components_v2/PromptInput/Notifications.js';
 import { getHistory } from '../history.js';
-import { Text } from '../ink.js';
+import { Text } from '../../ink_v2/index.js';
 import type { PromptInputMode } from '../types/textInputTypes.js';
-import type { HistoryEntry, PastedContent } from '../utils/config.js';
+import type { HistoryEntry, PastedContent } from '../../utils_v2/config.js';
 export type HistoryMode = PromptInputMode;
 
 // Load history entries in chunks to reduce disk reads on rapid keypresses

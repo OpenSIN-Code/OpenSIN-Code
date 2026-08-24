@@ -1,6 +1,11 @@
 import figures from 'figures'
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { SandboxManager } from '../../utils/sandbox/sandbox-adapter'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const command = {
   name: 'sandbox',

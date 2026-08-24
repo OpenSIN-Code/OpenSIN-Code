@@ -1,20 +1,20 @@
 import { feature } from 'bun:bundle'
 import { prependBullets } from '../../constants/prompts.js'
-import { getAttributionTexts } from '../../utils/attribution.js'
-import { hasEmbeddedSearchTools } from '../../utils/embeddedTools.js'
-import { isEnvTruthy } from '../../utils/envUtils.js'
-import { shouldIncludeGitInstructions } from '../../utils/gitSettings.js'
-import { getOpenSINTempDir } from '../../utils/permissions/filesystem.js'
-import { SandboxManager } from '../../utils/sandbox/sandbox-adapter.js'
-import { jsonStringify } from '../../utils/slowOperations.js'
+import { getAttributionTexts } from '../../utils_v2/attribution.js'
+import { hasEmbeddedSearchTools } from '../../utils_v2/embeddedTools.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { shouldIncludeGitInstructions } from '../../utils_v2/gitSettings.js'
+import { getOpenSINTempDir } from '../../utils_v2/permissions/filesystem.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
 import {
   getDefaultBashTimeoutMs,
   getMaxBashTimeoutMs,
-} from '../../utils/timeouts.js'
+} from '../../utils_v2/timeouts.js'
 import {
   getUndercoverInstructions,
   isUndercover,
-} from '../../utils/undercover.js'
+} from '../../utils_v2/undercover.js'
 import { AGENT_TOOL_NAME } from '../AgentTool/constants.js'
 import { FILE_EDIT_TOOL_NAME } from '../FileEditTool/constants.js'
 import { FILE_READ_TOOL_NAME } from '../FileReadTool/prompt.js'

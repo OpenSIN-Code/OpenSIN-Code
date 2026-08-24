@@ -1,4 +1,4 @@
-import type { ValidationResult } from 'src/Tool.js'
+import type { ValidationResult } from '../../tools_v2/Tool.js'
 import { isOpenSINSettingsPath } from '../permissions/filesystem.js'
 import { validateSettingsFileContent } from './validation.js'
 

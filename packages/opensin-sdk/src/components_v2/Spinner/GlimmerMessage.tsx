@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { stringWidth } from '../../ink/stringWidth.js';
-import { Text, useTheme } from '../../ink.js';
-import { getGraphemeSegmenter } from '../../utils/intl.js';
-import { getTheme, type Theme } from '../../utils/theme.js';
+import { Text, useTheme } from '../../ink_v2/index.js';
+import { getGraphemeSegmenter } from '../../utils_v2/intl.js';
+import { getTheme, type Theme } from '../../utils_v2/theme.js';
 import type { SpinnerMode } from './types.js';
 import { interpolateColor, parseRGB, toRGBColor } from './utils.js';
 type Props = {

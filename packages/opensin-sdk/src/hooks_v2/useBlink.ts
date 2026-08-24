@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { type DOMElement, useAnimationFrame, useTerminalFocus } from '../ink'
+=======
+import { type DOMElement, useAnimationFrame, useTerminalFocus } from '../../ink_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const BLINK_INTERVAL_MS = 600
 

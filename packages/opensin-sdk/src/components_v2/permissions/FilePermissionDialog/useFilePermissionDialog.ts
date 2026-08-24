@@ -1,6 +1,11 @@
 import { useCallback, useMemo, useState } from 'react'
+<<<<<<< HEAD
 import { useAppState } from 'src/state/AppState'
 import { useKeybindings } from '../../../keybindings/useKeybinding'
+=======
+import { useAppState } from '../../state/AppState.js'
+import { useKeybindings } from '../../../keybindings/useKeybinding.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,

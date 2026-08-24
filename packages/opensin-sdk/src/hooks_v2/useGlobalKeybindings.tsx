@@ -7,13 +7,13 @@
 import { feature } from 'bun:bundle';
 import { useCallback } from 'react';
 import instances from '../ink/instances.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
 import type { Screen } from '../screens/REPL.js';
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../services/analytics/growthbook.js';
 import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from '../services/analytics/index.js';
 import { useAppState, useSetAppState } from '../state/AppState.js';
-import { count } from '../utils/array.js';
-import { getTerminalPanel } from '../utils/terminalPanel.js';
+import { count } from '../../utils_v2/array.js';
+import { getTerminalPanel } from '../../utils_v2/terminalPanel.js';
 type Props = {
   screen: Screen;
   setScreen: React.Dispatch<React.SetStateAction<Screen>>;

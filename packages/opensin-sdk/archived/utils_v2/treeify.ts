@@ -1,5 +1,5 @@
 import figures from 'figures'
-import { color } from '../components/design-system/color.js'
+import { color } from '../../components_v2/design-system/color.js'
 import type { Theme, ThemeName } from './theme.js'
 
 export type TreeNode = {

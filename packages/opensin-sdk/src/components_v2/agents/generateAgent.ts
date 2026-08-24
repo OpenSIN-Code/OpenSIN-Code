@@ -1,4 +1,5 @@
 import type { ContentBlock } from '@opensin-ai/sdk/resources/index.mjs'
+<<<<<<< HEAD
 import { getUserContext } from 'src/context'
 import { queryModelWithoutStreaming } from 'src/services/api/opensin'
 import { getEmptyToolPermissionContext } from 'src/Tool'
@@ -16,6 +17,25 @@ import {
 } from '../../services/analytics/index'
 import { jsonParse } from '../../utils/slowOperations'
 import { asSystemPrompt } from '../../utils/systemPromptType'
+=======
+import { getUserContext } from 'src/context.js'
+import { queryModelWithoutStreaming } from '../services/api/opensin.js'
+import { getEmptyToolPermissionContext } from '../../tools_v2/Tool.js'
+import { AGENT_TOOL_NAME } from '../../tools_v2/AgentTool/constants.js'
+import { prependUserContext } from '../../utils_v2/api.js'
+import {
+  createUserMessage,
+  normalizeMessagesForAPI,
+} from '../../utils_v2/messages.js'
+import type { ModelName } from '../../utils_v2/model/model.js'
+import { isAutoMemoryEnabled } from '../../memdir/paths.js'
+import {
+  type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
+  logEvent,
+} from '../../services/analytics/index.js'
+import { jsonParse } from '../../utils_v2/slowOperations.js'
+import { asSystemPrompt } from '../../utils_v2/systemPromptType.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type GeneratedAgent = {
   identifier: string

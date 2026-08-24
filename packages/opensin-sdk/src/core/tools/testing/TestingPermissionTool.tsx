@@ -3,9 +3,9 @@
  * the model.
  */
 import { z } from 'zod/v4';
-import type { Tool } from '../../Tool.js';
-import { buildTool, type ToolDef } from '../../Tool.js';
-import { lazySchema } from '../../utils/lazySchema.js';
+import type { Tool } from '../../tools_v2/Tool.js';
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js';
+import { lazySchema } from '../../utils_v2/lazySchema.js';
 const NAME = 'TestingPermission';
 const inputSchema = lazySchema(() => z.strictObject({}));
 type InputSchema = ReturnType<typeof inputSchema>;

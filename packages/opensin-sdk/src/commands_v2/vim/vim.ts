@@ -1,9 +1,15 @@
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from '../../services/analytics/index'
 import type { LocalCommandCall } from '../../types/command'
 import { getGlobalConfig, saveGlobalConfig } from '../../utils/config'
+=======
+} from '../../services/analytics/index.js'
+import type { LocalCommandCall } from '../../types/command.js'
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export const call: LocalCommandCall = async () => {
   const config = getGlobalConfig()

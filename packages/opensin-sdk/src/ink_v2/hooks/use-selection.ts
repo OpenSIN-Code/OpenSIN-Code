@@ -1,6 +1,11 @@
 import { useContext, useMemo, useSyncExternalStore } from 'react'
+<<<<<<< HEAD
 import StdinContext from '../components/StdinContext'
 import instances from '../instances'
+=======
+import StdinContext from '../../components_v2/StdinContext.js'
+import instances from '../instances.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type FocusMove,
   type SelectionState,

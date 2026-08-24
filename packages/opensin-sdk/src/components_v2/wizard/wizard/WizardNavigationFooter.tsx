@@ -1,6 +1,6 @@
 import React, { type ReactNode } from 'react';
-import { useExitOnCtrlCDWithKeybindings } from '../../hooks/useExitOnCtrlCDWithKeybindings.js';
-import { Box, Text } from '../../ink.js';
+import { useExitOnCtrlCDWithKeybindings } from '../../hooks_v2/useExitOnCtrlCDWithKeybindings.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { ConfigurableShortcutHint } from '../ConfigurableShortcutHint.js';
 import { Byline } from '../design-system/Byline.js';
 import { KeyboardShortcutHint } from '../design-system/KeyboardShortcutHint.js';

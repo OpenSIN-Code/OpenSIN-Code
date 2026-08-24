@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useCallback, useMemo } from 'react';
-import { getOriginalCwd } from '../../bootstrap/state.js';
-import { Box, Text, useTheme } from '../../ink.js';
+import { getOriginalCwd } from '../../bootstrap_system/state.js';
+import { Box, Text, useTheme } from '../../ink_v2/index.js';
 import { sanitizeToolNameForAnalytics } from '../../services/analytics/metadata.js';
-import { env } from '../../utils/env.js';
-import { shouldShowAlwaysAllowOptions } from '../../utils/permissions/permissionsLoader.js';
-import { truncateToLines } from '../../utils/stringUtils.js';
-import { logUnaryEvent } from '../../utils/unaryLogging.js';
+import { env } from '../../utils_v2/env.js';
+import { shouldShowAlwaysAllowOptions } from '../../utils_v2/permissions/permissionsLoader.js';
+import { truncateToLines } from '../../utils_v2/stringUtils.js';
+import { logUnaryEvent } from '../../utils_v2/unaryLogging.js';
 import { type UnaryEvent, usePermissionRequestLogging } from './hooks.js';
 import { PermissionDialog } from './PermissionDialog.js';
 import { PermissionPrompt, type PermissionPromptOption, type ToolAnalyticsContext } from './PermissionPrompt.js';

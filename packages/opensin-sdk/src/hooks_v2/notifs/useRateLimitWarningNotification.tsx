@@ -2,12 +2,12 @@ import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNotifications } from 'src/context/notifications.js';
-import { Text } from 'src/ink.js';
-import { getRateLimitWarning, getUsingOverageText } from 'src/services/opensinAiLimits.js';
-import { useOpenSINAiLimits } from 'src/services/opensinAiLimitsHook.js';
-import { getSubscriptionType } from 'src/utils/auth.js';
-import { hasOpenSINAiBillingAccess } from 'src/utils/billing.js';
-import { getIsRemoteMode } from '../../bootstrap/state.js';
+import { Text } from '../../ink_v2/index.js';
+import { getRateLimitWarning, getUsingOverageText } from '../services/opensinAiLimits.js';
+import { useOpenSINAiLimits } from '../services/opensinAiLimitsHook.js';
+import { getSubscriptionType } from '../../utils_v2/auth.js';
+import { hasOpenSINAiBillingAccess } from '../../utils_v2/billing.js';
+import { getIsRemoteMode } from '../../bootstrap_system/state.js';
 export function useRateLimitWarningNotification(model) {
   const $ = _c(17);
   const {

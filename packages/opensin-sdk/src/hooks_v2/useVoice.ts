@@ -19,6 +19,7 @@ import {
   type FinalizeSource,
   isVoiceStreamAvailable,
   type VoiceStreamConnection,
+<<<<<<< HEAD
 } from '../services/voiceStreamSTT'
 import { logForDebugging } from '../utils/debug'
 import { toError } from '../utils/errors'
@@ -26,6 +27,15 @@ import { getSystemLocaleLanguage } from '../utils/intl'
 import { logError } from '../utils/log'
 import { getInitialSettings } from '../utils/settings/settings'
 import { sleep } from '../utils/sleep'
+=======
+} from '../services/voiceStreamSTT.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { toError } from '../../utils_v2/errors.js'
+import { getSystemLocaleLanguage } from '../../utils_v2/intl.js'
+import { logError } from '../../utils_v2/log.js'
+import { getInitialSettings } from '../../utils_v2/settings/settings.js'
+import { sleep } from '../../utils_v2/sleep.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // ─── Language normalization ─────────────────────────────────────────────
 

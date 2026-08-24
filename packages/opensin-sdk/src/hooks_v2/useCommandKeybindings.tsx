@@ -11,9 +11,9 @@ import { c as _c } from "react/compiler-runtime";
  */
 import { useMemo } from 'react';
 import { useIsModalOverlayActive } from '../context/overlayContext.js';
-import { useOptionalKeybindingContext } from '../keybindings/KeybindingContext.js';
-import { useKeybindings } from '../keybindings/useKeybinding.js';
-import type { PromptInputHelpers } from '../utils/handlePromptSubmit.js';
+import { useOptionalKeybindingContext } from '../../keybindings_v2/KeybindingContext.js';
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js';
+import type { PromptInputHelpers } from '../../utils_v2/handlePromptSubmit.js';
 type Props = {
   // onSubmit accepts additional parameters beyond what we pass here,
   // so we use a rest parameter to allow any additional args

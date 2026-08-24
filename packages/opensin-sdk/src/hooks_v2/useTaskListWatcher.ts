@@ -1,6 +1,10 @@
 import { type FSWatcher, watch } from 'fs'
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { logForDebugging } from '../utils/debug'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   claimTask,
   DEFAULT_TASKS_MODE_TASK_LIST_ID,
@@ -9,7 +13,11 @@ import {
   listTasks,
   type Task,
   updateTask,
+<<<<<<< HEAD
 } from '../utils/tasks'
+=======
+} from '../../utils_v2/tasks.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const DEBOUNCE_MS = 1000
 

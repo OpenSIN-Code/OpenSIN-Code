@@ -1,9 +1,9 @@
 import React from 'react';
-import { MessageResponse } from '../../components/MessageResponse.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
 import { TOOL_SUMMARY_MAX_LENGTH } from '../../constants/toolLimits.js';
-import { Box, Text } from '../../ink.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import type { ProgressMessage } from '../../types/message.js';
-import { truncate } from '../../utils/format.js';
+import { truncate } from '../../utils_v2/format.js';
 import type { Output, SearchResult, WebSearchProgress } from './WebSearchTool.js';
 function getSearchSummary(results: (SearchResult | string | null | undefined)[]): {
   searchCount: number;

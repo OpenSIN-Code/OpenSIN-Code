@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { memo, type ReactNode } from 'react';
-import { useTerminalSize } from '../../hooks/useTerminalSize.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 import { stringWidth } from '../../ink/stringWidth.js';
-import { Box, Text } from '../../ink.js';
-import { truncatePathMiddle, truncateToWidth } from '../../utils/format.js';
-import type { Theme } from '../../utils/theme.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { truncatePathMiddle, truncateToWidth } from '../../utils_v2/format.js';
+import type { Theme } from '../../utils_v2/theme.js';
 export type SuggestionItem = {
   id: string;
   displayText: string;

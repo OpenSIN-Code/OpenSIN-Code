@@ -1,17 +1,29 @@
 import { randomUUID, type UUID } from 'crypto'
 import { mkdir, readFile, writeFile } from 'fs/promises'
+<<<<<<< HEAD
 import { getOriginalCwd, getSessionId } from '../../bootstrap/state'
 import type { LocalJSXCommandContext } from '../../commands'
 import { logEvent } from '../../services/analytics/index'
 import type { LocalJSXCommandOnDone } from '../../types/command'
+=======
+import { getOriginalCwd, getSessionId } from '../../bootstrap_system/state.js'
+import type { LocalJSXCommandContext } from '../../commands_v2/index.js'
+import { logEvent } from '../../services/analytics/index.js'
+import type { LocalJSXCommandOnDone } from '../../types/command.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   ContentReplacementEntry,
   Entry,
   LogOption,
   SerializedMessage,
   TranscriptMessage,
+<<<<<<< HEAD
 } from '../../types/logs'
 import { parseJSONL } from '../../utils/json'
+=======
+} from '../../types/logs.js'
+import { parseJSONL } from '../../utils_v2/json.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getProjectDir,
   getTranscriptPath,
@@ -19,9 +31,15 @@ import {
   isTranscriptMessage,
   saveCustomTitle,
   searchSessionsByCustomTitle,
+<<<<<<< HEAD
 } from '../../utils/sessionStorage'
 import { jsonStringify } from '../../utils/slowOperations'
 import { escapeRegExp } from '../../utils/stringUtils'
+=======
+} from '../../utils_v2/sessionStorage.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { escapeRegExp } from '../../utils_v2/stringUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type TranscriptEntry = TranscriptMessage & {
   forkedFrom?: {

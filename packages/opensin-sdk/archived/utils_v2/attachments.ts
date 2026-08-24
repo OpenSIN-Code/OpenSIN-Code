@@ -2,13 +2,13 @@
 import {
   logEvent,
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
-} from 'src/services/analytics/index.js'
+} from '../services/analytics/index.js'
 import {
   toolMatchesName,
   type Tools,
   type ToolUseContext,
   type ToolPermissionContext,
-} from '../Tool.js'
+} from '../../tools_v2/Tool.js'
 import {
   FileReadTool,
   MaxFileReadTokenExceededError,
@@ -21,7 +21,7 @@ import { countCharInString } from './stringUtils.js'
 import { count, uniq } from './array.js'
 import { getFsImplementation } from './fsOperations.js'
 import { readdir, stat } from 'fs/promises'
-import type { IDESelection } from '../hooks/useIdeSelection.js'
+import type { IDESelection } from '../../hooks_v2/useIdeSelection.js'
 import { TODO_WRITE_TOOL_NAME } from '../tools/TodoWriteTool/constants.js'
 import { TASK_CREATE_TOOL_NAME } from '../tools/TaskCreateTool/constants.js'
 import { TASK_UPDATE_TOOL_NAME } from '../tools/TaskUpdateTool/constants.js'
@@ -45,7 +45,7 @@ import {
   type MemoryFileInfo,
 } from './opensinmd.js'
 import { dirname, parse, relative, resolve } from 'path'
-import { getCwd } from 'src/utils/cwd.js'
+import { getCwd } from '../../utils_v2/cwd.js'
 import { getViewedTeammateTask } from '../state/selectors.js'
 import { logError } from './log.js'
 import { logAntError } from './debug.js'
@@ -56,15 +56,15 @@ import type {
   AttachmentMessage,
   Message,
   MessageOrigin,
-} from 'src/types/message.js'
+} from '../../types/message.js'
 import {
   type QueuedCommand,
   getImagePasteIds,
   isValidImagePaste,
-} from 'src/types/textInputTypes.js'
+} from '../../types/textInputTypes.js'
 import { randomUUID, type UUID } from 'crypto'
 import { getSettings_DEPRECATED } from './settings/settings.js'
-import { getSnippetForTwoFileDiff } from 'src/tools/FileEditTool/utils.js'
+import { getSnippetForTwoFileDiff } from '../../tools_v2/FileEditTool/utils.js'
 import type {
   ContentBlockParam,
   ImageBlockParam,
@@ -79,10 +79,10 @@ import {
   getDefaultOpusModel,
 } from './model/model.js'
 import type { ReadResourceResult } from '@modelcontextprotocol/sdk/types.js'
-import { getSkillToolCommands, getMcpSkillCommands } from '../commands.js'
+import { getSkillToolCommands, getMcpSkillCommands } from '../../commands_v2/index.js'
 import type { Command } from '../types/command.js'
 import uniqBy from 'lodash-es/uniqBy.js'
-import { getProjectRoot } from '../bootstrap/state.js'
+import { getProjectRoot } from '../../bootstrap_system/state.js'
 import { formatCommandsWithinBudget } from '../tools/SkillTool/prompt.js'
 import { getContextWindowForModel } from './context.js'
 import type { DiscoverySignal } from '../services/skillSearch/signals.js'
@@ -107,8 +107,8 @@ const autoModeStateModule = feature('TRANSCRIPT_CLASSIFIER')
 import {
   MAX_LINES_TO_READ,
   FILE_READ_TOOL_NAME,
-} from 'src/tools/FileReadTool/prompt.js'
-import { getDefaultFileReadingLimits } from 'src/tools/FileReadTool/limits.js'
+} from '../../tools_v2/FileReadTool/prompt.js'
+import { getDefaultFileReadingLimits } from '../../tools_v2/FileReadTool/limits.js'
 import { cacheKeys, type FileStateCache } from './fileStateCache.js'
 import {
   createAbortController,
@@ -157,7 +157,7 @@ import {
   getLastEmittedDate,
   setLastEmittedDate,
   getKairosActive,
-} from '../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import type { QuerySource } from '../constants/querySource.js'
 import {
   getDeferredToolsDelta,
@@ -178,7 +178,7 @@ import type { MCPServerConnection } from '../services/mcp/types.js'
 import type {
   HookEvent,
   SyncHookJSONOutput,
-} from 'src/entrypoints/agentSdkTypes.js'
+} from '../entrypoints/agentSdkTypes.js'
 import {
   checkForAsyncHookResponses,
   removeDeliveredAsyncHooks,

@@ -1,18 +1,31 @@
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from 'src/services/analytics/index'
 import { saveGlobalConfig } from 'src/utils/config'
+=======
+} from '../services/analytics/index.js'
+import { saveGlobalConfig } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   CODE_REVIEW_PLUGIN_WORKFLOW_CONTENT,
   PR_BODY,
   PR_TITLE,
   WORKFLOW_CONTENT,
+<<<<<<< HEAD
 } from '../../constants/github-app'
 import { openBrowser } from '../../utils/browser'
 import { execFileNoThrow } from '../../utils/execFileNoThrow'
 import { logError } from '../../utils/log'
 import type { Workflow } from './types'
+=======
+} from '../../constants/github-app.js'
+import { openBrowser } from '../../utils_v2/browser.js'
+import { execFileNoThrow } from '../../utils_v2/execFileNoThrow.js'
+import { logError } from '../../utils_v2/log.js'
+import type { Workflow } from './types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 async function createWorkflowFile(
   repoName: string,

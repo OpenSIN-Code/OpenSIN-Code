@@ -1,10 +1,17 @@
 import { feature } from 'bun:bundle'
 import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs'
 import { randomUUID } from 'crypto'
+<<<<<<< HEAD
 import { logForDebugging } from 'src/utils/debug'
 import { getAllowedChannels } from '../../../bootstrap/state'
 import type { BridgePermissionCallbacks } from '../../../bridge/bridgePermissionCallbacks'
 import { getTerminalFocused } from '../../../ink/terminal-focus-state'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { getAllowedChannels } from '../../../bootstrap/state.js'
+import type { BridgePermissionCallbacks } from '../../../bridge/bridgePermissionCallbacks.js'
+import { getTerminalFocused } from '../../../ink/terminal-focus-state.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   CHANNEL_PERMISSION_REQUEST_METHOD,
   type ChannelPermissionRequestParams,

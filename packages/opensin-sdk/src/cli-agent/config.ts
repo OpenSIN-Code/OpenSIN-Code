@@ -3,6 +3,8 @@
  */
 
 import type { CLIAgentConfig, CLICommandOptions } from "./types.js";
+import fs from "fs";
+import path from "path";
 
 const DEFAULT_CONFIG: Omit<CLIAgentConfig, "sessionId" | "workspacePath"> = {
   model: "claude-sonnet-4-20250514",
@@ -28,8 +30,6 @@ export function createDefaultConfig(overrides: Partial<CLIAgentConfig> = {}): CL
 
 export function loadConfigFromFile(configPath: string): CLIAgentConfig | null {
   try {
-    const fs = require("fs");
-    const path = require("path");
     const fullPath = path.resolve(configPath);
     if (!fs.existsSync(fullPath)) return null;
     const raw = fs.readFileSync(fullPath, "utf-8");
@@ -42,8 +42,6 @@ export function loadConfigFromFile(configPath: string): CLIAgentConfig | null {
 
 export function saveConfigToFile(config: CLIAgentConfig, configPath: string): boolean {
   try {
-    const fs = require("fs");
-    const path = require("path");
     const fullPath = path.resolve(configPath);
     const dir = path.dirname(fullPath);
     if (!fs.existsSync(dir)) {

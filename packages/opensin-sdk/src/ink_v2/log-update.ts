@@ -3,9 +3,15 @@ import {
   ansiCodesToString,
   diffAnsiCodes,
 } from '@alcalzone/ansi-tokenize'
+<<<<<<< HEAD
 import { logForDebugging } from '../utils/debug'
 import type { Diff, FlickerReason, Frame } from './frame'
 import type { Point } from './layout/geometry'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+import type { Diff, FlickerReason, Frame } from './frame.js'
+import type { Point } from './layout/geometry.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type Cell,
   CellWidth,

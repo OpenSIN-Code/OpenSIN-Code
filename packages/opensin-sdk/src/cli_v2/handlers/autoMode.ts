@@ -3,19 +3,34 @@
  * critique user-written rules. Dynamically imported when `opensin auto-mode ...` runs.
  */
 
+<<<<<<< HEAD
 import { errorMessage } from '../../utils/errors'
 import {
   getMainLoopModel,
   parseUserSpecifiedModel,
 } from '../../utils/model/model'
+=======
+import { errorMessage } from '../../utils_v2/errors.js'
+import {
+  getMainLoopModel,
+  parseUserSpecifiedModel,
+} from '../../utils_v2/model/model.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AutoModeRules,
   buildDefaultExternalSystemPrompt,
   getDefaultExternalAutoModeRules,
+<<<<<<< HEAD
 } from '../../utils/permissions/yoloClassifier'
 import { getAutoModeConfig } from '../../utils/settings/settings'
 import { sideQuery } from '../../utils/sideQuery'
 import { jsonStringify } from '../../utils/slowOperations'
+=======
+} from '../../utils_v2/permissions/yoloClassifier.js'
+import { getAutoModeConfig } from '../../utils_v2/settings/settings.js'
+import { sideQuery } from '../../utils_v2/sideQuery.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 function writeRules(rules: AutoModeRules): void {
   process.stdout.write(jsonStringify(rules, null, 2) + '\n')

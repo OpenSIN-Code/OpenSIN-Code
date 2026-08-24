@@ -1,6 +1,6 @@
 import { appendFile, rename } from 'fs/promises'
 import { basename, dirname, join } from 'path'
-import { getOriginalCwd, getSessionId } from '../bootstrap/state.js'
+import { getOriginalCwd, getSessionId } from '../../bootstrap_system/state.js'
 import { createBufferedWriter } from './bufferedWriter.js'
 import { registerCleanup } from './cleanupRegistry.js'
 import { logForDebugging } from './debug.js'

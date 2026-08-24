@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import figures from 'figures';
 import * as React from 'react';
-import { Box, Text } from '../../ink.js';
-import { getPluginTrustMessage } from '../../utils/plugins/marketplaceHelpers.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getPluginTrustMessage } from '../../utils_v2/plugins/marketplaceHelpers.js';
 export function PluginTrustWarning() {
   const $ = _c(3);
   let t0;

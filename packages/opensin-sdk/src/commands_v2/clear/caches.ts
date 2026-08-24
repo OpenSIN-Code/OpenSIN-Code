@@ -6,14 +6,21 @@ import { feature } from 'bun:bundle'
 import {
   clearInvokedSkills,
   setLastEmittedDate,
+<<<<<<< HEAD
 } from '../../bootstrap/state'
 import { clearCommandsCache } from '../../commands'
 import { getSessionStartDate } from '../../constants/common'
+=======
+} from '../../bootstrap_system/state.js'
+import { clearCommandsCache } from '../../commands_v2/index.js'
+import { getSessionStartDate } from '../../constants/common.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getGitStatus,
   getSystemContext,
   getUserContext,
   setSystemPromptInjection,
+<<<<<<< HEAD
 } from '../../context'
 import { clearFileSuggestionCaches } from '../../hooks/fileSuggestions'
 import { clearAllPendingCallbacks } from '../../hooks/useSwarmPermissionPoller'
@@ -31,6 +38,25 @@ import { clearRepositoryCaches } from '../../utils/detectRepository'
 import { clearResolveGitDirCache } from '../../utils/git/gitFilesystem'
 import { clearStoredImagePaths } from '../../utils/imageStore'
 import { clearSessionEnvVars } from '../../utils/sessionEnvVars'
+=======
+} from '../../context.js'
+import { clearFileSuggestionCaches } from '../../hooks_v2/fileSuggestions.js'
+import { clearAllPendingCallbacks } from '../../hooks_v2/useSwarmPermissionPoller.js'
+import { clearAllDumpState } from '../../services/api/dumpPrompts.js'
+import { resetPromptCacheBreakDetection } from '../../services/api/promptCacheBreakDetection.js'
+import { clearAllSessions } from '../../services/api/sessionIngress.js'
+import { runPostCompactCleanup } from '../../services/compact/postCompactCleanup.js'
+import { resetAllLSPDiagnosticState } from '../../services/lsp/LSPDiagnosticRegistry.js'
+import { clearTrackedMagicDocs } from '../../services/MagicDocs/magicDocs.js'
+import { clearDynamicSkills } from '../../skills/loadSkillsDir.js'
+import { resetSentSkillNames } from '../../utils_v2/attachments.js'
+import { clearCommandPrefixCaches } from '../../utils_v2/bash/commands.js'
+import { resetGetMemoryFilesCache } from '../../utils_v2/opensinmd.js'
+import { clearRepositoryCaches } from '../../utils_v2/detectRepository.js'
+import { clearResolveGitDirCache } from '../../utils_v2/git/gitFilesystem.js'
+import { clearStoredImagePaths } from '../../utils_v2/imageStore.js'
+import { clearSessionEnvVars } from '../../utils_v2/sessionEnvVars.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Clear all session-related caches.

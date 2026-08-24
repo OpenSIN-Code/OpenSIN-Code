@@ -1,7 +1,7 @@
 import { feature } from 'bun:bundle'
 import type { BetaToolUseBlock } from '@opensin-ai/sdk/resources/beta/messages/messages.mjs'
 import { randomUUID } from 'crypto'
-import { getIsNonInteractiveSession } from '../../bootstrap/state.js'
+import { getIsNonInteractiveSession } from '../../bootstrap_system/state.js'
 import {
   FORK_BOILERPLATE_TAG,
   FORK_DIRECTIVE_PREFIX,
@@ -11,8 +11,8 @@ import type {
   AssistantMessage,
   Message as MessageType,
 } from '../../types/message.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { createUserMessage } from '../../utils/messages.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { createUserMessage } from '../../utils_v2/messages.js'
 import type { BuiltInAgentDefinition } from './loadAgentsDir.js'
 
 /**

@@ -1,18 +1,18 @@
 import { c as _c } from "react/compiler-runtime";
 import figures from 'figures';
 import * as React from 'react';
-import { useTerminalSize } from '../hooks/useTerminalSize.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 import { stringWidth } from '../ink/stringWidth.js';
-import { Box, Text } from '../ink.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import { useAppState } from '../state/AppState.js';
 import { isInProcessTeammateTask } from '../tasks/InProcessTeammateTask/types.js';
 import { AGENT_COLOR_TO_THEME_COLOR, type AgentColorName } from '../tools/AgentTool/agentColorManager.js';
-import { isAgentSwarmsEnabled } from '../utils/agentSwarmsEnabled.js';
-import { count } from '../utils/array.js';
-import { summarizeRecentActivities } from '../utils/collapseReadSearch.js';
-import { truncateToWidth } from '../utils/format.js';
-import { isTodoV2Enabled, type Task } from '../utils/tasks.js';
-import type { Theme } from '../utils/theme.js';
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js';
+import { count } from '../../utils_v2/array.js';
+import { summarizeRecentActivities } from '../../utils_v2/collapseReadSearch.js';
+import { truncateToWidth } from '../../utils_v2/format.js';
+import { isTodoV2Enabled, type Task } from '../../utils_v2/tasks.js';
+import type { Theme } from '../../utils_v2/theme.js';
 import ThemedText from './design-system/ThemedText.js';
 type Props = {
   tasks: Task[];

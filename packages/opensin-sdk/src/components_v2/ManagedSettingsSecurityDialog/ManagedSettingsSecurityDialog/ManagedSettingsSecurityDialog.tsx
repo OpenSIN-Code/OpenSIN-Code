@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { useExitOnCtrlCDWithKeybindings } from '../../hooks/useExitOnCtrlCDWithKeybindings.js';
-import { Box, Text } from '../../ink.js';
-import { useKeybinding } from '../../keybindings/useKeybinding.js';
-import type { SettingsJson } from '../../utils/settings/types.js';
+import { useExitOnCtrlCDWithKeybindings } from '../../hooks_v2/useExitOnCtrlCDWithKeybindings.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
+import type { SettingsJson } from '../../utils_v2/settings/types.js';
 import { Select } from '../CustomSelect/index.js';
 import { PermissionDialog } from '../permissions/PermissionDialog.js';
 import { extractDangerousSettings, formatDangerousSettingsList } from './utils.js';

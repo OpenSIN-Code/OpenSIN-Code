@@ -10,9 +10,9 @@
 
 import type { UUID } from 'crypto'
 import { randomUUID } from 'crypto'
-import type { PromptCommand } from '../commands.js'
+import type { PromptCommand } from '../../commands_v2/index.js'
 import type { QuerySource } from '../constants/querySource.js'
-import type { CanUseToolFn } from '../hooks/useCanUseTool.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
 import { query } from '../query.js'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
@@ -20,7 +20,7 @@ import {
 } from '../services/analytics/index.js'
 import { accumulateUsage, updateUsage } from '../services/api/opensin.js'
 import { EMPTY_USAGE, type NonNullableUsage } from '../services/api/logging.js'
-import type { ToolUseContext } from '../Tool.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
 import type { AgentDefinition } from '../tools/AgentTool/loadAgentsDir.js'
 import type { AgentId } from '../types/ids.js'
 import type { Message } from '../types/message.js'

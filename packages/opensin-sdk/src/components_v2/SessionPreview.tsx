@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import type { UUID } from 'crypto';
 import React, { useCallback } from 'react';
-import { Box, Text } from '../ink.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
 import { getAllBaseTools } from '../tools.js';
 import type { LogOption } from '../types/logs.js';
-import { formatRelativeTimeAgo } from '../utils/format.js';
-import { getSessionIdFromLog, isLiteLog, loadFullLog } from '../utils/sessionStorage.js';
+import { formatRelativeTimeAgo } from '../../utils_v2/format.js';
+import { getSessionIdFromLog, isLiteLog, loadFullLog } from '../../utils_v2/sessionStorage.js';
 import { ConfigurableShortcutHint } from './ConfigurableShortcutHint.js';
 import { Byline } from './design-system/Byline.js';
 import { KeyboardShortcutHint } from './design-system/KeyboardShortcutHint.js';

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import type { StdoutMessage } from 'src/entrypoints/sdk/controlTypes'
 import type WsWebSocket from 'ws'
 import { logEvent } from '../../services/analytics/index'
@@ -16,6 +17,26 @@ import {
 } from '../../utils/sessionActivity'
 import { jsonStringify } from '../../utils/slowOperations'
 import type { Transport } from './Transport'
+=======
+import type { StdoutMessage } from '../entrypoints/sdk/controlTypes.js'
+import type WsWebSocket from 'ws'
+import { logEvent } from '../../services/analytics/index.js'
+import { CircularBuffer } from '../../utils_v2/CircularBuffer.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { getWebSocketTLSOptions } from '../../utils_v2/mtls.js'
+import {
+  getWebSocketProxyAgent,
+  getWebSocketProxyUrl,
+} from '../../utils_v2/proxy.js'
+import {
+  registerSessionActivityCallback,
+  unregisterSessionActivityCallback,
+} from '../../utils_v2/sessionActivity.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import type { Transport } from './Transport.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const KEEP_ALIVE_FRAME = '{"type":"keep_alive"}\n'
 

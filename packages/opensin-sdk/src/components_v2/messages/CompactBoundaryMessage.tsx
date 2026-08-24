@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { Box, Text } from '../../ink.js';
-import { useShortcutDisplay } from '../../keybindings/useShortcutDisplay.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
 export function CompactBoundaryMessage() {
   const $ = _c(2);
   const historyShortcut = useShortcutDisplay("app:toggleTranscript", "Global", "ctrl+o");

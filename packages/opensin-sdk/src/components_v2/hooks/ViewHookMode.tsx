@@ -6,8 +6,8 @@ import { c as _c } from "react/compiler-runtime";
  * confirmation screen and directs users to settings.json or OpenSIN for edits.
  */
 import * as React from 'react';
-import { Box, Text } from '../../ink.js';
-import { hookSourceDescriptionDisplayString, type IndividualHookConfig } from '../../utils/hooks/hooksSettings.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { hookSourceDescriptionDisplayString, type IndividualHookConfig } from '../../utils_v2/hooks/hooksSettings.js';
 import { Dialog } from '../design-system/Dialog.js';
 type Props = {
   selectedHook: IndividualHookConfig;

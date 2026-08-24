@@ -13,7 +13,7 @@ import {
   getHeapStatistics,
   type HeapSpaceInfo,
 } from 'v8'
-import { getSessionId } from '../bootstrap/state.js'
+import { getSessionId } from '../../bootstrap_system/state.js'
 import { logEvent } from '../services/analytics/index.js'
 import { logForDebugging } from './debug.js'
 import { toError } from './errors.js'

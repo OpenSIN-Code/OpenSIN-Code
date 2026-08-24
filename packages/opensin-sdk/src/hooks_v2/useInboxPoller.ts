@@ -1,15 +1,23 @@
 import { randomUUID } from 'crypto'
 import { useCallback, useEffect, useRef } from 'react'
 import { useInterval } from 'usehooks-ts'
+<<<<<<< HEAD
 import type { ToolUseConfirm } from '../components/permissions/PermissionRequest'
 import { TEAMMATE_MESSAGE_TAG } from '../constants/xml'
 import { useTerminalNotification } from '../ink/useTerminalNotification'
 import { sendNotification } from '../services/notifier'
+=======
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import { TEAMMATE_MESSAGE_TAG } from '../constants/xml.js'
+import { useTerminalNotification } from '../ink/useTerminalNotification.js'
+import { sendNotification } from '../services/notifier.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AppState,
   useAppState,
   useAppStateStore,
   useSetAppState,
+<<<<<<< HEAD
 } from '../state/AppState'
 import { findToolByName } from '../Tool'
 import { isInProcessTeammateTask } from '../tasks/InProcessTeammateTask/types'
@@ -41,13 +49,51 @@ import {
   setMemberMode,
 } from '../utils/swarm/teamHelpers'
 import { unassignTeammateTasks } from '../utils/tasks'
+=======
+} from '../state/AppState.js'
+import { findToolByName } from '../../tools_v2/Tool.js'
+import { isInProcessTeammateTask } from '../tasks/InProcessTeammateTask/types.js'
+import { getAllBaseTools } from '../tools.js'
+import type { PermissionUpdate } from '../types/permissions.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import {
+  findInProcessTeammateTaskId,
+  handlePlanApprovalResponse,
+} from '../../utils_v2/inProcessTeammateHelpers.js'
+import { createAssistantMessage } from '../../utils_v2/messages.js'
+import {
+  permissionModeFromString,
+  toExternalPermissionMode,
+} from '../../utils_v2/permissions/PermissionMode.js'
+import { applyPermissionUpdate } from '../../utils_v2/permissions/PermissionUpdate.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { isInsideTmux } from '../../utils_v2/swarm/backends/detection.js'
+import {
+  ensureBackendsRegistered,
+  getBackendByType,
+} from '../../utils_v2/swarm/backends/registry.js'
+import type { PaneBackendType } from '../../utils_v2/swarm/backends/types.js'
+import { TEAM_LEAD_NAME } from '../../utils_v2/swarm/constants.js'
+import { getLeaderToolUseConfirmQueue } from '../../utils_v2/swarm/leaderPermissionBridge.js'
+import { sendPermissionResponseViaMailbox } from '../../utils_v2/swarm/permissionSync.js'
+import {
+  removeTeammateFromTeamFile,
+  setMemberMode,
+} from '../../utils_v2/swarm/teamHelpers.js'
+import { unassignTeammateTasks } from '../../utils_v2/tasks.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getAgentName,
   isPlanModeRequired,
   isTeamLead,
   isTeammate,
+<<<<<<< HEAD
 } from '../utils/teammate'
 import { isInProcessTeammate } from '../utils/teammateContext'
+=======
+} from '../../utils_v2/teammate.js'
+import { isInProcessTeammate } from '../../utils_v2/teammateContext.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isModeSetRequest,
   isPermissionRequest,
@@ -63,7 +109,11 @@ import {
   readUnreadMessages,
   type TeammateMessage,
   writeToMailbox,
+<<<<<<< HEAD
 } from '../utils/teammateMailbox'
+=======
+} from '../../utils_v2/teammateMailbox.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   hasPermissionCallback,
   hasSandboxPermissionCallback,

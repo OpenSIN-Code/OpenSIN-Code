@@ -4,32 +4,32 @@ import type {
   BetaToolUnion,
 } from '@opensin-ai/sdk/resources/beta/messages/messages.mjs'
 import { createHash } from 'crypto'
-import { SYSTEM_PROMPT_DYNAMIC_BOUNDARY } from 'src/constants/prompts.js'
+import { SYSTEM_PROMPT_DYNAMIC_BOUNDARY } from '../../constants/prompts.js'
 import { getSystemContext, getUserContext } from 'src/context.js'
-import { isAnalyticsDisabled } from 'src/services/analytics/config.js'
+import { isAnalyticsDisabled } from '../services/analytics/config.js'
 import {
   checkStatsigFeatureGate_CACHED_MAY_BE_STALE,
   getFeatureValue_CACHED_MAY_BE_STALE,
-} from 'src/services/analytics/growthbook.js'
+} from '../services/analytics/growthbook.js'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
-} from 'src/services/analytics/index.js'
-import { prefetchAllMcpResources } from 'src/services/mcp/client.js'
-import type { ScopedMcpServerConfig } from 'src/services/mcp/types.js'
-import { BashTool } from 'src/tools/BashTool/BashTool.js'
-import { FileEditTool } from 'src/tools/FileEditTool/FileEditTool.js'
+} from '../services/analytics/index.js'
+import { prefetchAllMcpResources } from '../services/mcp/client.js'
+import type { ScopedMcpServerConfig } from '../services/mcp/types.js'
+import { BashTool } from '../../tools_v2/BashTool/BashTool.js'
+import { FileEditTool } from '../../tools_v2/FileEditTool/FileEditTool.js'
 import {
   normalizeFileEditInput,
   stripTrailingWhitespace,
-} from 'src/tools/FileEditTool/utils.js'
-import { FileWriteTool } from 'src/tools/FileWriteTool/FileWriteTool.js'
+} from '../../tools_v2/FileEditTool/utils.js'
+import { FileWriteTool } from '../../tools_v2/FileWriteTool/FileWriteTool.js'
 import { getTools } from 'src/tools.js'
-import type { AgentId } from 'src/types/ids.js'
+import type { AgentId } from '../../types/ids.js'
 import type { z } from 'zod/v4'
 import { CLI_SYSPROMPT_PREFIXES } from '../constants/system.js'
 import { roughTokenCountEstimation } from '../services/tokenEstimation.js'
-import type { Tool, ToolPermissionContext, Tools } from '../Tool.js'
+import type { Tool, ToolPermissionContext, Tools } from '../../tools_v2/Tool.js'
 import { AGENT_TOOL_NAME } from '../tools/AgentTool/constants.js'
 import type { AgentDefinition } from '../tools/AgentTool/loadAgentsDir.js'
 import { EXIT_PLAN_MODE_V2_TOOL_NAME } from '../tools/ExitPlanModeTool/constants.js'

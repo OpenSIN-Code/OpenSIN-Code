@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { Attachment } from 'src/utils/attachments'
 import type { Message, NormalizedMessage } from '../../types/message'
+=======
+import type { Attachment } from '../../utils_v2/attachments.js'
+import type { Message, NormalizedMessage } from '../../types/message.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Attachment types that AttachmentMessage renders as `null` unconditionally

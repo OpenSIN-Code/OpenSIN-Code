@@ -3,40 +3,70 @@ import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from 'src/services/analytics/index'
 import { sanitizeToolNameForAnalytics } from 'src/services/analytics/metadata'
 import type { ToolUseConfirm } from '../../components/permissions/PermissionRequest'
+=======
+} from '../services/analytics/index.js'
+import { sanitizeToolNameForAnalytics } from '../services/analytics/metadata.js'
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   ToolPermissionContext,
   Tool as ToolType,
   ToolUseContext,
+<<<<<<< HEAD
 } from '../../Tool'
 import { awaitClassifierAutoApproval } from '../../tools/BashTool/bashPermissions'
 import { BASH_TOOL_NAME } from '../../tools/BashTool/toolName'
 import type { AssistantMessage } from '../../types/message'
+=======
+} from '../../tools_v2/Tool.js'
+import { awaitClassifierAutoApproval } from '../../tools/BashTool/bashPermissions.js'
+import { BASH_TOOL_NAME } from '../../tools/BashTool/toolName.js'
+import type { AssistantMessage } from '../../types/message.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   PendingClassifierCheck,
   PermissionAllowDecision,
   PermissionDecisionReason,
   PermissionDenyDecision,
+<<<<<<< HEAD
 } from '../../types/permissions'
 import { setClassifierApproval } from '../../utils/classifierApprovals'
 import { logForDebugging } from '../../utils/debug'
 import { executePermissionRequestHooks } from '../../utils/hooks'
+=======
+} from '../../types/permissions.js'
+import { setClassifierApproval } from '../../utils_v2/classifierApprovals.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { executePermissionRequestHooks } from '../../utils_v2/hooks.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   REJECT_MESSAGE,
   REJECT_MESSAGE_WITH_REASON_PREFIX,
   SUBAGENT_REJECT_MESSAGE,
   SUBAGENT_REJECT_MESSAGE_WITH_REASON_PREFIX,
   withMemoryCorrectionHint,
+<<<<<<< HEAD
 } from '../../utils/messages'
 import type { PermissionDecision } from '../../utils/permissions/PermissionResult'
+=======
+} from '../../utils_v2/messages.js'
+import type { PermissionDecision } from '../../utils_v2/permissions/PermissionResult.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   applyPermissionUpdates,
   persistPermissionUpdates,
   supportsPersistence,
+<<<<<<< HEAD
 } from '../../utils/permissions/PermissionUpdate'
 import type { PermissionUpdate } from '../../utils/permissions/PermissionUpdateSchema'
+=======
+} from '../../utils_v2/permissions/PermissionUpdate.js'
+import type { PermissionUpdate } from '../../utils_v2/permissions/PermissionUpdateSchema.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   logPermissionDecision,
   type PermissionDecisionArgs,

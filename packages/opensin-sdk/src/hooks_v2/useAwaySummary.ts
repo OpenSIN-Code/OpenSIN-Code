@@ -3,11 +3,19 @@ import { useEffect, useRef } from 'react'
 import {
   getTerminalFocusState,
   subscribeTerminalFocus,
+<<<<<<< HEAD
 } from '../ink/terminal-focus-state'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../services/analytics/growthbook'
 import { generateAwaySummary } from '../services/awaySummary'
 import type { Message } from '../types/message'
 import { createAwaySummaryMessage } from '../utils/messages'
+=======
+} from '../ink/terminal-focus-state.js'
+import { getFeatureValue_CACHED_MAY_BE_STALE } from '../services/analytics/growthbook.js'
+import { generateAwaySummary } from '../services/awaySummary.js'
+import type { Message } from '../../types/message.js'
+import { createAwaySummaryMessage } from '../../utils_v2/messages.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const BLUR_DELAY_MS = 5 * 60_000
 

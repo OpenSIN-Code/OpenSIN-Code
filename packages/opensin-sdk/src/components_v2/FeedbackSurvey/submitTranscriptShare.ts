@@ -1,19 +1,34 @@
 import axios from 'axios'
 import { readFile, stat } from 'fs/promises'
+<<<<<<< HEAD
 import type { Message } from '../../types/message'
 import { checkAndRefreshOAuthTokenIfNeeded } from '../../utils/auth'
 import { logForDebugging } from '../../utils/debug'
 import { errorMessage } from '../../utils/errors'
 import { getAuthHeaders, getUserAgent } from '../../utils/http'
 import { normalizeMessagesForAPI } from '../../utils/messages'
+=======
+import type { Message } from '../../types/message.js'
+import { checkAndRefreshOAuthTokenIfNeeded } from '../../utils_v2/auth.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { getAuthHeaders, getUserAgent } from '../../utils_v2/http.js'
+import { normalizeMessagesForAPI } from '../../utils_v2/messages.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   extractAgentIdsFromMessages,
   getTranscriptPath,
   loadSubagentTranscripts,
   MAX_TRANSCRIPT_READ_BYTES,
+<<<<<<< HEAD
 } from '../../utils/sessionStorage'
 import { jsonStringify } from '../../utils/slowOperations'
 import { redactSensitiveInfo } from '../Feedback'
+=======
+} from '../../utils_v2/sessionStorage.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { redactSensitiveInfo } from '../Feedback.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type TranscriptShareResult = {
   success: boolean

@@ -1,6 +1,6 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text } from '../../ink.js';
+import { Box, Text } from '../../ink_v2/index.js';
 import type { Workflow } from './types.js';
 interface CreatingStepProps {
   currentWorkflowInstallStep: number;

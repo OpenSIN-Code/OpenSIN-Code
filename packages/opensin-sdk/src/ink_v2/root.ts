@@ -1,5 +1,9 @@
 import type { ReactNode } from 'react'
+<<<<<<< HEAD
 import { logForDebugging } from 'src/utils/debug'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import { Stream } from 'stream'
 import type { FrameEvent } from './frame'
 import Ink, { type Options as InkOptions } from './ink'

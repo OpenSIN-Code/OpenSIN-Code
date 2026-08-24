@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { clearTrustedDeviceTokenCache } from '../../bridge/trustedDevice.js';
-import { Text } from '../../ink.js';
+import { Text } from '../../ink_v2/index.js';
 import { refreshGrowthBookAfterAuthChange } from '../../services/analytics/growthbook.js';
 import { getGroveNoticeConfig, getGroveSettings } from '../../services/api/grove.js';
 import { clearPolicyLimitsCache } from '../../services/policyLimits/index.js';
 // flushTelemetry is loaded lazily to avoid pulling in ~1.1MB of OpenTelemetry at startup
 import { clearRemoteManagedSettingsCache } from '../../services/remoteManagedSettings/index.js';
-import { getOpenSINAIOAuthTokens, removeApiKey } from '../../utils/auth.js';
-import { clearBetasCaches } from '../../utils/betas.js';
-import { saveGlobalConfig } from '../../utils/config.js';
-import { gracefulShutdownSync } from '../../utils/gracefulShutdown.js';
-import { getSecureStorage } from '../../utils/secureStorage/index.js';
-import { clearToolSchemaCache } from '../../utils/toolSchemaCache.js';
-import { resetUserCache } from '../../utils/user.js';
+import { getOpenSINAIOAuthTokens, removeApiKey } from '../../utils_v2/auth.js';
+import { clearBetasCaches } from '../../utils_v2/betas.js';
+import { saveGlobalConfig } from '../../utils_v2/config.js';
+import { gracefulShutdownSync } from '../../utils_v2/gracefulShutdown.js';
+import { getSecureStorage } from '../../utils_v2/secureStorage/index.js';
+import { clearToolSchemaCache } from '../../utils_v2/toolSchemaCache.js';
+import { resetUserCache } from '../../utils_v2/user.js';
 export async function performLogout({
   clearOnboarding = false
 }): Promise<void> {

@@ -8,8 +8,8 @@ import {
   type ResourceMetrics,
 } from '@opentelemetry/sdk-metrics'
 import axios from 'axios'
-import { checkMetricsEnabled } from 'src/services/api/metricsOptOut.js'
-import { getIsNonInteractiveSession } from '../../bootstrap/state.js'
+import { checkMetricsEnabled } from '../services/api/metricsOptOut.js'
+import { getIsNonInteractiveSession } from '../../bootstrap_system/state.js'
 import { getSubscriptionType, isOpenSINAISubscriber } from '../auth.js'
 import { checkHasTrustDialogAccepted } from '../config.js'
 import { logForDebugging } from '../debug.js'

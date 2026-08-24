@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { isPolicyAllowed } from '../../services/policyLimits/index'
 import { isEnvTruthy } from '../../utils/envUtils'
 import { isEssentialTrafficOnly } from '../../utils/privacyLevel'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { isEssentialTrafficOnly } from '../../utils_v2/privacyLevel.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const feedback = {
   aliases: ['bug'],

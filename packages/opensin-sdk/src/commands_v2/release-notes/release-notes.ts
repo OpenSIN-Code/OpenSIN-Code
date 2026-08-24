@@ -4,7 +4,11 @@ import {
   fetchAndStoreChangelog,
   getAllReleaseNotes,
   getStoredChangelog,
+<<<<<<< HEAD
 } from '../../utils/releaseNotes'
+=======
+} from '../../utils_v2/releaseNotes.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 function formatReleaseNotes(notes: Array<[string, string[]]>): string {
   return notes

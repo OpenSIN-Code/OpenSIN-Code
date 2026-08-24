@@ -1,10 +1,18 @@
 import { feature } from 'bun:bundle'
 import chalk from 'chalk'
+<<<<<<< HEAD
 import { markPostCompaction } from 'src/bootstrap/state'
 import { getSystemPrompt } from '../../constants/prompts'
 import { getSystemContext, getUserContext } from '../../context'
 import { getShortcutDisplay } from '../../keybindings/shortcutFormat'
 import { notifyCompaction } from '../../services/api/promptCacheBreakDetection'
+=======
+import { markPostCompaction } from '../../bootstrap_system/state.js'
+import { getSystemPrompt } from '../../constants/prompts.js'
+import { getSystemContext, getUserContext } from '../../context.js'
+import { getShortcutDisplay } from '../../keybindings_v2/shortcutFormat.js'
+import { notifyCompaction } from '../../services/api/promptCacheBreakDetection.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type CompactionResult,
   compactConversation,
@@ -12,6 +20,7 @@ import {
   ERROR_MESSAGE_NOT_ENOUGH_MESSAGES,
   ERROR_MESSAGE_USER_ABORT,
   mergeHookInstructions,
+<<<<<<< HEAD
 } from '../../services/compact/compact'
 import { suppressCompactWarning } from '../../services/compact/compactWarningState'
 import { microcompactMessages } from '../../services/compact/microCompact'
@@ -30,6 +39,26 @@ import {
   buildEffectiveSystemPrompt,
   type SystemPrompt,
 } from '../../utils/systemPrompt'
+=======
+} from '../../services/compact/compact.js'
+import { suppressCompactWarning } from '../../services/compact/compactWarningState.js'
+import { microcompactMessages } from '../../services/compact/microCompact.js'
+import { runPostCompactCleanup } from '../../services/compact/postCompactCleanup.js'
+import { trySessionMemoryCompaction } from '../../services/compact/sessionMemoryCompact.js'
+import { setLastSummarizedMessageId } from '../../services/SessionMemory/sessionMemoryUtils.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
+import type { LocalCommandCall } from '../../types/command.js'
+import type { Message } from '../../types/message.js'
+import { hasExactErrorMessage } from '../../utils_v2/errors.js'
+import { executePreCompactHooks } from '../../utils_v2/hooks.js'
+import { logError } from '../../utils_v2/log.js'
+import { getMessagesAfterCompactBoundary } from '../../utils_v2/messages.js'
+import { getUpgradeMessage } from '../../utils_v2/model/contextWindowUpgradeCheck.js'
+import {
+  buildEffectiveSystemPrompt,
+  type SystemPrompt,
+} from '../../utils_v2/systemPrompt.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /* eslint-disable @typescript-eslint/no-require-imports */
 const reactiveCompact = feature('REACTIVE_COMPACT')

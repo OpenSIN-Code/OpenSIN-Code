@@ -4,12 +4,18 @@ import * as path from 'path'
 import {
   OPENSIN_CONFIG_DIRECTORIES,
   loadMarkdownFilesForSubdir,
+<<<<<<< HEAD
 } from 'src/utils/markdownConfigLoader'
 import type { SuggestionItem } from '../components/PromptInput/PromptInputFooterSuggestions'
+=======
+} from '../../utils_v2/markdownConfigLoader.js'
+import type { SuggestionItem } from '../../components_v2/PromptInput/PromptInputFooterSuggestions.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   CHUNK_MS,
   FileIndex,
   yieldToEventLoop,
+<<<<<<< HEAD
 } from '../native-ts/file-index/index'
 import { logEvent } from '../services/analytics/index'
 import type { FileSuggestionCommandInput } from '../types/fileSuggestion'
@@ -29,6 +35,27 @@ import { expandPath } from '../utils/path'
 import { ripGrep } from '../utils/ripgrep'
 import { getInitialSettings } from '../utils/settings/settings'
 import { createSignal } from '../utils/signal'
+=======
+} from '../native-ts/file-index/index.js'
+import { logEvent } from '../services/analytics/index.js'
+import type { FileSuggestionCommandInput } from '../types/fileSuggestion.js'
+import { getGlobalConfig } from '../../utils_v2/config.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { execFileNoThrowWithCwd } from '../../utils_v2/execFileNoThrow.js'
+import { getFsImplementation } from '../../utils_v2/fsOperations.js'
+import { findGitRoot, gitExe } from '../../utils_v2/git.js'
+import {
+  createBaseHookInput,
+  executeFileSuggestionCommand,
+} from '../../utils_v2/hooks.js'
+import { logError } from '../../utils_v2/log.js'
+import { expandPath } from '../../utils_v2/path.js'
+import { ripGrep } from '../../utils_v2/ripgrep.js'
+import { getInitialSettings } from '../../utils_v2/settings/settings.js'
+import { createSignal } from '../../utils_v2/signal.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Lazily constructed singleton
 let fileIndex: FileIndex | null = null

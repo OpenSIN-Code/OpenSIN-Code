@@ -1,7 +1,13 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { useNotifications } from '../context/notifications'
 import { getShortcutDisplay } from '../keybindings/shortcutFormat'
 import { hasImageInClipboard } from '../utils/imagePaste'
+=======
+import { useNotifications } from '../context/notifications.js'
+import { getShortcutDisplay } from '../../keybindings_v2/shortcutFormat.js'
+import { hasImageInClipboard } from '../../utils_v2/imagePaste.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const NOTIFICATION_KEY = 'clipboard-image-hint'
 // Small debounce to batch rapid focus changes

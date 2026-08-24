@@ -1,4 +1,5 @@
 import { feature } from 'bun:bundle'
+<<<<<<< HEAD
 import { getIsRemoteMode } from '../../bootstrap/state'
 import { redownloadUserSettings } from '../../services/settingsSync/index'
 import type { LocalCommandCall } from '../../types/command'
@@ -6,6 +7,15 @@ import { isEnvTruthy } from '../../utils/envUtils'
 import { refreshActivePlugins } from '../../utils/plugins/refresh'
 import { settingsChangeDetector } from '../../utils/settings/changeDetector'
 import { plural } from '../../utils/stringUtils'
+=======
+import { getIsRemoteMode } from '../../bootstrap_system/state.js'
+import { redownloadUserSettings } from '../../services/settingsSync/index.js'
+import type { LocalCommandCall } from '../../types/command.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { refreshActivePlugins } from '../../utils_v2/plugins/refresh.js'
+import { settingsChangeDetector } from '../../utils_v2/settings/changeDetector.js'
+import { plural } from '../../utils_v2/stringUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export const call: LocalCommandCall = async (_args, context) => {
   // CCR: re-pull user settings before the cache sweep so enabledPlugins /

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import type { LocalJSXCommandContext } from '../../commands.js';
+import type { LocalJSXCommandContext } from '../../commands_v2/index.js';
 import { getOauthProfileFromOauthToken } from '../../services/oauth/getOauthProfile.js';
 import type { LocalJSXCommandOnDone } from '../../types/command.js';
-import { getOpenSINAIOAuthTokens, isOpenSINAISubscriber } from '../../utils/auth.js';
-import { openBrowser } from '../../utils/browser.js';
-import { logError } from '../../utils/log.js';
+import { getOpenSINAIOAuthTokens, isOpenSINAISubscriber } from '../../utils_v2/auth.js';
+import { openBrowser } from '../../utils_v2/browser.js';
+import { logError } from '../../utils_v2/log.js';
 import { Login } from '../login/login.js';
 export async function call(onDone: LocalJSXCommandOnDone, context: LocalJSXCommandContext): Promise<React.ReactNode | null> {
   try {

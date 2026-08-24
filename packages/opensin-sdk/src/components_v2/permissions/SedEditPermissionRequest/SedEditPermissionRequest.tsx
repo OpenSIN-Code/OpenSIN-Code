@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import { basename, relative } from 'path';
 import React, { Suspense, use, useMemo } from 'react';
-import { FileEditToolDiff } from 'src/components/FileEditToolDiff.js';
-import { getCwd } from 'src/utils/cwd.js';
-import { isENOENT } from 'src/utils/errors.js';
-import { detectEncodingForResolvedPath } from 'src/utils/fileRead.js';
-import { getFsImplementation } from 'src/utils/fsOperations.js';
+import { FileEditToolDiff } from '../../components_v2/FileEditToolDiff.js';
+import { getCwd } from '../../utils_v2/cwd.js';
+import { isENOENT } from '../../utils_v2/errors.js';
+import { detectEncodingForResolvedPath } from '../../utils_v2/fileRead.js';
+import { getFsImplementation } from '../../utils_v2/fsOperations.js';
 import { Text } from '../../../ink.js';
 import { BashTool } from '../../../tools/BashTool/BashTool.js';
 import { applySedSubstitution, type SedEditInfo } from '../../../tools/BashTool/sedEditParser.js';

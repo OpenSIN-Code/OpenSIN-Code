@@ -5,7 +5,11 @@
 /* eslint-disable custom-rules/no-process-exit -- CLI subcommand handlers intentionally exit */
 import figures from 'figures'
 import { basename, dirname } from 'path'
+<<<<<<< HEAD
 import { setUseCoworkPlugins } from '../../bootstrap/state'
+=======
+import { setUseCoworkPlugins } from '../../bootstrap_system/state.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_PII_TAGGED,
@@ -20,6 +24,7 @@ import {
   updatePluginCli,
   VALID_INSTALLABLE_SCOPES,
   VALID_UPDATE_SCOPES,
+<<<<<<< HEAD
 } from '../../services/plugins/pluginCliCommands'
 import { getPluginErrorMessage } from '../../types/plugin'
 import { errorMessage } from '../../utils/errors'
@@ -34,6 +39,22 @@ import {
   createPluginId,
   loadMarketplacesWithGracefulDegradation,
 } from '../../utils/plugins/marketplaceHelpers'
+=======
+} from '../../services/plugins/pluginCliCommands.js'
+import { getPluginErrorMessage } from '../../types/plugin.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { logError } from '../../utils_v2/log.js'
+import { clearAllCaches } from '../../utils_v2/plugins/cacheUtils.js'
+import { getInstallCounts } from '../../utils_v2/plugins/installCounts.js'
+import {
+  isPluginInstalled,
+  loadInstalledPluginsV2,
+} from '../../utils_v2/plugins/installedPluginsManager.js'
+import {
+  createPluginId,
+  loadMarketplacesWithGracefulDegradation,
+} from '../../utils_v2/plugins/marketplaceHelpers.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   addMarketplaceSource,
   loadKnownMarketplacesConfig,
@@ -41,6 +62,7 @@ import {
   refreshMarketplace,
   removeMarketplaceSource,
   saveMarketplaceToSettings,
+<<<<<<< HEAD
 } from '../../utils/plugins/marketplaceManager'
 import { loadPluginMcpServers } from '../../utils/plugins/mcpPluginIntegration'
 import { parseMarketplaceInput } from '../../utils/plugins/parseMarketplaceInput'
@@ -50,14 +72,32 @@ import {
 } from '../../utils/plugins/pluginIdentifier'
 import { loadAllPlugins } from '../../utils/plugins/pluginLoader'
 import type { PluginSource } from '../../utils/plugins/schemas'
+=======
+} from '../../utils_v2/plugins/marketplaceManager.js'
+import { loadPluginMcpServers } from '../../utils_v2/plugins/mcpPluginIntegration.js'
+import { parseMarketplaceInput } from '../../utils_v2/plugins/parseMarketplaceInput.js'
+import {
+  parsePluginIdentifier,
+  scopeToSettingSource,
+} from '../../utils_v2/plugins/pluginIdentifier.js'
+import { loadAllPlugins } from '../../utils_v2/plugins/pluginLoader.js'
+import type { PluginSource } from '../../utils_v2/plugins/schemas.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type ValidationResult,
   validateManifest,
   validatePluginContents,
+<<<<<<< HEAD
 } from '../../utils/plugins/validatePlugin'
 import { jsonStringify } from '../../utils/slowOperations'
 import { plural } from '../../utils/stringUtils'
 import { cliError, cliOk } from '../exit'
+=======
+} from '../../utils_v2/plugins/validatePlugin.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { plural } from '../../utils_v2/stringUtils.js'
+import { cliError, cliOk } from '../exit.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Re-export for main.tsx to reference in option definitions
 export { VALID_INSTALLABLE_SCOPES, VALID_UPDATE_SCOPES }

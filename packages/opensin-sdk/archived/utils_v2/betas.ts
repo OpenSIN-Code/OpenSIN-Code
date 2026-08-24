@@ -3,8 +3,8 @@ import memoize from 'lodash-es/memoize.js'
 import {
   checkStatsigFeatureGate_CACHED_MAY_BE_STALE,
   getFeatureValue_CACHED_MAY_BE_STALE,
-} from 'src/services/analytics/growthbook.js'
-import { getIsNonInteractiveSession, getSdkBetas } from '../bootstrap/state.js'
+} from '../services/analytics/growthbook.js'
+import { getIsNonInteractiveSession, getSdkBetas } from '../../bootstrap_system/state.js'
 import {
   BEDROCK_EXTRA_PARAMS_HEADERS,
   OPENSIN_CODE_20250219_BETA_HEADER,

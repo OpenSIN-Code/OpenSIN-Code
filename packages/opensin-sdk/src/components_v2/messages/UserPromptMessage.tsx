@@ -1,13 +1,13 @@
 import { feature } from 'bun:bundle';
 import type { TextBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import React, { useContext, useMemo } from 'react';
-import { getKairosActive, getUserMsgOptIn } from '../../bootstrap/state.js';
-import { Box } from '../../ink.js';
+import { getKairosActive, getUserMsgOptIn } from '../../bootstrap_system/state.js';
+import { Box } from '../../ink_v2/index.js';
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js';
 import { useAppState } from '../../state/AppState.js';
-import { isEnvTruthy } from '../../utils/envUtils.js';
-import { logError } from '../../utils/log.js';
-import { countCharInString } from '../../utils/stringUtils.js';
+import { isEnvTruthy } from '../../utils_v2/envUtils.js';
+import { logError } from '../../utils_v2/log.js';
+import { countCharInString } from '../../utils_v2/stringUtils.js';
 import { MessageActionsSelectedContext } from '../messageActions.js';
 import { HighlightedThinkingText } from './HighlightedThinkingText.js';
 type Props = {

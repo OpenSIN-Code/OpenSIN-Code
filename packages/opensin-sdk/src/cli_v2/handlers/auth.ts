@@ -29,6 +29,7 @@ import {
   isUsing3PServices,
   saveOAuthTokensIfNeeded,
   validateForceLoginOrg,
+<<<<<<< HEAD
 } from '../../utils/auth'
 import { saveGlobalConfig } from '../../utils/config'
 import { logForDebugging } from '../../utils/debug'
@@ -42,6 +43,21 @@ import {
   buildAccountProperties,
   buildAPIProviderProperties,
 } from '../../utils/status'
+=======
+} from '../../utils_v2/auth.js'
+import { saveGlobalConfig } from '../../utils_v2/config.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { isRunningOnHomespace } from '../../utils_v2/envUtils.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { logError } from '../../utils_v2/log.js'
+import { getAPIProvider } from '../../utils_v2/model/providers.js'
+import { getInitialSettings } from '../../utils_v2/settings/settings.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import {
+  buildAccountProperties,
+  buildAPIProviderProperties,
+} from '../../utils_v2/status.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Shared post-token-acquisition logic. Saves tokens, fetches profile/roles,

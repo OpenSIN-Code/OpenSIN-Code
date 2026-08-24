@@ -1,8 +1,15 @@
 import axios from 'axios'
+<<<<<<< HEAD
 import { getOauthConfig } from '../../constants/oauth'
 import { logForDebugging } from '../../utils/debug'
 import { getOAuthHeaders, prepareApiRequest } from '../../utils/teleport/api'
 import { fetchEnvironments } from '../../utils/teleport/environments'
+=======
+import { getOauthConfig } from '../../constants/oauth.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { getOAuthHeaders, prepareApiRequest } from '../../utils_v2/teleport/api.js'
+import { fetchEnvironments } from '../../utils_v2/teleport/environments.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const CCR_BYOC_BETA_HEADER = 'ccr-byoc-2025-07-29'
 

@@ -2,7 +2,11 @@
  * /reload-plugins — Layer-3 refresh. Applies pending plugin changes to the
  * running session. Implementation lazy-loaded.
  */
+<<<<<<< HEAD
 import type { Command } from '../../commands'
+=======
+import type { Command } from '../../commands_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const reloadPlugins = {
   type: 'local',

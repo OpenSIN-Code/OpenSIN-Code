@@ -8,14 +8,14 @@
 
 import { homedir } from 'os'
 import { isAbsolute, resolve } from 'path'
-import type { ToolPermissionContext } from '../../Tool.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
 import type { PermissionRule } from '../../types/permissions.js'
-import { getCwd } from '../../utils/cwd.js'
+import { getCwd } from '../../utils_v2/cwd.js'
 import {
   getFsImplementation,
   safeResolvePath,
-} from '../../utils/fsOperations.js'
-import { containsPathTraversal, getDirectoryForPath } from '../../utils/path.js'
+} from '../../utils_v2/fsOperations.js'
+import { containsPathTraversal, getDirectoryForPath } from '../../utils_v2/path.js'
 import {
   allWorkingDirectories,
   checkEditableInternalPath,
@@ -23,23 +23,23 @@ import {
   checkReadableInternalPath,
   matchingRuleForInput,
   pathInAllowedWorkingPath,
-} from '../../utils/permissions/filesystem.js'
-import type { PermissionResult } from '../../utils/permissions/PermissionResult.js'
-import { createReadRuleSuggestion } from '../../utils/permissions/PermissionUpdate.js'
-import type { PermissionUpdate } from '../../utils/permissions/PermissionUpdateSchema.js'
+} from '../../utils_v2/permissions/filesystem.js'
+import type { PermissionResult } from '../../utils_v2/permissions/PermissionResult.js'
+import { createReadRuleSuggestion } from '../../utils_v2/permissions/PermissionUpdate.js'
+import type { PermissionUpdate } from '../../utils_v2/permissions/PermissionUpdateSchema.js'
 import {
   isDangerousRemovalPath,
   isPathInSandboxWriteAllowlist,
-} from '../../utils/permissions/pathValidation.js'
-import { getPlatform } from '../../utils/platform.js'
+} from '../../utils_v2/permissions/pathValidation.js'
+import { getPlatform } from '../../utils_v2/platform.js'
 import type {
   ParsedCommandElement,
   ParsedPowerShellCommand,
-} from '../../utils/powershell/parser.js'
+} from '../../utils_v2/powershell/parser.js'
 import {
   isNullRedirectionTarget,
   isPowerShellParameter,
-} from '../../utils/powershell/parser.js'
+} from '../../utils_v2/powershell/parser.js'
 import { COMMON_SWITCHES, COMMON_VALUE_PARAMS } from './commonParameters.js'
 import { resolveToCanonical } from './readOnlyValidation.js'
 

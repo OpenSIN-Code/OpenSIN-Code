@@ -1,6 +1,11 @@
 import type { UUID } from 'crypto'
+<<<<<<< HEAD
 import { getSessionId } from '../../bootstrap/state'
 import type { ToolUseContext } from '../../Tool'
+=======
+import { getSessionId } from '../../bootstrap_system/state.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   AGENT_COLORS,
   type AgentColorName,
@@ -12,8 +17,13 @@ import type {
 import {
   getTranscriptPath,
   saveAgentColor,
+<<<<<<< HEAD
 } from '../../utils/sessionStorage'
 import { isTeammate } from '../../utils/teammate'
+=======
+} from '../../utils_v2/sessionStorage.js'
+import { isTeammate } from '../../utils_v2/teammate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const RESET_ALIASES = ['default', 'reset', 'none', 'gray', 'grey'] as const
 

@@ -7,11 +7,11 @@ import { c as _c } from "react/compiler-runtime";
 
 import figures from 'figures';
 import * as React from 'react';
-import { getIsRemoteMode } from '../bootstrap/state.js';
+import { getIsRemoteMode } from '../../bootstrap_system/state.js';
 import type { useNotifications } from '../context/notifications.js';
-import { Text } from '../ink.js';
-import { logError } from '../utils/log.js';
-import { getPluginById } from '../utils/plugins/marketplaceManager.js';
+import { Text } from '../../ink_v2/index.js';
+import { logError } from '../../utils_v2/log.js';
+import { getPluginById } from '../../utils_v2/plugins/marketplaceManager.js';
 type AddNotification = ReturnType<typeof useNotifications>['addNotification'];
 type PluginData = NonNullable<Awaited<ReturnType<typeof getPluginById>>>;
 

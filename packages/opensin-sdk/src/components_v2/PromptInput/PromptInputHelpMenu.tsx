@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import { feature } from 'bun:bundle';
 import * as React from 'react';
-import { Box, Text } from 'src/ink.js';
-import { getPlatform } from 'src/utils/platform.js';
-import { isKeybindingCustomizationEnabled } from '../../keybindings/loadUserBindings.js';
-import { useShortcutDisplay } from '../../keybindings/useShortcutDisplay.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getPlatform } from '../../utils_v2/platform.js';
+import { isKeybindingCustomizationEnabled } from '../../keybindings_v2/loadUserBindings.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js';
-import { isFastModeAvailable, isFastModeEnabled } from '../../utils/fastMode.js';
+import { isFastModeAvailable, isFastModeEnabled } from '../../utils_v2/fastMode.js';
 import { getNewlineInstructions } from './utils.js';
 
 /** Format a shortcut for display in the help menu (e.g., "ctrl+o" → "ctrl + o") */

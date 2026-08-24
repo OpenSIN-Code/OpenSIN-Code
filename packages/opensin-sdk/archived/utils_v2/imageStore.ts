@@ -1,6 +1,6 @@
 import { mkdir, open } from 'fs/promises'
 import { join } from 'path'
-import { getSessionId } from '../bootstrap/state.js'
+import { getSessionId } from '../../bootstrap_system/state.js'
 import type { PastedContent } from './config.js'
 import { logForDebugging } from './debug.js'
 import { getOpenSINConfigHomeDir } from './envUtils.js'

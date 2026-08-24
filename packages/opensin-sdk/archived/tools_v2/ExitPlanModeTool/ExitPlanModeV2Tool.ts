@@ -7,7 +7,7 @@ import {
   setHasExitedPlanMode,
   setNeedsAutoModeExitAttachment,
   setNeedsPlanModeExitAttachment,
-} from '../../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { logEvent } from '../../services/analytics/index.js'
 import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from '../../services/analytics/metadata.js'
 import {
@@ -15,29 +15,29 @@ import {
   type Tool,
   type ToolDef,
   toolMatchesName,
-} from '../../Tool.js'
-import { formatAgentId, generateRequestId } from '../../utils/agentId.js'
-import { isAgentSwarmsEnabled } from '../../utils/agentSwarmsEnabled.js'
-import { logForDebugging } from '../../utils/debug.js'
+} from '../../tools_v2/Tool.js'
+import { formatAgentId, generateRequestId } from '../../utils_v2/agentId.js'
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
 import {
   findInProcessTeammateTaskId,
   setAwaitingPlanApproval,
-} from '../../utils/inProcessTeammateHelpers.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { logError } from '../../utils/log.js'
+} from '../../utils_v2/inProcessTeammateHelpers.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { logError } from '../../utils_v2/log.js'
 import {
   getPlan,
   getPlanFilePath,
   persistFileSnapshotIfRemote,
-} from '../../utils/plans.js'
-import { jsonStringify } from '../../utils/slowOperations.js'
+} from '../../utils_v2/plans.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
 import {
   getAgentName,
   getTeamName,
   isPlanModeRequired,
   isTeammate,
-} from '../../utils/teammate.js'
-import { writeToMailbox } from '../../utils/teammateMailbox.js'
+} from '../../utils_v2/teammate.js'
+import { writeToMailbox } from '../../utils_v2/teammateMailbox.js'
 import { AGENT_TOOL_NAME } from '../AgentTool/constants.js'
 import { TEAM_CREATE_TOOL_NAME } from '../TeamCreateTool/constants.js'
 import { EXIT_PLAN_MODE_V2_TOOL_NAME } from './constants.js'

@@ -4,8 +4,8 @@ import {
   formatDescriptionWithSource,
   getCommand,
   getCommandName,
-} from '../../commands.js'
-import type { SuggestionItem } from '../../components/PromptInput/PromptInputFooterSuggestions.js'
+} from '../../commands_v2/index.js'
+import type { SuggestionItem } from '../../components_v2/PromptInput/PromptInputFooterSuggestions.js'
 import { getSkillUsageScore } from './skillUsageTracking.js'
 
 // Treat these characters as word separators for command search

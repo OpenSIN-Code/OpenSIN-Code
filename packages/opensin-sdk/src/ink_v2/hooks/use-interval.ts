@@ -1,5 +1,9 @@
 import { useContext, useEffect, useRef, useState } from 'react'
+<<<<<<< HEAD
 import { ClockContext } from '../components/ClockContext'
+=======
+import { ClockContext } from '../../components_v2/ClockContext.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Returns the clock time, updating at the given interval.

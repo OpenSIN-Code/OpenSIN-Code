@@ -1,6 +1,11 @@
 import { useCallback, useContext, useLayoutEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { TerminalSizeContext } from '../components/TerminalSizeContext'
 import type { DOMElement } from '../dom'
+=======
+import { TerminalSizeContext } from '../../components_v2/TerminalSizeContext.js'
+import type { DOMElement } from '../dom.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type ViewportEntry = {
   /**

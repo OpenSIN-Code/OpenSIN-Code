@@ -1,7 +1,7 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text } from '../ink.js';
-import { getCachedKeybindingWarnings, getKeybindingsPath, isKeybindingCustomizationEnabled } from '../keybindings/loadUserBindings.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getCachedKeybindingWarnings, getKeybindingsPath, isKeybindingCustomizationEnabled } from '../../keybindings_v2/loadUserBindings.js';
 
 /**
  * Displays keybinding validation warnings in the UI.

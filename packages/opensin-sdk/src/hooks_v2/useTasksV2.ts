@@ -1,8 +1,14 @@
 import { type FSWatcher, watch } from 'fs'
 import { useEffect, useSyncExternalStore } from 'react'
+<<<<<<< HEAD
 import { useAppState, useSetAppState } from '../state/AppState'
 import { createSignal } from '../utils/signal'
 import type { Task } from '../utils/tasks'
+=======
+import { useAppState, useSetAppState } from '../state/AppState.js'
+import { createSignal } from '../../utils_v2/signal.js'
+import type { Task } from '../../utils_v2/tasks.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getTaskListId,
   getTasksDir,
@@ -10,8 +16,13 @@ import {
   listTasks,
   onTasksUpdated,
   resetTaskList,
+<<<<<<< HEAD
 } from '../utils/tasks'
 import { isTeamLead } from '../utils/teammate'
+=======
+} from '../../utils_v2/tasks.js'
+import { isTeamLead } from '../../utils_v2/teammate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const HIDE_DELAY_MS = 5000
 const DEBOUNCE_MS = 50

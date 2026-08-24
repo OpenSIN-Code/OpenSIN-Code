@@ -1,5 +1,9 @@
 import { useCallback, useRef, useState } from 'react'
+<<<<<<< HEAD
 import type { PastedContent } from '../utils/config'
+=======
+import type { PastedContent } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type BufferEntry = {
   text: string

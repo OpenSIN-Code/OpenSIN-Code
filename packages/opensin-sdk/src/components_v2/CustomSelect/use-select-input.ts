@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+<<<<<<< HEAD
 import { useRegisterOverlay } from '../../context/overlayContext'
 import type { InputEvent } from '../../ink/events/input-event'
 import { useInput } from '../../ink'
@@ -9,6 +10,18 @@ import {
 } from '../../utils/stringUtils'
 import type { OptionWithDescription } from './select'
 import type { SelectState } from './use-select-state'
+=======
+import { useRegisterOverlay } from '../../context/overlayContext.js'
+import type { InputEvent } from '../../ink/events/input-event.js'
+import { useInput } from '../../ink_v2/index.js'
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js'
+import {
+  normalizeFullWidthDigits,
+  normalizeFullWidthSpace,
+} from '../../utils_v2/stringUtils.js'
+import type { OptionWithDescription } from './select.js'
+import type { SelectState } from './use-select-state.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type UseSelectProps<T> = {
   /**

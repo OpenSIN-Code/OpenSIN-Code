@@ -11,11 +11,11 @@ import {
   type Tool,
   type ToolDef,
   type Tools,
-} from '../../Tool.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { escapeRegExp } from '../../utils/stringUtils.js'
-import { isToolSearchEnabledOptimistic } from '../../utils/toolSearch.js'
+} from '../../tools_v2/Tool.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { escapeRegExp } from '../../utils_v2/stringUtils.js'
+import { isToolSearchEnabledOptimistic } from '../../utils_v2/toolSearch.js'
 import { getPrompt, isDeferredTool, TOOL_SEARCH_TOOL_NAME } from './prompt.js'
 
 export const inputSchema = lazySchema(() =>

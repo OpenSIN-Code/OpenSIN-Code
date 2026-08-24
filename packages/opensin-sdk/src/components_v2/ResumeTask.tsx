@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
-import { useTerminalSize } from 'src/hooks/useTerminalSize.js';
-import { type CodeSession, fetchCodeSessionsFromSessionsAPI } from 'src/utils/teleport/api.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
+import { type CodeSession, fetchCodeSessionsFromSessionsAPI } from '../../utils_v2/teleport/api.js';
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- raw j/k/arrow list navigation
-import { Box, Text, useInput } from '../ink.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
-import { useShortcutDisplay } from '../keybindings/useShortcutDisplay.js';
-import { logForDebugging } from '../utils/debug.js';
-import { detectCurrentRepository } from '../utils/detectRepository.js';
-import { formatRelativeTime } from '../utils/format.js';
+import { Box, Text, useInput } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { detectCurrentRepository } from '../../utils_v2/detectRepository.js';
+import { formatRelativeTime } from '../../utils_v2/format.js';
 import { ConfigurableShortcutHint } from './ConfigurableShortcutHint.js';
 import { Select } from './CustomSelect/index.js';
 import { Byline } from './design-system/Byline.js';

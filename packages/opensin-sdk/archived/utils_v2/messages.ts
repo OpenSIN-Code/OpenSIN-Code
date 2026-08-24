@@ -18,9 +18,9 @@ import last from 'lodash-es/last.js'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
-} from 'src/services/analytics/index.js'
-import { sanitizeToolNameForAnalytics } from 'src/services/analytics/metadata.js'
-import type { AgentId } from 'src/types/ids.js'
+} from '../services/analytics/index.js'
+import { sanitizeToolNameForAnalytics } from '../services/analytics/metadata.js'
+import type { AgentId } from '../../types/ids.js'
 import { companionIntroText } from '../buddy/prompt.js'
 import { NO_CONTENT_MESSAGE } from '../constants/messages.js'
 import { OUTPUT_STYLE_CONFIG } from '../constants/outputStyles.js'
@@ -36,7 +36,7 @@ import {
   getPdfTooLargeErrorMessage,
   getRequestTooLargeErrorMessage,
 } from '../services/api/errors.js'
-import type { AnyObject, Progress } from '../Tool.js'
+import type { AnyObject, Progress } from '../../tools_v2/Tool.js'
 import { isConnectorTextBlock } from '../types/connectorText.js'
 import type {
   AssistantMessage,
@@ -102,25 +102,25 @@ import type {
 import type {
   HookEvent,
   SDKAssistantMessageError,
-} from 'src/entrypoints/agentSdkTypes.js'
-import { EXPLORE_AGENT } from 'src/tools/AgentTool/built-in/exploreAgent.js'
-import { PLAN_AGENT } from 'src/tools/AgentTool/built-in/planAgent.js'
-import { areExplorePlanAgentsEnabled } from 'src/tools/AgentTool/builtInAgents.js'
-import { AGENT_TOOL_NAME } from 'src/tools/AgentTool/constants.js'
-import { ASK_USER_QUESTION_TOOL_NAME } from 'src/tools/AskUserQuestionTool/prompt.js'
-import { BashTool } from 'src/tools/BashTool/BashTool.js'
-import { ExitPlanModeV2Tool } from 'src/tools/ExitPlanModeTool/ExitPlanModeV2Tool.js'
-import { FileEditTool } from 'src/tools/FileEditTool/FileEditTool.js'
+} from '../entrypoints/agentSdkTypes.js'
+import { EXPLORE_AGENT } from '../../tools_v2/AgentTool/built-in/exploreAgent.js'
+import { PLAN_AGENT } from '../../tools_v2/AgentTool/built-in/planAgent.js'
+import { areExplorePlanAgentsEnabled } from '../../tools_v2/AgentTool/builtInAgents.js'
+import { AGENT_TOOL_NAME } from '../../tools_v2/AgentTool/constants.js'
+import { ASK_USER_QUESTION_TOOL_NAME } from '../../tools_v2/AskUserQuestionTool/prompt.js'
+import { BashTool } from '../../tools_v2/BashTool/BashTool.js'
+import { ExitPlanModeV2Tool } from '../../tools_v2/ExitPlanModeTool/ExitPlanModeV2Tool.js'
+import { FileEditTool } from '../../tools_v2/FileEditTool/FileEditTool.js'
 import {
   FILE_READ_TOOL_NAME,
   MAX_LINES_TO_READ,
-} from 'src/tools/FileReadTool/prompt.js'
-import { FileWriteTool } from 'src/tools/FileWriteTool/FileWriteTool.js'
-import { GLOB_TOOL_NAME } from 'src/tools/GlobTool/prompt.js'
-import { GREP_TOOL_NAME } from 'src/tools/GrepTool/prompt.js'
-import type { DeepImmutable } from 'src/types/utils.js'
-import { getStrictToolResultPairing } from '../bootstrap/state.js'
-import type { SpinnerMode } from '../components/Spinner.js'
+} from '../../tools_v2/FileReadTool/prompt.js'
+import { FileWriteTool } from '../../tools_v2/FileWriteTool/FileWriteTool.js'
+import { GLOB_TOOL_NAME } from '../../tools_v2/GlobTool/prompt.js'
+import { GREP_TOOL_NAME } from '../../tools_v2/GrepTool/prompt.js'
+import type { DeepImmutable } from '../../types/utils.js'
+import { getStrictToolResultPairing } from '../../bootstrap_system/state.js'
+import type { SpinnerMode } from '../../components_v2/Spinner.js'
 import {
   COMMAND_ARGS_TAG,
   COMMAND_MESSAGE_TAG,
@@ -134,7 +134,7 @@ import {
   type Tool,
   type Tools,
   toolMatchesName,
-} from '../Tool.js'
+} from '../../tools_v2/Tool.js'
 import {
   FileReadTool,
   type Output as FileReadToolOutput,

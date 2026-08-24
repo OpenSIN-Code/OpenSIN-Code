@@ -1,8 +1,15 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { useTheme } from '../components/design-system/ThemeProvider'
 import type { useSelection } from '../ink/hooks/use-selection'
 import { getGlobalConfig } from '../utils/config'
 import { getTheme } from '../utils/theme'
+=======
+import { useTheme } from '../../components_v2/design-system/ThemeProvider.js'
+import type { useSelection } from '../ink/hooks/use-selection.js'
+import { getGlobalConfig } from '../../utils_v2/config.js'
+import { getTheme } from '../../utils_v2/theme.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type Selection = ReturnType<typeof useSelection>
 

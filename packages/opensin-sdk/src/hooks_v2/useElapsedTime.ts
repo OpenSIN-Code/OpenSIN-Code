@@ -1,5 +1,9 @@
 import { useCallback, useSyncExternalStore } from 'react'
+<<<<<<< HEAD
 import { formatDuration } from '../utils/format'
+=======
+import { formatDuration } from '../../utils_v2/format.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Hook that returns formatted elapsed time since startTime.

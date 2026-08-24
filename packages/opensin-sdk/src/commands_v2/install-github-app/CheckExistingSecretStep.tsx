@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useCallback, useState } from 'react';
-import TextInput from '../../components/TextInput.js';
-import { useTerminalSize } from '../../hooks/useTerminalSize.js';
-import { Box, color, Text, useTheme } from '../../ink.js';
-import { useKeybindings } from '../../keybindings/useKeybinding.js';
+import TextInput from '../../components_v2/TextInput.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
+import { Box, color, Text, useTheme } from '../../ink_v2/index.js';
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js';
 interface CheckExistingSecretStepProps {
   useExistingSecret: boolean;
   secretName: string;

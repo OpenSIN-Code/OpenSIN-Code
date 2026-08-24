@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+<<<<<<< HEAD
 import { getLastInteractionTime } from '../bootstrap/state'
 import { fetchPrStatus, type PrReviewState } from '../utils/ghPrStatus'
+=======
+import { getLastInteractionTime } from '../../bootstrap_system/state.js'
+import { fetchPrStatus, type PrReviewState } from '../../utils_v2/ghPrStatus.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const POLL_INTERVAL_MS = 60_000
 const SLOW_GH_THRESHOLD_MS = 4_000

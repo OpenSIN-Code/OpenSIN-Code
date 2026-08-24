@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import { formatTotalCost } from '../../cost-tracker'
 import { currentLimits } from '../../services/opensinAiLimits'
 import type { LocalCommandCall } from '../../types/command'
 import { isOpenSINAISubscriber } from '../../utils/auth'
+=======
+import { formatTotalCost } from '../../cost-tracker.js'
+import { currentLimits } from '../../services/opensinAiLimits.js'
+import type { LocalCommandCall } from '../../types/command.js'
+import { isOpenSINAISubscriber } from '../../utils_v2/auth.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export const call: LocalCommandCall = async () => {
   if (isOpenSINAISubscriber()) {

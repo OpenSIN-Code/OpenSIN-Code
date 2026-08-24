@@ -5,12 +5,18 @@
  * This component renders nothing - it just registers the cancel keybinding handler.
  */
 import { useCallback, useRef } from 'react'
+<<<<<<< HEAD
 import { logEvent } from 'src/services/analytics/index'
 import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from 'src/services/analytics/metadata'
+=======
+import { logEvent } from '../services/analytics/index.js'
+import type { AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS } from '../services/analytics/metadata.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   useAppState,
   useAppStateStore,
   useSetAppState,
+<<<<<<< HEAD
 } from 'src/state/AppState'
 import { isVimModeEnabled } from '../components/PromptInput/utils'
 import type { ToolUseConfirm } from '../components/permissions/PermissionRequest'
@@ -22,6 +28,19 @@ import { getShortcutDisplay } from '../keybindings/shortcutFormat'
 import { useKeybinding } from '../keybindings/useKeybinding'
 import type { Screen } from '../screens/REPL'
 import { exitTeammateView } from '../state/teammateViewHelpers'
+=======
+} from '../../state/AppState.js'
+import { isVimModeEnabled } from '../../components_v2/PromptInput/utils.js'
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import type { SpinnerMode } from '../../components_v2/Spinner/types.js'
+import { useNotifications } from '../context/notifications.js'
+import { useIsOverlayActive } from '../context/overlayContext.js'
+import { useCommandQueue } from '../../hooks_v2/useCommandQueue.js'
+import { getShortcutDisplay } from '../../keybindings_v2/shortcutFormat.js'
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js'
+import type { Screen } from '../screens/REPL.js'
+import { exitTeammateView } from '../state/teammateViewHelpers.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   killAllRunningAgentTasks,
   markAgentsNotified,
@@ -31,8 +50,13 @@ import {
   clearCommandQueue,
   enqueuePendingNotification,
   hasCommandsInQueue,
+<<<<<<< HEAD
 } from '../utils/messageQueueManager'
 import { emitTaskTerminatedSdk } from '../utils/sdkEventQueue'
+=======
+} from '../../utils_v2/messageQueueManager.js'
+import { emitTaskTerminatedSdk } from '../../utils_v2/sdkEventQueue.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /** Time window in ms during which a second press kills all background agents. */
 const KILL_AGENTS_CONFIRM_WINDOW_MS = 3000

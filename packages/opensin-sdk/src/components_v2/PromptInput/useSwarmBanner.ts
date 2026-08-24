@@ -9,6 +9,7 @@ import {
   AGENT_COLORS,
   type AgentColorName,
   getAgentColor,
+<<<<<<< HEAD
 } from '../../tools/AgentTool/agentColorManager'
 import { getStandaloneAgentName } from '../../utils/standaloneAgent'
 import { isInsideTmux } from '../../utils/swarm/backends/detection'
@@ -17,14 +18,30 @@ import {
   isInProcessEnabled,
 } from '../../utils/swarm/backends/registry'
 import { getSwarmSocketName } from '../../utils/swarm/constants'
+=======
+} from '../../tools/AgentTool/agentColorManager.js'
+import { getStandaloneAgentName } from '../../utils_v2/standaloneAgent.js'
+import { isInsideTmux } from '../../utils_v2/swarm/backends/detection.js'
+import {
+  getCachedDetectionResult,
+  isInProcessEnabled,
+} from '../../utils_v2/swarm/backends/registry.js'
+import { getSwarmSocketName } from '../../utils_v2/swarm/constants.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getAgentName,
   getTeammateColor,
   getTeamName,
   isTeammate,
+<<<<<<< HEAD
 } from '../../utils/teammate'
 import { isInProcessTeammate } from '../../utils/teammateContext'
 import type { Theme } from '../../utils/theme'
+=======
+} from '../../utils_v2/teammate.js'
+import { isInProcessTeammate } from '../../utils_v2/teammateContext.js'
+import type { Theme } from '../../utils_v2/theme.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type SwarmBannerInfo = {
   text: string

@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, Text } from '../../ink.js';
-import { getPlatform } from '../../utils/platform.js';
-import type { SandboxDependencyCheck } from '../../utils/sandbox/sandbox-adapter.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { getPlatform } from '../../utils_v2/platform.js';
+import type { SandboxDependencyCheck } from '../../utils_v2/sandbox/sandbox-adapter.js';
 type Props = {
   depCheck: SandboxDependencyCheck;
 };

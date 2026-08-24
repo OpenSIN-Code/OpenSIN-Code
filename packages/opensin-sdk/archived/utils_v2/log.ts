@@ -3,11 +3,11 @@ import type { BetaMessageStreamParams } from '@opensin-ai/sdk/resources/beta/mes
 import { readdir, readFile, stat } from 'fs/promises'
 import memoize from 'lodash-es/memoize.js'
 import { join } from 'path'
-import type { QuerySource } from 'src/constants/querySource.js'
+import type { QuerySource } from '../../constants/querySource.js'
 import {
   setLastAPIRequest,
   setLastAPIRequestMessages,
-} from '../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { TICK_TAG } from '../constants/xml.js'
 import {
   type LogOption,

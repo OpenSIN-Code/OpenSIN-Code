@@ -2,11 +2,11 @@ import { c as _c } from "react/compiler-runtime";
 import { feature } from 'bun:bundle';
 import chalk from 'chalk';
 import React from 'react';
-import { Ansi, Box, Text } from '../../ink.js';
+import { Ansi, Box, Text } from '../../ink_v2/index.js';
 import { useAppState } from '../../state/AppState.js';
-import type { PermissionDecision, PermissionDecisionReason } from '../../utils/permissions/PermissionResult.js';
-import { permissionRuleValueToString } from '../../utils/permissions/permissionRuleParser.js';
-import type { Theme } from '../../utils/theme.js';
+import type { PermissionDecision, PermissionDecisionReason } from '../../utils_v2/permissions/PermissionResult.js';
+import { permissionRuleValueToString } from '../../utils_v2/permissions/permissionRuleParser.js';
+import type { Theme } from '../../utils_v2/theme.js';
 import ThemedText from '../design-system/ThemedText.js';
 export type PermissionRuleExplanationProps = {
   permissionResult: PermissionDecision;

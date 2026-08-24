@@ -1,5 +1,6 @@
 import { coerce } from 'semver'
 import type { Writable } from 'stream'
+<<<<<<< HEAD
 import { env } from '../utils/env'
 import { gte } from '../utils/semver'
 import { getClearTerminalSequence } from './clearTerminal'
@@ -7,6 +8,15 @@ import type { Diff } from './frame'
 import { cursorMove, cursorTo, eraseLines } from './termio/csi'
 import { BSU, ESU, HIDE_CURSOR, SHOW_CURSOR } from './termio/dec'
 import { link } from './termio/osc'
+=======
+import { env } from '../../utils_v2/env.js'
+import { gte } from '../../utils_v2/semver.js'
+import { getClearTerminalSequence } from './clearTerminal.js'
+import type { Diff } from './frame.js'
+import { cursorMove, cursorTo, eraseLines } from './termio/csi.js'
+import { BSU, ESU, HIDE_CURSOR, SHOW_CURSOR } from './termio/dec.js'
+import { link } from './termio/osc.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type Progress = {
   state: 'running' | 'completed' | 'error' | 'indeterminate'

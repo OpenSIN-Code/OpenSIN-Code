@@ -2,20 +2,20 @@ import { c as _c } from "react/compiler-runtime";
 import type { RefObject } from 'react';
 import * as React from 'react';
 import { useCallback, useContext, useEffect, useImperativeHandle, useRef, useState, useSyncExternalStore } from 'react';
-import { useVirtualScroll } from '../hooks/useVirtualScroll.js';
+import { useVirtualScroll } from '../../hooks_v2/useVirtualScroll.js';
 import type { ScrollBoxHandle } from '../ink/components/ScrollBox.js';
 import type { DOMElement } from '../ink/dom.js';
 import type { MatchPosition } from '../ink/render-to-screen.js';
-import { Box } from '../ink.js';
+import { Box } from '../../ink_v2/index.js';
 import type { RenderableMessage } from '../types/message.js';
 import { TextHoverColorContext } from './design-system/ThemedText.js';
 import { ScrollChromeContext } from './FullscreenLayout.js';
 
 // Rows of breathing room above the target when we scrollTo.
 const HEADROOM = 3;
-import { logForDebugging } from '../utils/debug.js';
-import { sleep } from '../utils/sleep.js';
-import { renderableSearchText } from '../utils/transcriptSearch.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { sleep } from '../../utils_v2/sleep.js';
+import { renderableSearchText } from '../../utils_v2/transcriptSearch.js';
 import { isNavigableMessage, type MessageActionsNav, type MessageActionsState, type NavigableMessage, stripSystemReminders, toolCallOf } from './messageActions.js';
 
 // Fallback extractor: lower + cache here for callers without the

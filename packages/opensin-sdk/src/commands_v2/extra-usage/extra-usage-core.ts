@@ -2,6 +2,7 @@ import {
   checkAdminRequestEligibility,
   createAdminRequest,
   getMyAdminRequests,
+<<<<<<< HEAD
 } from '../../services/api/adminRequests'
 import { invalidateOverageCreditGrantCache } from '../../services/api/overageCreditGrant'
 import { type ExtraUsage, fetchUtilization } from '../../services/api/usage'
@@ -10,6 +11,16 @@ import { hasOpenSINAiBillingAccess } from '../../utils/billing'
 import { openBrowser } from '../../utils/browser'
 import { getGlobalConfig, saveGlobalConfig } from '../../utils/config'
 import { logError } from '../../utils/log'
+=======
+} from '../../services/api/adminRequests.js'
+import { invalidateOverageCreditGrantCache } from '../../services/api/overageCreditGrant.js'
+import { type ExtraUsage, fetchUtilization } from '../../services/api/usage.js'
+import { getSubscriptionType } from '../../utils_v2/auth.js'
+import { hasOpenSINAiBillingAccess } from '../../utils_v2/billing.js'
+import { openBrowser } from '../../utils_v2/browser.js'
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js'
+import { logError } from '../../utils_v2/log.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type ExtraUsageResult =
   | { type: 'message'; value: string }

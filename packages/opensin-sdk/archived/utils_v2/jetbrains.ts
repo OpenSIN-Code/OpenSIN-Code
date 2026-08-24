@@ -1,6 +1,6 @@
 import { homedir, platform } from 'os'
 import { join } from 'path'
-import { getFsImplementation } from '../utils/fsOperations.js'
+import { getFsImplementation } from '../../utils_v2/fsOperations.js'
 import type { IdeType } from './ide.js'
 
 const PLUGIN_PREFIX = 'opensin-code-jetbrains-plugin'

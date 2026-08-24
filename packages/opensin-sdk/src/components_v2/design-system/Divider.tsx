@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { useTerminalSize } from '../../hooks/useTerminalSize.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 import { stringWidth } from '../../ink/stringWidth.js';
-import { Ansi, Text } from '../../ink.js';
-import type { Theme } from '../../utils/theme.js';
+import { Ansi, Text } from '../../ink_v2/index.js';
+import type { Theme } from '../../utils_v2/theme.js';
 type DividerProps = {
   /**
    * Width of the divider in characters.

@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import figures from 'figures';
 import * as React from 'react';
-import { Box, Text } from '../ink.js';
-import type { ContextSuggestion } from '../utils/contextSuggestions.js';
-import { formatTokens } from '../utils/format.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import type { ContextSuggestion } from '../../utils_v2/contextSuggestions.js';
+import { formatTokens } from '../../utils_v2/format.js';
 import { StatusIcon } from './design-system/StatusIcon.js';
 type Props = {
   suggestions: ContextSuggestion[];

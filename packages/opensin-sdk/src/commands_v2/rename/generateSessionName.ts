@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { queryHaiku } from '../../services/api/opensin'
 import type { Message } from '../../types/message'
 import { logForDebugging } from '../../utils/debug'
@@ -6,6 +7,16 @@ import { safeParseJSON } from '../../utils/json'
 import { extractTextContent } from '../../utils/messages'
 import { extractConversationText } from '../../utils/sessionTitle'
 import { asSystemPrompt } from '../../utils/systemPromptType'
+=======
+import { queryHaiku } from '../../services/api/opensin.js'
+import type { Message } from '../../types/message.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import { safeParseJSON } from '../../utils_v2/json.js'
+import { extractTextContent } from '../../utils_v2/messages.js'
+import { extractConversationText } from '../../utils_v2/sessionTitle.js'
+import { asSystemPrompt } from '../../utils_v2/systemPromptType.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export async function generateSessionName(
   messages: Message[],

@@ -1,6 +1,11 @@
 import { useCallback, useContext, useLayoutEffect, useRef } from 'react'
+<<<<<<< HEAD
 import CursorDeclarationContext from '../components/CursorDeclarationContext'
 import type { DOMElement } from '../dom'
+=======
+import CursorDeclarationContext from '../../components_v2/CursorDeclarationContext.js'
+import type { DOMElement } from '../dom.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Declares where the terminal cursor should be parked after each frame.

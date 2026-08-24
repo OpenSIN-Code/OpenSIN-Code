@@ -2,8 +2,13 @@
 
 import { appendFileSync } from 'fs'
 import createReconciler from 'react-reconciler'
+<<<<<<< HEAD
 import { getYogaCounters } from 'src/native-ts/yoga-layout/index'
 import { isEnvTruthy } from '../utils/envUtils'
+=======
+import { getYogaCounters } from 'src/native-ts/yoga-layout/index.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   appendChildNode,
   clearYogaNodeReferences,

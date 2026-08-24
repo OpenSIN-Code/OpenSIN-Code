@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import type { Command } from '../../commands'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook'
 import { isPolicyAllowed } from '../../services/policyLimits/index'
+=======
+import type { Command } from '../../commands_v2/index.js'
+import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js'
+import { isPolicyAllowed } from '../../services/policyLimits/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const web = {
   type: 'local-jsx',

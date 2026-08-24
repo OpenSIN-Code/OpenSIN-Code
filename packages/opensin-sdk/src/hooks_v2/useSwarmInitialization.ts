@@ -8,6 +8,7 @@
  */
 
 import { useEffect } from 'react'
+<<<<<<< HEAD
 import { getSessionId } from '../bootstrap/state'
 import type { AppState } from '../state/AppState'
 import type { Message } from '../types/message'
@@ -16,6 +17,16 @@ import { initializeTeammateContextFromSession } from '../utils/swarm/reconnectio
 import { readTeamFile } from '../utils/swarm/teamHelpers'
 import { initializeTeammateHooks } from '../utils/swarm/teammateInit'
 import { getDynamicTeamContext } from '../utils/teammate'
+=======
+import { getSessionId } from '../../bootstrap_system/state.js'
+import type { AppState } from '../state/AppState.js'
+import type { Message } from '../../types/message.js'
+import { isAgentSwarmsEnabled } from '../../utils_v2/agentSwarmsEnabled.js'
+import { initializeTeammateContextFromSession } from '../../utils_v2/swarm/reconnection.js'
+import { readTeamFile } from '../../utils_v2/swarm/teamHelpers.js'
+import { initializeTeammateHooks } from '../../utils_v2/swarm/teammateInit.js'
+import { getDynamicTeamContext } from '../../utils_v2/teammate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type SetAppState = (f: (prevState: AppState) => AppState) => void
 

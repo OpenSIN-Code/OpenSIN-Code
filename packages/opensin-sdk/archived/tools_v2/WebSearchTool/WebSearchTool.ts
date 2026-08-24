@@ -2,18 +2,18 @@ import type {
   BetaContentBlock,
   BetaWebSearchTool20250305,
 } from '@opensin-ai/sdk/resources/beta/messages/messages.mjs'
-import { getAPIProvider } from 'src/utils/model/providers.js'
-import type { PermissionResult } from 'src/utils/permissions/PermissionResult.js'
+import { getAPIProvider } from '../../utils_v2/model/providers.js'
+import type { PermissionResult } from '../../utils_v2/permissions/PermissionResult.js'
 import { z } from 'zod/v4'
 import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/growthbook.js'
 import { queryModelWithStreaming } from '../../services/api/opensin.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { logError } from '../../utils/log.js'
-import { createUserMessage } from '../../utils/messages.js'
-import { getMainLoopModel, getSmallFastModel } from '../../utils/model/model.js'
-import { jsonParse, jsonStringify } from '../../utils/slowOperations.js'
-import { asSystemPrompt } from '../../utils/systemPromptType.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { logError } from '../../utils_v2/log.js'
+import { createUserMessage } from '../../utils_v2/messages.js'
+import { getMainLoopModel, getSmallFastModel } from '../../utils_v2/model/model.js'
+import { jsonParse, jsonStringify } from '../../utils_v2/slowOperations.js'
+import { asSystemPrompt } from '../../utils_v2/systemPromptType.js'
 import { getWebSearchPrompt, WEB_SEARCH_TOOL_NAME } from './prompt.js'
 import {
   getToolUseSummary,

@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from 'src/services/analytics/index'
 import { sanitizeToolNameForAnalytics } from 'src/services/analytics/metadata'
 import { BashTool } from 'src/tools/BashTool/BashTool'
@@ -22,6 +23,27 @@ import { useSetAppState } from '../../state/AppState'
 import { env } from '../../utils/env'
 import { jsonStringify } from '../../utils/slowOperations'
 import { type CompletionType, logUnaryEvent } from '../../utils/unaryLogging'
+=======
+} from '../services/analytics/index.js'
+import { sanitizeToolNameForAnalytics } from '../services/analytics/metadata.js'
+import { BashTool } from '../../tools_v2/BashTool/BashTool.js'
+import { splitCommand_DEPRECATED } from '../../utils_v2/bash/commands.js'
+import type {
+  PermissionDecisionReason,
+  PermissionResult,
+} from '../../utils_v2/permissions/PermissionResult.js'
+import {
+  extractRules,
+  hasRules,
+} from '../../utils_v2/permissions/PermissionUpdate.js'
+import { permissionRuleValueToString } from '../../utils_v2/permissions/permissionRuleParser.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import { useSetAppState } from '../../state/AppState.js'
+import { env } from '../../utils_v2/env.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { type CompletionType, logUnaryEvent } from '../../utils_v2/unaryLogging.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type UnaryEvent = {
   completion_type: CompletionType

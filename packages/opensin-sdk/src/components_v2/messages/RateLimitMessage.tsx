@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import React, { useEffect, useMemo, useState } from 'react';
-import { extraUsage } from 'src/commands/extra-usage/index.js';
-import { Box, Text } from 'src/ink.js';
-import { useOpenSINAiLimits } from 'src/services/opensinAiLimitsHook.js';
-import { shouldProcessMockLimits } from 'src/services/rateLimitMocking.js'; // Used for /mock-limits command
-import { getRateLimitTier, getSubscriptionType, isOpenSINAISubscriber } from 'src/utils/auth.js';
-import { hasOpenSINAiBillingAccess } from 'src/utils/billing.js';
+import { extraUsage } from '../../commands_v2/extra-usage/index.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useOpenSINAiLimits } from '../services/opensinAiLimitsHook.js';
+import { shouldProcessMockLimits } from '../services/rateLimitMocking.js'; // Used for /mock-limits command
+import { getRateLimitTier, getSubscriptionType, isOpenSINAISubscriber } from '../../utils_v2/auth.js';
+import { hasOpenSINAiBillingAccess } from '../../utils_v2/billing.js';
 import { MessageResponse } from '../MessageResponse.js';
 type UpsellParams = {
   shouldShowUpsell: boolean;

@@ -1,11 +1,11 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { Text } from 'src/ink.js';
+import { Text } from '../../ink_v2/index.js';
 import type { BackgroundTaskState } from 'src/tasks/types.js';
-import type { DeepImmutable } from 'src/types/utils.js';
-import { truncate } from 'src/utils/format.js';
-import { toInkColor } from 'src/utils/ink.js';
-import { plural } from 'src/utils/stringUtils.js';
+import type { DeepImmutable } from '../../types/utils.js';
+import { truncate } from '../../utils_v2/format.js';
+import { toInkColor } from '../../utils_v2/ink.js';
+import { plural } from '../../utils_v2/stringUtils.js';
 import { DIAMOND_FILLED, DIAMOND_OPEN } from '../../constants/figures.js';
 import { RemoteSessionProgress } from './RemoteSessionProgress.js';
 import { ShellProgress, TaskStatusText } from './ShellProgress.js';

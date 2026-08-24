@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { Box, Text } from '../ink.js';
-import { formatNumber } from '../utils/format.js';
-import type { Theme } from '../utils/theme.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { formatNumber } from '../../utils_v2/format.js';
+import type { Theme } from '../../utils_v2/theme.js';
 type Props = {
   agentType: string;
   description?: string;

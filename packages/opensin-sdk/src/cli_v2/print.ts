@@ -5,14 +5,22 @@ import { dirname } from 'path'
 import {
   downloadUserSettings,
   redownloadUserSettings,
+<<<<<<< HEAD
 } from 'src/services/settingsSync/index'
 import { waitForRemoteManagedSettingsToLoad } from 'src/services/remoteManagedSettings/index'
 import { StructuredIO } from 'src/cli/structuredIO'
 import { RemoteIO } from 'src/cli/remoteIO'
+=======
+} from '../services/settingsSync/index.js'
+import { waitForRemoteManagedSettingsToLoad } from '../services/remoteManagedSettings/index.js'
+import { StructuredIO } from 'src/cli/structuredIO.js'
+import { RemoteIO } from 'src/cli/remoteIO.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type Command,
   formatDescriptionWithSource,
   getCommandName,
+<<<<<<< HEAD
 } from 'src/commands'
 import { createStreamlinedTransformer } from 'src/utils/streamlinedTransform'
 import { installStreamJsonStdoutGuard } from 'src/utils/streamJsonStdoutGuard'
@@ -33,13 +41,41 @@ import {
   withDiagnosticsTiming,
 } from 'src/utils/diagLogs'
 import { toolMatchesName, type Tool, type Tools } from 'src/Tool'
+=======
+} from 'src/commands.js'
+import { createStreamlinedTransformer } from '../../utils_v2/streamlinedTransform.js'
+import { installStreamJsonStdoutGuard } from '../../utils_v2/streamJsonStdoutGuard.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import type { ThinkingConfig } from '../../utils_v2/thinking.js'
+import { assembleToolPool, filterToolsByDenyRules } from 'src/tools.js'
+import uniqBy from 'lodash-es/uniqBy.js'
+import { uniq } from '../../utils_v2/array.js'
+import { mergeAndFilterTools } from '../../utils_v2/toolPool.js'
+import {
+  logEvent,
+  type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
+} from '../services/analytics/index.js'
+import { getFeatureValue_CACHED_MAY_BE_STALE } from '../services/analytics/growthbook.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import {
+  logForDiagnosticsNoPII,
+  withDiagnosticsTiming,
+} from '../../utils_v2/diagLogs.js'
+import { toolMatchesName, type Tool, type Tools } from '../../tools_v2/Tool.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AgentDefinition,
   isBuiltInAgent,
   parseAgentsFromJson,
+<<<<<<< HEAD
 } from 'src/tools/AgentTool/loadAgentsDir'
 import type { Message, NormalizedUserMessage } from 'src/types/message'
 import type { QueuedCommand } from 'src/types/textInputTypes'
+=======
+} from '../../tools_v2/AgentTool/loadAgentsDir.js'
+import type { Message, NormalizedUserMessage } from '../../types/message.js'
+import type { QueuedCommand } from '../../types/textInputTypes.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   dequeue,
   dequeueAllMatching,
@@ -48,8 +84,13 @@ import {
   peek,
   subscribeToCommandQueue,
   getCommandsByMaxPriority,
+<<<<<<< HEAD
 } from 'src/utils/messageQueueManager'
 import { notifyCommandLifecycle } from 'src/utils/commandLifecycle'
+=======
+} from '../../utils_v2/messageQueueManager.js'
+import { notifyCommandLifecycle } from '../../utils_v2/commandLifecycle.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getSessionState,
   notifySessionStateChanged,
@@ -57,6 +98,7 @@ import {
   setPermissionModeChangedListener,
   type RequiresActionDetails,
   type SessionExternalMetadata,
+<<<<<<< HEAD
 } from 'src/utils/sessionState'
 import { externalMetadataToAppState } from 'src/state/onChangeAppState'
 import { getInMemoryErrors, logError, logMCPDebug } from 'src/utils/log'
@@ -70,16 +112,36 @@ import {
   loadConversationForResume,
   type TurnInterruptionState,
 } from 'src/utils/conversationRecovery'
+=======
+} from '../../utils_v2/sessionState.js'
+import { externalMetadataToAppState } from '../../state/onChangeAppState.js'
+import { getInMemoryErrors, logError, logMCPDebug } from '../../utils_v2/log.js'
+import {
+  writeToStdout,
+  registerProcessOutputErrorHandlers,
+} from '../../utils_v2/process.js'
+import type { Stream } from '../../utils_v2/stream.js'
+import { EMPTY_USAGE } from '../services/api/logging.js'
+import {
+  loadConversationForResume,
+  type TurnInterruptionState,
+} from '../../utils_v2/conversationRecovery.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   MCPServerConnection,
   McpSdkServerConfig,
   ScopedMcpServerConfig,
+<<<<<<< HEAD
 } from 'src/services/mcp/types'
+=======
+} from '../services/mcp/types.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   ChannelMessageNotificationSchema,
   gateChannelServer,
   wrapChannelMessage,
   findChannelEntry,
+<<<<<<< HEAD
 } from 'src/services/mcp/channelNotification'
 import {
   isChannelAllowlisted,
@@ -90,23 +152,50 @@ import { validateUuid } from 'src/utils/uuid'
 import { fromArray } from 'src/utils/generators'
 import { ask } from 'src/QueryEngine'
 import type { PermissionPromptTool } from 'src/utils/queryHelpers'
+=======
+} from '../services/mcp/channelNotification.js'
+import {
+  isChannelAllowlisted,
+  isChannelsEnabled,
+} from '../services/mcp/channelAllowlist.js'
+import { parsePluginIdentifier } from '../../utils_v2/plugins/pluginIdentifier.js'
+import { validateUuid } from '../../utils_v2/uuid.js'
+import { fromArray } from '../../utils_v2/generators.js'
+import { ask } from 'src/QueryEngine.js'
+import type { PermissionPromptTool } from '../../utils_v2/queryHelpers.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   createFileStateCacheWithSizeLimit,
   mergeFileStateCaches,
   READ_FILE_STATE_CACHE_SIZE,
+<<<<<<< HEAD
 } from 'src/utils/fileStateCache'
 import { expandPath } from 'src/utils/path'
 import { extractReadFilesFromMessages } from 'src/utils/queryHelpers'
 import { registerHookEventHandler } from 'src/utils/hooks/hookEvents'
 import { executeFilePersistence } from 'src/utils/filePersistence/filePersistence'
 import { finalizePendingAsyncHooks } from 'src/utils/hooks/AsyncHookRegistry'
+=======
+} from '../../utils_v2/fileStateCache.js'
+import { expandPath } from '../../utils_v2/path.js'
+import { extractReadFilesFromMessages } from '../../utils_v2/queryHelpers.js'
+import { registerHookEventHandler } from '../../utils_v2/hooks/hookEvents.js'
+import { executeFilePersistence } from '../../utils_v2/filePersistence/filePersistence.js'
+import { finalizePendingAsyncHooks } from '../../utils_v2/hooks/AsyncHookRegistry.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   gracefulShutdown,
   gracefulShutdownSync,
   isShuttingDown,
+<<<<<<< HEAD
 } from 'src/utils/gracefulShutdown'
 import { registerCleanup } from 'src/utils/cleanupRegistry'
 import { createIdleTimeoutManager } from 'src/utils/idleTimeout'
+=======
+} from '../../utils_v2/gracefulShutdown.js'
+import { registerCleanup } from '../../utils_v2/cleanupRegistry.js'
+import { createIdleTimeoutManager } from '../../utils_v2/idleTimeout.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   SDKStatus,
   ModelInfo,
@@ -117,7 +206,11 @@ import type {
   McpServerConfigForProcessTransport,
   McpServerStatus,
   RewindFilesResult,
+<<<<<<< HEAD
 } from 'src/entrypoints/agentSdkTypes'
+=======
+} from '../entrypoints/agentSdkTypes.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   StdoutMessage,
   SDKControlInitializeRequest,
@@ -126,6 +219,7 @@ import type {
   SDKControlResponse,
   SDKControlMcpSetServersResponse,
   SDKControlReloadPluginsResponse,
+<<<<<<< HEAD
 } from 'src/entrypoints/sdk/controlTypes'
 import type { PermissionMode } from '@opensin-ai/opensin-agent-sdk'
 import type { PermissionMode as InternalPermissionMode } from 'src/types/permissions'
@@ -151,10 +245,38 @@ import { createCombinedAbortSignal } from 'src/utils/combinedAbortSignal'
 import { generateSessionTitle } from 'src/utils/sessionTitle'
 import { buildSideQuestionFallbackParams } from 'src/utils/queryContext'
 import { runSideQuestion } from 'src/utils/sideQuestion'
+=======
+} from '../entrypoints/sdk/controlTypes.js'
+import type { PermissionMode } from '@opensin-ai/opensin-agent-sdk'
+import type { PermissionMode as InternalPermissionMode } from '../../types/permissions.js'
+import { cwd } from 'process'
+import { getCwd } from '../../utils_v2/cwd.js'
+import omit from 'lodash-es/omit.js'
+import reject from 'lodash-es/reject.js'
+import { isPolicyAllowed } from '../services/policyLimits/index.js'
+import type { ReplBridgeHandle } from 'src/bridge/replBridge.js'
+import { getRemoteSessionUrl } from '../../constants/product.js'
+import { buildBridgeConnectUrl } from 'src/bridge/bridgeStatusUtil.js'
+import { extractInboundMessageFields } from 'src/bridge/inboundMessages.js'
+import { resolveAndPrepend } from 'src/bridge/inboundAttachments.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
+import { hasPermissionsToUseTool } from '../../utils_v2/permissions/permissions.js'
+import { safeParseJSON } from '../../utils_v2/json.js'
+import {
+  outputSchema as permissionToolOutputSchema,
+  permissionPromptToolResultToPermissionDecision,
+} from '../../utils_v2/permissions/PermissionPromptToolResultSchema.js'
+import { createAbortController } from '../../utils_v2/abortController.js'
+import { createCombinedAbortSignal } from '../../utils_v2/combinedAbortSignal.js'
+import { generateSessionTitle } from '../../utils_v2/sessionTitle.js'
+import { buildSideQuestionFallbackParams } from '../../utils_v2/queryContext.js'
+import { runSideQuestion } from '../../utils_v2/sideQuestion.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   processSessionStartHooks,
   processSetupHooks,
   takeInitialUserMessage,
+<<<<<<< HEAD
 } from 'src/utils/sessionStart'
 import {
   DEFAULT_OUTPUT_STYLE_NAME,
@@ -167,24 +289,47 @@ import {
 } from 'src/utils/settings/settings'
 import { settingsChangeDetector } from 'src/utils/settings/changeDetector'
 import { applySettingsChange } from 'src/utils/settings/applySettingsChange'
+=======
+} from '../../utils_v2/sessionStart.js'
+import {
+  DEFAULT_OUTPUT_STYLE_NAME,
+  getAllOutputStyles,
+} from '../../constants/outputStyles.js'
+import { TEAMMATE_MESSAGE_TAG, TICK_TAG } from '../../constants/xml.js'
+import {
+  getSettings_DEPRECATED,
+  getSettingsWithSources,
+} from '../../utils_v2/settings/settings.js'
+import { settingsChangeDetector } from '../../utils_v2/settings/changeDetector.js'
+import { applySettingsChange } from '../../utils_v2/settings/applySettingsChange.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isFastModeAvailable,
   isFastModeEnabled,
   isFastModeSupportedByModel,
   getFastModeState,
+<<<<<<< HEAD
 } from 'src/utils/fastMode'
+=======
+} from '../../utils_v2/fastMode.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isAutoModeGateEnabled,
   getAutoModeUnavailableNotification,
   getAutoModeUnavailableReason,
   isBypassPermissionsModeDisabled,
   transitionPermissionMode,
+<<<<<<< HEAD
 } from 'src/utils/permissions/permissionSetup'
+=======
+} from '../../utils_v2/permissions/permissionSetup.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   tryGenerateSuggestion,
   logSuggestionOutcome,
   logSuggestionSuppressed,
   type PromptVariant,
+<<<<<<< HEAD
 } from 'src/services/PromptSuggestion/promptSuggestion'
 import { getLastCacheSafeParams } from 'src/utils/forkedAgent'
 import { getAccountInformation } from 'src/utils/auth'
@@ -194,14 +339,31 @@ import { getAPIProvider } from 'src/utils/model/providers'
 import type { HookCallbackMatcher } from 'src/types/hooks'
 import { AwsAuthStatusManager } from 'src/utils/awsAuthStatusManager'
 import type { HookEvent } from 'src/entrypoints/agentSdkTypes'
+=======
+} from '../services/PromptSuggestion/promptSuggestion.js'
+import { getLastCacheSafeParams } from '../../utils_v2/forkedAgent.js'
+import { getAccountInformation } from '../../utils_v2/auth.js'
+import { OAuthService } from '../services/oauth/index.js'
+import { installOAuthTokens } from 'src/cli/handlers/auth.js'
+import { getAPIProvider } from '../../utils_v2/model/providers.js'
+import type { HookCallbackMatcher } from '../../types/hooks.js'
+import { AwsAuthStatusManager } from '../../utils_v2/awsAuthStatusManager.js'
+import type { HookEvent } from '../entrypoints/agentSdkTypes.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   registerHookCallbacks,
   setInitJsonSchema,
   getInitJsonSchema,
   setSdkAgentProgressSummariesEnabled,
+<<<<<<< HEAD
 } from 'src/bootstrap/state'
 import { createSyntheticOutputTool } from 'src/tools/SyntheticOutputTool/SyntheticOutputTool'
 import { parseSessionIdentifier } from 'src/utils/sessionUrl'
+=======
+} from '../../bootstrap_system/state.js'
+import { createSyntheticOutputTool } from '../../tools_v2/SyntheticOutputTool/SyntheticOutputTool.js'
+import { parseSessionIdentifier } from '../../utils_v2/sessionUrl.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   hydrateRemoteSession,
   hydrateFromCCRv2InternalEvents,
@@ -213,8 +375,13 @@ import {
   saveMode,
   saveAiGeneratedTitle,
   restoreSessionMetadata,
+<<<<<<< HEAD
 } from 'src/utils/sessionStorage'
 import { incrementPromptCount } from 'src/utils/commitAttribution'
+=======
+} from '../../utils_v2/sessionStorage.js'
+import { incrementPromptCount } from '../../utils_v2/commitAttribution.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   setupSdkMcpClients,
   connectToServer,
@@ -222,12 +389,17 @@ import {
   fetchToolsForClient,
   areMcpConfigsEqual,
   reconnectMcpServerImpl,
+<<<<<<< HEAD
 } from 'src/services/mcp/client'
+=======
+} from '../services/mcp/client.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   filterMcpServersByPolicy,
   getMcpConfigByName,
   isMcpServerDisabled,
   setMcpServerEnabled,
+<<<<<<< HEAD
 } from 'src/services/mcp/config'
 import {
   performMCPOAuthFlow,
@@ -264,22 +436,72 @@ import {
   statusListeners,
   type OpenSINAILimits,
 } from 'src/services/opensinAiLimits'
+=======
+} from '../services/mcp/config.js'
+import {
+  performMCPOAuthFlow,
+  revokeServerTokens,
+} from '../services/mcp/auth.js'
+import {
+  runElicitationHooks,
+  runElicitationResultHooks,
+} from '../services/mcp/elicitationHandler.js'
+import { executeNotificationHooks } from '../../utils_v2/hooks.js'
+import {
+  ElicitRequestSchema,
+  ElicitationCompleteNotificationSchema,
+} from '@modelcontextprotocol/sdk/types.js'
+import { getMcpPrefix } from '../services/mcp/mcpStringUtils.js'
+import {
+  commandBelongsToServer,
+  filterToolsByServer,
+} from '../services/mcp/utils.js'
+import { setupVscodeSdkMcp } from '../services/mcp/vscodeSdkMcp.js'
+import { getAllMcpConfigs } from '../services/mcp/config.js'
+import {
+  isQualifiedForGrove,
+  checkGroveForNonInteractive,
+} from '../services/api/grove.js'
+import {
+  toInternalMessages,
+  toSDKRateLimitInfo,
+} from '../../utils_v2/messages/mappers.js'
+import { createModelSwitchBreadcrumbs } from '../../utils_v2/messages.js'
+import { collectContextData } from '../../commands_v2/context/context-noninteractive.js'
+import { LOCAL_COMMAND_STDOUT_TAG } from '../../constants/xml.js'
+import {
+  statusListeners,
+  type OpenSINAILimits,
+} from '../services/opensinAiLimits.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getDefaultMainLoopModel,
   getMainLoopModel,
   modelDisplayString,
   parseUserSpecifiedModel,
+<<<<<<< HEAD
 } from 'src/utils/model/model'
 import { getModelOptions } from 'src/utils/model/modelOptions'
+=======
+} from '../../utils_v2/model/model.js'
+import { getModelOptions } from '../../utils_v2/model/modelOptions.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   modelSupportsEffort,
   modelSupportsMaxEffort,
   EFFORT_LEVELS,
   resolveAppliedEffort,
+<<<<<<< HEAD
 } from 'src/utils/effort'
 import { modelSupportsAdaptiveThinking } from 'src/utils/thinking'
 import { modelSupportsAutoMode } from 'src/utils/betas'
 import { ensureModelStringsInitialized } from 'src/utils/model/modelStrings'
+=======
+} from '../../utils_v2/effort.js'
+import { modelSupportsAdaptiveThinking } from '../../utils_v2/thinking.js'
+import { modelSupportsAutoMode } from '../../utils_v2/betas.js'
+import { ensureModelStringsInitialized } from '../../utils_v2/model/modelStrings.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getSessionId,
   setMainLoopModelOverride,
@@ -293,27 +515,46 @@ import {
   getAllowedChannels,
   setAllowedChannels,
   type ChannelEntry,
+<<<<<<< HEAD
 } from 'src/bootstrap/state'
 import { runWithWorkload, WORKLOAD_CRON } from 'src/utils/workloadContext'
 import type { UUID } from 'crypto'
 import { randomUUID } from 'crypto'
 import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs'
 import type { AppState } from 'src/state/AppStateStore'
+=======
+} from '../../bootstrap_system/state.js'
+import { runWithWorkload, WORKLOAD_CRON } from '../../utils_v2/workloadContext.js'
+import type { UUID } from 'crypto'
+import { randomUUID } from 'crypto'
+import type { ContentBlockParam } from '@opensin-ai/sdk/resources/messages.mjs'
+import type { AppState } from '../../state/AppStateStore.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   fileHistoryRewind,
   fileHistoryCanRestore,
   fileHistoryEnabled,
   fileHistoryGetDiffStats,
+<<<<<<< HEAD
 } from 'src/utils/fileHistory'
 import {
   restoreAgentFromSession,
   restoreSessionStateFromLog,
 } from 'src/utils/sessionRestore'
 import { SandboxManager } from 'src/utils/sandbox/sandbox-adapter'
+=======
+} from '../../utils_v2/fileHistory.js'
+import {
+  restoreAgentFromSession,
+  restoreSessionStateFromLog,
+} from '../../utils_v2/sessionRestore.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   headlessProfilerStartTurn,
   headlessProfilerCheckpoint,
   logHeadlessProfilerTurn,
+<<<<<<< HEAD
 } from 'src/utils/headlessProfiler'
 import {
   startQueryProfile,
@@ -323,24 +564,47 @@ import { asSessionId } from 'src/types/ids'
 import { jsonStringify } from '../utils/slowOperations'
 import { skillChangeDetector } from '../utils/skills/skillChangeDetector'
 import { getCommands, clearCommandsCache } from '../commands'
+=======
+} from '../../utils_v2/headlessProfiler.js'
+import {
+  startQueryProfile,
+  logQueryProfileReport,
+} from '../../utils_v2/queryProfiler.js'
+import { asSessionId } from '../../types/ids.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { skillChangeDetector } from '../../utils_v2/skills/skillChangeDetector.js'
+import { getCommands, clearCommandsCache } from '../../commands_v2/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isBareMode,
   isEnvTruthy,
   isEnvDefinedFalsy,
+<<<<<<< HEAD
 } from '../utils/envUtils'
 import { installPluginsForHeadless } from '../utils/plugins/headlessPluginInstall'
 import { refreshActivePlugins } from '../utils/plugins/refresh'
 import { loadAllPluginsCacheOnly } from '../utils/plugins/pluginLoader'
+=======
+} from '../../utils_v2/envUtils.js'
+import { installPluginsForHeadless } from '../../utils_v2/plugins/headlessPluginInstall.js'
+import { refreshActivePlugins } from '../../utils_v2/plugins/refresh.js'
+import { loadAllPluginsCacheOnly } from '../../utils_v2/plugins/pluginLoader.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isTeamLead,
   hasActiveInProcessTeammates,
   hasWorkingInProcessTeammates,
   waitForTeammatesToBecomeIdle,
+<<<<<<< HEAD
 } from '../utils/teammate'
+=======
+} from '../../utils_v2/teammate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   readUnreadMessages,
   markMessagesAsRead,
   isShutdownApproved,
+<<<<<<< HEAD
 } from '../utils/teammateMailbox'
 import { removeTeammateFromTeamFile } from '../utils/swarm/teamHelpers'
 import { unassignTeammateTasks } from '../utils/tasks'
@@ -352,6 +616,19 @@ import { initializeGrowthBook } from '../services/analytics/growthbook'
 import { errorMessage, toError } from '../utils/errors'
 import { sleep } from '../utils/sleep'
 import { isExtractModeActive } from '../memdir/paths'
+=======
+} from '../../utils_v2/teammateMailbox.js'
+import { removeTeammateFromTeamFile } from '../../utils_v2/swarm/teamHelpers.js'
+import { unassignTeammateTasks } from '../../utils_v2/tasks.js'
+import { getRunningTasks } from '../../utils_v2/task/framework.js'
+import { isBackgroundTask } from '../tasks/types.js'
+import { stopTask } from '../tasks/stopTask.js'
+import { drainSdkEvents } from '../../utils_v2/sdkEventQueue.js'
+import { initializeGrowthBook } from '../services/analytics/growthbook.js'
+import { errorMessage, toError } from '../../utils_v2/errors.js'
+import { sleep } from '../../utils_v2/sleep.js'
+import { isExtractModeActive } from '../memdir/paths.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Dead code elimination: conditional imports
 /* eslint-disable @typescript-eslint/no-require-imports */

@@ -1,14 +1,22 @@
 import { randomUUID } from 'crypto'
 import { basename } from 'path'
 import { useEffect, useMemo, useRef, useState } from 'react'
+<<<<<<< HEAD
 import { logEvent } from 'src/services/analytics/index'
 import { readFileSync } from 'src/utils/fileRead'
 import { expandPath } from 'src/utils/path'
 import type { PermissionOption } from '../components/permissions/FilePermissionDialog/permissionOptions'
+=======
+import { logEvent } from '../services/analytics/index.js'
+import { readFileSync } from '../../utils_v2/fileRead.js'
+import { expandPath } from '../../utils_v2/path.js'
+import type { PermissionOption } from '../../components_v2/permissions/FilePermissionDialog/permissionOptions.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   MCPServerConnection,
   McpSSEIDEServerConfig,
   McpWebSocketIDEServerConfig,
+<<<<<<< HEAD
 } from '../services/mcp/types'
 import type { ToolUseContext } from '../Tool'
 import type { FileEdit } from '../tools/FileEditTool/types'
@@ -19,15 +27,34 @@ import {
 import { getGlobalConfig } from '../utils/config'
 import { getPatchFromContents } from '../utils/diff'
 import { isENOENT } from '../utils/errors'
+=======
+} from '../services/mcp/types.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
+import type { FileEdit } from '../tools/FileEditTool/types.js'
+import {
+  getEditsForPatch,
+  getPatchForEdits,
+} from '../tools/FileEditTool/utils.js'
+import { getGlobalConfig } from '../../utils_v2/config.js'
+import { getPatchFromContents } from '../../utils_v2/diff.js'
+import { isENOENT } from '../../utils_v2/errors.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   callIdeRpc,
   getConnectedIdeClient,
   getConnectedIdeName,
   hasAccessToIDEExtensionDiffFeature,
+<<<<<<< HEAD
 } from '../utils/ide'
 import { WindowsToWSLConverter } from '../utils/idePathConversion'
 import { logError } from '../utils/log'
 import { getPlatform } from '../utils/platform'
+=======
+} from '../../utils_v2/ide.js'
+import { WindowsToWSLConverter } from '../../utils_v2/idePathConversion.js'
+import { logError } from '../../utils_v2/log.js'
+import { getPlatform } from '../../utils_v2/platform.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type Props = {
   onChange(

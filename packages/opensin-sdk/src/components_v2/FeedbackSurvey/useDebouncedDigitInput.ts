@@ -1,5 +1,9 @@
 import { useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { normalizeFullWidthDigits } from '../../utils/stringUtils'
+=======
+import { normalizeFullWidthDigits } from '../../utils_v2/stringUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // Delay before accepting a digit as a response, to prevent accidental
 // submissions when users start messages with numbers (e.g., numbered lists).

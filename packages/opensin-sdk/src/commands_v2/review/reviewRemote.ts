@@ -14,21 +14,37 @@ import { getFeatureValue_CACHED_MAY_BE_STALE } from '../../services/analytics/gr
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
+<<<<<<< HEAD
 } from '../../services/analytics/index'
 import { fetchUltrareviewQuota } from '../../services/api/ultrareviewQuota'
 import { fetchUtilization } from '../../services/api/usage'
 import type { ToolUseContext } from '../../Tool'
+=======
+} from '../../services/analytics/index.js'
+import { fetchUltrareviewQuota } from '../../services/api/ultrareviewQuota.js'
+import { fetchUtilization } from '../../services/api/usage.js'
+import type { ToolUseContext } from '../../tools_v2/Tool.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   checkRemoteAgentEligibility,
   formatPreconditionError,
   getRemoteTaskSessionUrl,
   registerRemoteAgentTask,
+<<<<<<< HEAD
 } from '../../tasks/RemoteAgentTask/RemoteAgentTask'
 import { isEnterpriseSubscriber, isTeamSubscriber } from '../../utils/auth'
 import { detectCurrentRepositoryWithHost } from '../../utils/detectRepository'
 import { execFileNoThrow } from '../../utils/execFileNoThrow'
 import { getDefaultBranch, gitExe } from '../../utils/git'
 import { teleportToRemote } from '../../utils/teleport'
+=======
+} from '../../tasks/RemoteAgentTask/RemoteAgentTask.js'
+import { isEnterpriseSubscriber, isTeamSubscriber } from '../../utils_v2/auth.js'
+import { detectCurrentRepositoryWithHost } from '../../utils_v2/detectRepository.js'
+import { execFileNoThrow } from '../../utils_v2/execFileNoThrow.js'
+import { getDefaultBranch, gitExe } from '../../utils_v2/git.js'
+import { teleportToRemote } from '../../utils_v2/teleport.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // One-time session flag: once the user confirms overage billing via the
 // dialog, all subsequent /ultrareview invocations in this session proceed

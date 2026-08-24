@@ -6,9 +6,9 @@ import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
 } from '../../services/analytics/index.js'
-import type { ToolPermissionContext, ToolUseContext } from '../../Tool.js'
+import type { ToolPermissionContext, ToolUseContext } from '../../tools_v2/Tool.js'
 import type { PendingClassifierCheck } from '../../types/permissions.js'
-import { count } from '../../utils/array.js'
+import { count } from '../../utils_v2/array.js'
 import {
   checkSemantics,
   nodeTypeId,
@@ -16,45 +16,45 @@ import {
   parseForSecurityFromAst,
   type Redirect,
   type SimpleCommand,
-} from '../../utils/bash/ast.js'
+} from '../../utils_v2/bash/ast.js'
 import {
   type CommandPrefixResult,
   extractOutputRedirections,
   getCommandSubcommandPrefix,
   splitCommand_DEPRECATED,
-} from '../../utils/bash/commands.js'
-import { parseCommandRaw } from '../../utils/bash/parser.js'
-import { tryParseShellCommand } from '../../utils/bash/shellQuote.js'
-import { getCwd } from '../../utils/cwd.js'
-import { logForDebugging } from '../../utils/debug.js'
-import { isEnvTruthy } from '../../utils/envUtils.js'
-import { AbortError } from '../../utils/errors.js'
+} from '../../utils_v2/bash/commands.js'
+import { parseCommandRaw } from '../../utils_v2/bash/parser.js'
+import { tryParseShellCommand } from '../../utils_v2/bash/shellQuote.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { AbortError } from '../../utils_v2/errors.js'
 import type {
   ClassifierBehavior,
   ClassifierResult,
-} from '../../utils/permissions/bashClassifier.js'
+} from '../../utils_v2/permissions/bashClassifier.js'
 import {
   classifyBashCommand,
   getBashPromptAllowDescriptions,
   getBashPromptAskDescriptions,
   getBashPromptDenyDescriptions,
   isClassifierPermissionsEnabled,
-} from '../../utils/permissions/bashClassifier.js'
+} from '../../utils_v2/permissions/bashClassifier.js'
 import type {
   PermissionDecisionReason,
   PermissionResult,
-} from '../../utils/permissions/PermissionResult.js'
+} from '../../utils_v2/permissions/PermissionResult.js'
 import type {
   PermissionRule,
   PermissionRuleValue,
-} from '../../utils/permissions/PermissionRule.js'
-import { extractRules } from '../../utils/permissions/PermissionUpdate.js'
-import type { PermissionUpdate } from '../../utils/permissions/PermissionUpdateSchema.js'
-import { permissionRuleValueToString } from '../../utils/permissions/permissionRuleParser.js'
+} from '../../utils_v2/permissions/PermissionRule.js'
+import { extractRules } from '../../utils_v2/permissions/PermissionUpdate.js'
+import type { PermissionUpdate } from '../../utils_v2/permissions/PermissionUpdateSchema.js'
+import { permissionRuleValueToString } from '../../utils_v2/permissions/permissionRuleParser.js'
 import {
   createPermissionRequestMessage,
   getRuleByContentsForTool,
-} from '../../utils/permissions/permissions.js'
+} from '../../utils_v2/permissions/permissions.js'
 import {
   parsePermissionRule,
   type ShellPermissionRule,
@@ -62,11 +62,11 @@ import {
   permissionRuleExtractPrefix as sharedPermissionRuleExtractPrefix,
   suggestionForExactCommand as sharedSuggestionForExactCommand,
   suggestionForPrefix as sharedSuggestionForPrefix,
-} from '../../utils/permissions/shellRuleMatching.js'
-import { getPlatform } from '../../utils/platform.js'
-import { SandboxManager } from '../../utils/sandbox/sandbox-adapter.js'
-import { jsonStringify } from '../../utils/slowOperations.js'
-import { windowsPathToPosixPath } from '../../utils/windowsPaths.js'
+} from '../../utils_v2/permissions/shellRuleMatching.js'
+import { getPlatform } from '../../utils_v2/platform.js'
+import { SandboxManager } from '../../utils_v2/sandbox/sandbox-adapter.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { windowsPathToPosixPath } from '../../utils_v2/windowsPaths.js'
 import { BashTool } from './BashTool.js'
 import { checkCommandOperatorPermissions } from './bashCommandHelpers.js'
 import {

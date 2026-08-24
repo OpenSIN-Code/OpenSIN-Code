@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import type { PermissionRule } from 'src/utils/permissions/PermissionRule'
 import { getSettingsForSource } from 'src/utils/settings/settings'
 import type { SettingsJson } from 'src/utils/settings/types'
 import { BASH_TOOL_NAME } from '../../tools/BashTool/toolName'
 import { SAFE_ENV_VARS } from '../../utils/managedEnvConstants'
 import { getPermissionRulesForSource } from '../../utils/permissions/permissionsLoader'
+=======
+import type { PermissionRule } from '../../utils_v2/permissions/PermissionRule.js'
+import { getSettingsForSource } from '../../utils_v2/settings/settings.js'
+import type { SettingsJson } from '../../utils_v2/settings/types.js'
+import { BASH_TOOL_NAME } from '../../tools/BashTool/toolName.js'
+import { SAFE_ENV_VARS } from '../../utils_v2/managedEnvConstants.js'
+import { getPermissionRulesForSource } from '../../utils_v2/permissions/permissionsLoader.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 function hasHooks(settings: SettingsJson | null): boolean {
   if (settings === null || settings.disableAllHooks) {

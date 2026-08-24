@@ -12,10 +12,10 @@ import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useNotifications } from '../context/notifications.js';
 import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, type AnalyticsMetadata_I_VERIFIED_THIS_IS_PII_TAGGED, logEvent } from '../services/analytics/index.js';
-import { clearPendingHint, getPendingHintSnapshot, markShownThisSession, subscribeToPendingHint } from '../utils/opensinCodeHints.js';
-import { logForDebugging } from '../utils/debug.js';
-import { disableHintRecommendations, markHintPluginShown, type PluginHintRecommendation, resolvePluginHint } from '../utils/plugins/hintRecommendation.js';
-import { installPluginFromMarketplace } from '../utils/plugins/pluginInstallationHelpers.js';
+import { clearPendingHint, getPendingHintSnapshot, markShownThisSession, subscribeToPendingHint } from '../../utils_v2/opensinCodeHints.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { disableHintRecommendations, markHintPluginShown, type PluginHintRecommendation, resolvePluginHint } from '../../utils_v2/plugins/hintRecommendation.js';
+import { installPluginFromMarketplace } from '../../utils_v2/plugins/pluginInstallationHelpers.js';
 import { installPluginAndNotify, usePluginRecommendationBase } from './usePluginRecommendationBase.js';
 type UseOpenSINCodeHintRecommendationResult = {
   recommendation: PluginHintRecommendation | null;

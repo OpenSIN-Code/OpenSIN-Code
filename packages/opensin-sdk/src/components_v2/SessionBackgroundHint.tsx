@@ -1,15 +1,15 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
 import { useCallback, useState } from 'react';
-import { useDoublePress } from '../hooks/useDoublePress.js';
-import { Box, Text } from '../ink.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
-import { useShortcutDisplay } from '../keybindings/useShortcutDisplay.js';
+import { useDoublePress } from '../../hooks_v2/useDoublePress.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
 import { useAppState, useAppStateStore, useSetAppState } from '../state/AppState.js';
 import { backgroundAll, hasForegroundTasks } from '../tasks/LocalShellTask/LocalShellTask.js';
-import { getGlobalConfig, saveGlobalConfig } from '../utils/config.js';
-import { env } from '../utils/env.js';
-import { isEnvTruthy } from '../utils/envUtils.js';
+import { getGlobalConfig, saveGlobalConfig } from '../../utils_v2/config.js';
+import { env } from '../../utils_v2/env.js';
+import { isEnvTruthy } from '../../utils_v2/envUtils.js';
 import { KeyboardShortcutHint } from './design-system/KeyboardShortcutHint.js';
 type Props = {
   onBackgroundSession: () => void;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { Text } from '../../ink.js';
-import { jsonParse } from '../../utils/slowOperations.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { Text } from '../../ink_v2/index.js';
+import { jsonParse } from '../../utils_v2/slowOperations.js';
 import type { Input, SendMessageToolOutput } from './SendMessageTool.js';
 export function renderToolUseMessage(input: Partial<Input>): React.ReactNode {
   if (typeof input.message !== 'object' || input.message === null) {

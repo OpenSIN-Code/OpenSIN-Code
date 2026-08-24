@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { jsonStringify } from '../utils/slowOperations'
+=======
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // JSON.stringify emits U+2028/U+2029 raw (valid per ECMA-404). When the
 // output is a single NDJSON line, any receiver that uses JavaScript

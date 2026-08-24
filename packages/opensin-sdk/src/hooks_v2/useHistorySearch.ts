@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   getModeFromInput,
   getValueFromInput,
+<<<<<<< HEAD
 } from '../components/PromptInput/inputModes'
 import { makeHistoryReader } from '../history'
 import { KeyboardEvent } from '../ink/events/keyboard-event'
@@ -11,6 +12,16 @@ import { useInput } from '../ink'
 import { useKeybinding, useKeybindings } from '../keybindings/useKeybinding'
 import type { PromptInputMode } from '../types/textInputTypes'
 import type { HistoryEntry } from '../utils/config'
+=======
+} from '../../components_v2/PromptInput/inputModes.js'
+import { makeHistoryReader } from '../history.js'
+import { KeyboardEvent } from '../ink/events/keyboard-event.js'
+// eslint-disable-next-line custom-rules/prefer-use-keybindings -- backward-compat bridge until consumers wire handleKeyDown to <Box onKeyDown>
+import { useInput } from '../../ink_v2/index.js'
+import { useKeybinding, useKeybindings } from '../../keybindings_v2/useKeybinding.js'
+import type { PromptInputMode } from '../types/textInputTypes.js'
+import type { HistoryEntry } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export function useHistorySearch(
   onAcceptHistory: (entry: HistoryEntry) => void,

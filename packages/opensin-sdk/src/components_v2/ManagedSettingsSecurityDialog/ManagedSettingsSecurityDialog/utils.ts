@@ -1,9 +1,15 @@
 import {
   DANGEROUS_SHELL_SETTINGS,
   SAFE_ENV_VARS,
+<<<<<<< HEAD
 } from '../../utils/managedEnvConstants'
 import type { SettingsJson } from '../../utils/settings/types'
 import { jsonStringify } from '../../utils/slowOperations'
+=======
+} from '../../utils_v2/managedEnvConstants.js'
+import type { SettingsJson } from '../../utils_v2/settings/types.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type DangerousShellSetting = (typeof DANGEROUS_SHELL_SETTINGS)[number]
 

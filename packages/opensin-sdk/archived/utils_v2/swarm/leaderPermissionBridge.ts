@@ -10,8 +10,8 @@
  * from non-React code in the in-process runner.
  */
 
-import type { ToolUseConfirm } from '../../components/permissions/PermissionRequest.js'
-import type { ToolPermissionContext } from '../../Tool.js'
+import type { ToolUseConfirm } from '../../components_v2/permissions/PermissionRequest.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
 
 export type SetToolUseConfirmQueueFn = (
   updater: (prev: ToolUseConfirm[]) => ToolUseConfirm[],

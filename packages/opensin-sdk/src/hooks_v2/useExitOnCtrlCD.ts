@@ -1,7 +1,13 @@
 import { useCallback, useMemo, useState } from 'react'
+<<<<<<< HEAD
 import useApp from '../ink/hooks/use-app'
 import type { KeybindingContextName } from '../keybindings/types'
 import { useDoublePress } from './useDoublePress'
+=======
+import useApp from '../ink/hooks/use-app.js'
+import type { KeybindingContextName } from '../../keybindings_v2/types.js'
+import { useDoublePress } from './useDoublePress.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type ExitState = {
   pending: boolean

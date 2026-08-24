@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { useKeybindings } from '../keybindings/useKeybinding'
 import { type ExitState, useExitOnCtrlCD } from './useExitOnCtrlCD'
+=======
+import { useKeybindings } from '../../keybindings_v2/useKeybinding.js'
+import { type ExitState, useExitOnCtrlCD } from './useExitOnCtrlCD.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export type { ExitState }
 

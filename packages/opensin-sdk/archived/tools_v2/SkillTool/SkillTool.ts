@@ -2,7 +2,7 @@ import { feature } from 'bun:bundle'
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/index.mjs'
 import uniqBy from 'lodash-es/uniqBy.js'
 import { dirname } from 'path'
-import { getProjectRoot } from 'src/bootstrap/state.js'
+import { getProjectRoot } from '../../bootstrap_system/state.js'
 import {
   builtInCommandNames,
   findCommand,
@@ -15,50 +15,50 @@ import type {
   ToolResult,
   ToolUseContext,
   ValidationResult,
-} from 'src/Tool.js'
-import { buildTool, type ToolDef } from 'src/Tool.js'
-import type { Command } from 'src/types/command.js'
+} from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import type { Command } from '../../types/command.js'
 import type {
   AssistantMessage,
   AttachmentMessage,
   Message,
   SystemMessage,
   UserMessage,
-} from 'src/types/message.js'
-import { logForDebugging } from 'src/utils/debug.js'
-import type { PermissionDecision } from 'src/utils/permissions/PermissionResult.js'
-import { getRuleByContentsForTool } from 'src/utils/permissions/permissions.js'
+} from '../../types/message.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import type { PermissionDecision } from '../../utils_v2/permissions/PermissionResult.js'
+import { getRuleByContentsForTool } from '../../utils_v2/permissions/permissions.js'
 import {
   isOfficialMarketplaceName,
   parsePluginIdentifier,
-} from 'src/utils/plugins/pluginIdentifier.js'
-import { buildPluginCommandTelemetryFields } from 'src/utils/telemetry/pluginTelemetry.js'
+} from '../../utils_v2/plugins/pluginIdentifier.js'
+import { buildPluginCommandTelemetryFields } from '../../utils_v2/telemetry/pluginTelemetry.js'
 import { z } from 'zod/v4'
 import {
   addInvokedSkill,
   clearInvokedSkillsForAgent,
   getSessionId,
-} from '../../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { COMMAND_MESSAGE_TAG } from '../../constants/xml.js'
-import type { CanUseToolFn } from '../../hooks/useCanUseTool.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_PII_TAGGED,
   logEvent,
 } from '../../services/analytics/index.js'
-import { getAgentContext } from '../../utils/agentContext.js'
-import { errorMessage } from '../../utils/errors.js'
+import { getAgentContext } from '../../utils_v2/agentContext.js'
+import { errorMessage } from '../../utils_v2/errors.js'
 import {
   extractResultText,
   prepareForkedCommandContext,
-} from '../../utils/forkedAgent.js'
-import { parseFrontmatter } from '../../utils/frontmatterParser.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { createUserMessage, normalizeMessages } from '../../utils/messages.js'
-import type { ModelAlias } from '../../utils/model/aliases.js'
-import { resolveSkillModelOverride } from '../../utils/model/model.js'
-import { recordSkillUsage } from '../../utils/suggestions/skillUsageTracking.js'
-import { createAgentId } from '../../utils/uuid.js'
+} from '../../utils_v2/forkedAgent.js'
+import { parseFrontmatter } from '../../utils_v2/frontmatterParser.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { createUserMessage, normalizeMessages } from '../../utils_v2/messages.js'
+import type { ModelAlias } from '../../utils_v2/model/aliases.js'
+import { resolveSkillModelOverride } from '../../utils_v2/model/model.js'
+import { recordSkillUsage } from '../../utils_v2/suggestions/skillUsageTracking.js'
+import { createAgentId } from '../../utils_v2/uuid.js'
 import { runAgent } from '../AgentTool/runAgent.js'
 import {
   getToolUseIDFromParentMessage,

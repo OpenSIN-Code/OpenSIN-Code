@@ -5,7 +5,7 @@ import {
   getOriginalCwd,
   getSessionId,
   onSessionSwitch,
-} from '../bootstrap/state.js'
+} from '../../bootstrap_system/state.js'
 import { registerCleanup } from './cleanupRegistry.js'
 import { logForDebugging } from './debug.js'
 import { getOpenSINConfigHomeDir } from './envUtils.js'

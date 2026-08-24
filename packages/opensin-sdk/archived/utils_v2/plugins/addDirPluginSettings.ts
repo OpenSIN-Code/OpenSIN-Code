@@ -8,7 +8,7 @@
 
 import { join } from 'path'
 import type { z } from 'zod/v4'
-import { getAdditionalDirectoriesForOpenSINMd } from '../../bootstrap/state.js'
+import { getAdditionalDirectoriesForOpenSINMd } from '../../bootstrap_system/state.js'
 import { parseSettingsFile } from '../settings/settings.js'
 import type {
   ExtraKnownMarketplaceSchema,

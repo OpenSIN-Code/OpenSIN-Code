@@ -1,7 +1,11 @@
 import emojiRegex from 'emoji-regex'
 import { eastAsianWidth } from 'get-east-asian-width'
 import stripAnsi from 'strip-ansi'
+<<<<<<< HEAD
 import { getGraphemeSegmenter } from '../utils/intl'
+=======
+import { getGraphemeSegmenter } from '../../utils_v2/intl.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const EMOJI_REGEX = emojiRegex()
 

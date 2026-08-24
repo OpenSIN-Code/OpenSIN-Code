@@ -1,5 +1,6 @@
 import Fuse from 'fuse'
 import { basename } from 'path'
+<<<<<<< HEAD
 import type { SuggestionItem } from 'src/components/PromptInput/PromptInputFooterSuggestions'
 import { generateFileSuggestions } from 'src/hooks/fileSuggestions'
 import type { ServerResource } from 'src/services/mcp/types'
@@ -8,6 +9,16 @@ import type { AgentDefinition } from 'src/tools/AgentTool/loadAgentsDir'
 import { truncateToWidth } from 'src/utils/format'
 import { logError } from 'src/utils/log'
 import type { Theme } from 'src/utils/theme'
+=======
+import type { SuggestionItem } from '../../components_v2/PromptInput/PromptInputFooterSuggestions.js'
+import { generateFileSuggestions } from '../../hooks_v2/fileSuggestions.js'
+import type { ServerResource } from '../services/mcp/types.js'
+import { getAgentColor } from '../../tools_v2/AgentTool/agentColorManager.js'
+import type { AgentDefinition } from '../../tools_v2/AgentTool/loadAgentsDir.js'
+import { truncateToWidth } from '../../utils_v2/format.js'
+import { logError } from '../../utils_v2/log.js'
+import type { Theme } from '../../utils_v2/theme.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type FileSuggestionSource = {
   type: 'file'

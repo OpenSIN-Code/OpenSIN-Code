@@ -4,14 +4,14 @@ import {
 } from '@modelcontextprotocol/sdk/types.js'
 import { z } from 'zod/v4'
 import { ensureConnectedClient } from '../../services/mcp/client.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { lazySchema } from '../../utils/lazySchema.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
 import {
   getBinaryBlobSavedMessage,
   persistBinaryContent,
-} from '../../utils/mcpOutputStorage.js'
-import { jsonStringify } from '../../utils/slowOperations.js'
-import { isOutputLineTruncated } from '../../utils/terminal.js'
+} from '../../utils_v2/mcpOutputStorage.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+import { isOutputLineTruncated } from '../../utils_v2/terminal.js'
 import { DESCRIPTION, PROMPT } from './prompt.js'
 import {
   renderToolResultMessage,

@@ -13,15 +13,15 @@ import { c as _c } from "react/compiler-runtime";
 
 import { extname, join } from 'path';
 import * as React from 'react';
-import { hasShownLspRecommendationThisSession, setLspRecommendationShownThisSession } from '../bootstrap/state.js';
+import { hasShownLspRecommendationThisSession, setLspRecommendationShownThisSession } from '../../bootstrap_system/state.js';
 import { useNotifications } from '../context/notifications.js';
 import { useAppState } from '../state/AppState.js';
-import { saveGlobalConfig } from '../utils/config.js';
-import { logForDebugging } from '../utils/debug.js';
-import { logError } from '../utils/log.js';
-import { addToNeverSuggest, getMatchingLspPlugins, incrementIgnoredCount } from '../utils/plugins/lspRecommendation.js';
-import { cacheAndRegisterPlugin } from '../utils/plugins/pluginInstallationHelpers.js';
-import { getSettingsForSource, updateSettingsForSource } from '../utils/settings/settings.js';
+import { saveGlobalConfig } from '../../utils_v2/config.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { logError } from '../../utils_v2/log.js';
+import { addToNeverSuggest, getMatchingLspPlugins, incrementIgnoredCount } from '../../utils_v2/plugins/lspRecommendation.js';
+import { cacheAndRegisterPlugin } from '../../utils_v2/plugins/pluginInstallationHelpers.js';
+import { getSettingsForSource, updateSettingsForSource } from '../../utils_v2/settings/settings.js';
 import { installPluginAndNotify, usePluginRecommendationBase } from './usePluginRecommendationBase.js';
 
 // Threshold for detecting timeout vs explicit dismiss (ms)

@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import chalk from 'chalk';
 import React, { useContext } from 'react';
-import { Text } from '../ink.js';
-import { getShortcutDisplay } from '../keybindings/shortcutFormat.js';
-import { useShortcutDisplay } from '../keybindings/useShortcutDisplay.js';
+import { Text } from '../../ink_v2/index.js';
+import { getShortcutDisplay } from '../../keybindings_v2/shortcutFormat.js';
+import { useShortcutDisplay } from '../../keybindings_v2/useShortcutDisplay.js';
 import { KeyboardShortcutHint } from './design-system/KeyboardShortcutHint.js';
 import { InVirtualListContext } from './messageActions.js';
 

@@ -1,9 +1,9 @@
 import { c as _c } from "react/compiler-runtime";
 import * as React from 'react';
-import { Markdown } from '../../components/Markdown.js';
-import { Box, Text } from '../../ink.js';
-import { jsonParse } from '../../utils/slowOperations.js';
-import { type IdleNotificationMessage, isIdleNotification, isPlanApprovalRequest, isPlanApprovalResponse, type PlanApprovalRequestMessage, type PlanApprovalResponseMessage } from '../../utils/teammateMailbox.js';
+import { Markdown } from '../../components_v2/Markdown.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { jsonParse } from '../../utils_v2/slowOperations.js';
+import { type IdleNotificationMessage, isIdleNotification, isPlanApprovalRequest, isPlanApprovalResponse, type PlanApprovalRequestMessage, type PlanApprovalResponseMessage } from '../../utils_v2/teammateMailbox.js';
 import { getShutdownMessageSummary } from './ShutdownMessage.js';
 import { getTaskAssignmentSummary } from './TaskAssignmentMessage.js';
 type PlanApprovalRequestProps = {

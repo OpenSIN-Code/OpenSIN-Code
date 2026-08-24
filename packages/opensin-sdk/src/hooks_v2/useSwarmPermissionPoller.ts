@@ -11,19 +11,33 @@
 
 import { useCallback, useEffect, useRef } from 'react'
 import { useInterval } from 'usehooks-ts'
+<<<<<<< HEAD
 import { logForDebugging } from '../utils/debug'
 import { errorMessage } from '../utils/errors'
 import {
   type PermissionUpdate,
   permissionUpdateSchema,
 } from '../utils/permissions/PermissionUpdateSchema'
+=======
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { errorMessage } from '../../utils_v2/errors.js'
+import {
+  type PermissionUpdate,
+  permissionUpdateSchema,
+} from '../../utils_v2/permissions/PermissionUpdateSchema.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   isSwarmWorker,
   type PermissionResponse,
   pollForResponse,
   removeWorkerResponse,
+<<<<<<< HEAD
 } from '../utils/swarm/permissionSync'
 import { getAgentName, getTeamName } from '../utils/teammate'
+=======
+} from '../../utils_v2/swarm/permissionSync.js'
+import { getAgentName, getTeamName } from '../../utils_v2/teammate.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const POLL_INTERVAL_MS = 500
 

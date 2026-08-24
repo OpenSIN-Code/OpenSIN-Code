@@ -1,8 +1,8 @@
 import { c as _c } from "react/compiler-runtime";
 import type { TextBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import * as React from 'react';
-import { Box, Text } from '../../ink.js';
-import { extractTag } from '../../utils/messages.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { extractTag } from '../../utils_v2/messages.js';
 type Props = {
   addMargin: boolean;
   param: TextBlockParam;

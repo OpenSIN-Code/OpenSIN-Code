@@ -1,10 +1,10 @@
 import chokidar, { type FSWatcher } from 'chokidar'
 import * as platformPath from 'path'
-import { getAdditionalDirectoriesForOpenSINMd } from '../../bootstrap/state.js'
+import { getAdditionalDirectoriesForOpenSINMd } from '../../bootstrap_system/state.js'
 import {
   clearCommandMemoizationCaches,
   clearCommandsCache,
-} from '../../commands.js'
+} from '../../commands_v2/index.js'
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,

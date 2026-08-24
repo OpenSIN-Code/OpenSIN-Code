@@ -1,15 +1,25 @@
 import chalk from 'chalk'
+<<<<<<< HEAD
 import { logEvent } from 'src/services/analytics/index'
+=======
+import { logEvent } from '../services/analytics/index.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getLatestVersion,
   type InstallStatus,
   installGlobalPackage,
+<<<<<<< HEAD
 } from 'src/utils/autoUpdater'
 import { regenerateCompletionCache } from 'src/utils/completionCache'
+=======
+} from '../../utils_v2/autoUpdater.js'
+import { regenerateCompletionCache } from '../../utils_v2/completionCache.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   getGlobalConfig,
   type InstallMethod,
   saveGlobalConfig,
+<<<<<<< HEAD
 } from 'src/utils/config'
 import { logForDebugging } from 'src/utils/debug'
 import { getDoctorDiagnostic } from 'src/utils/doctorDiagnostic'
@@ -26,6 +36,24 @@ import { getPackageManager } from 'src/utils/nativeInstaller/packageManagers'
 import { writeToStdout } from 'src/utils/process'
 import { gte } from 'src/utils/semver'
 import { getInitialSettings } from 'src/utils/settings/settings'
+=======
+} from '../../utils_v2/config.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { getDoctorDiagnostic } from '../../utils_v2/doctorDiagnostic.js'
+import { gracefulShutdown } from '../../utils_v2/gracefulShutdown.js'
+import {
+  installOrUpdateOpenSINPackage,
+  localInstallationExists,
+} from '../../utils_v2/localInstaller.js'
+import {
+  installLatest as installLatestNative,
+  removeInstalledSymlink,
+} from '../../utils_v2/nativeInstaller/index.js'
+import { getPackageManager } from '../../utils_v2/nativeInstaller/packageManagers.js'
+import { writeToStdout } from '../../utils_v2/process.js'
+import { gte } from '../../utils_v2/semver.js'
+import { getInitialSettings } from '../../utils_v2/settings/settings.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export async function update() {
   logEvent('tengu_update_check', {})

@@ -1,9 +1,17 @@
 import axios, { type AxiosError } from 'axios'
+<<<<<<< HEAD
 import type { StdoutMessage } from 'src/entrypoints/sdk/controlTypes'
 import { logForDebugging } from '../../utils/debug'
 import { logForDiagnosticsNoPII } from '../../utils/diagLogs'
 import { getSessionIngressAuthToken } from '../../utils/sessionIngressAuth'
 import { SerialBatchEventUploader } from './SerialBatchEventUploader'
+=======
+import type { StdoutMessage } from '../entrypoints/sdk/controlTypes.js'
+import { logForDebugging } from '../../utils_v2/debug.js'
+import { logForDiagnosticsNoPII } from '../../utils_v2/diagLogs.js'
+import { getSessionIngressAuthToken } from '../../utils_v2/sessionIngressAuth.js'
+import { SerialBatchEventUploader } from './SerialBatchEventUploader.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   WebSocketTransport,
   type WebSocketTransportOptions,

@@ -9,7 +9,11 @@ import {
   getOriginalCwd,
   getSessionId,
   regenerateSessionId,
+<<<<<<< HEAD
 } from '../../bootstrap/state'
+=======
+} from '../../bootstrap_system/state.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS,
   logEvent,
@@ -19,6 +23,7 @@ import { isInProcessTeammateTask } from '../../tasks/InProcessTeammateTask/types
 import {
   isLocalAgentTask,
   type LocalAgentTaskState,
+<<<<<<< HEAD
 } from '../../tasks/LocalAgentTask/LocalAgentTask'
 import { isLocalShellTask } from '../../tasks/LocalShellTask/guards'
 import { asAgentId } from '../../types/ids'
@@ -33,11 +38,28 @@ import { logError } from '../../utils/log'
 import { clearAllPlanSlugs } from '../../utils/plans'
 import { setCwd } from '../../utils/Shell'
 import { processSessionStartHooks } from '../../utils/sessionStart'
+=======
+} from '../../tasks/LocalAgentTask/LocalAgentTask.js'
+import { isLocalShellTask } from '../../tasks/LocalShellTask/guards.js'
+import { asAgentId } from '../../types/ids.js'
+import type { Message } from '../../types/message.js'
+import { createEmptyAttributionState } from '../../utils_v2/commitAttribution.js'
+import type { FileStateCache } from '../../utils_v2/fileStateCache.js'
+import {
+  executeSessionEndHooks,
+  getSessionEndHookTimeoutMs,
+} from '../../utils_v2/hooks.js'
+import { logError } from '../../utils_v2/log.js'
+import { clearAllPlanSlugs } from '../../utils_v2/plans.js'
+import { setCwd } from '../../utils_v2/Shell.js'
+import { processSessionStartHooks } from '../../utils_v2/sessionStart.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import {
   clearSessionMetadata,
   getAgentTranscriptPath,
   resetSessionFilePointer,
   saveWorktreeState,
+<<<<<<< HEAD
 } from '../../utils/sessionStorage'
 import {
   evictTaskOutput,
@@ -45,6 +67,15 @@ import {
 } from '../../utils/task/diskOutput'
 import { getCurrentWorktreeSession } from '../../utils/worktree'
 import { clearSessionCaches } from './caches'
+=======
+} from '../../utils_v2/sessionStorage.js'
+import {
+  evictTaskOutput,
+  initTaskOutputAsSymlink,
+} from '../../utils_v2/task/diskOutput.js'
+import { getCurrentWorktreeSession } from '../../utils_v2/worktree.js'
+import { clearSessionCaches } from './caches.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 export async function clearConversation({
   setMessages,

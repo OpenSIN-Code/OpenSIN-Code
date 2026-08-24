@@ -1,12 +1,12 @@
 import { join } from 'path';
 import React, { useCallback, useState } from 'react';
-import type { ExitState } from '../hooks/useExitOnCtrlCDWithKeybindings.js';
-import { useTerminalSize } from '../hooks/useTerminalSize.js';
+import type { ExitState } from '../../hooks_v2/useExitOnCtrlCDWithKeybindings.js';
+import { useTerminalSize } from '../../hooks_v2/useTerminalSize.js';
 import { setClipboard } from '../ink/termio/osc.js';
-import { Box, Text } from '../ink.js';
-import { useKeybinding } from '../keybindings/useKeybinding.js';
-import { getCwd } from '../utils/cwd.js';
-import { writeFileSync_DEPRECATED } from '../utils/slowOperations.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { useKeybinding } from '../../keybindings_v2/useKeybinding.js';
+import { getCwd } from '../../utils_v2/cwd.js';
+import { writeFileSync_DEPRECATED } from '../../utils_v2/slowOperations.js';
 import { ConfigurableShortcutHint } from './ConfigurableShortcutHint.js';
 import { Select } from './CustomSelect/select.js';
 import { Byline } from './design-system/Byline.js';

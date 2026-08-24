@@ -1,20 +1,20 @@
 import { c as _c } from "react/compiler-runtime";
 import chalk from 'chalk';
 import * as React from 'react';
-import type { CommandResultDisplay } from '../../commands.js';
-import { ModelPicker } from '../../components/ModelPicker.js';
+import type { CommandResultDisplay } from '../../commands_v2/index.js';
+import { ModelPicker } from '../../components_v2/ModelPicker.js';
 import { COMMON_HELP_ARGS, COMMON_INFO_ARGS } from '../../constants/xml.js';
 import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from '../../services/analytics/index.js';
 import { useAppState, useSetAppState } from '../../state/AppState.js';
 import type { LocalJSXCommandCall } from '../../types/command.js';
-import type { EffortLevel } from '../../utils/effort.js';
-import { isBilledAsExtraUsage } from '../../utils/extraUsage.js';
-import { clearFastModeCooldown, isFastModeAvailable, isFastModeEnabled, isFastModeSupportedByModel } from '../../utils/fastMode.js';
-import { MODEL_ALIASES } from '../../utils/model/aliases.js';
-import { checkOpus1mAccess, checkSonnet1mAccess } from '../../utils/model/check1mAccess.js';
-import { getDefaultMainLoopModelSetting, isOpus1mMergeEnabled, renderDefaultModelSetting } from '../../utils/model/model.js';
-import { isModelAllowed } from '../../utils/model/modelAllowlist.js';
-import { validateModel } from '../../utils/model/validateModel.js';
+import type { EffortLevel } from '../../utils_v2/effort.js';
+import { isBilledAsExtraUsage } from '../../utils_v2/extraUsage.js';
+import { clearFastModeCooldown, isFastModeAvailable, isFastModeEnabled, isFastModeSupportedByModel } from '../../utils_v2/fastMode.js';
+import { MODEL_ALIASES } from '../../utils_v2/model/aliases.js';
+import { checkOpus1mAccess, checkSonnet1mAccess } from '../../utils_v2/model/check1mAccess.js';
+import { getDefaultMainLoopModelSetting, isOpus1mMergeEnabled, renderDefaultModelSetting } from '../../utils_v2/model/model.js';
+import { isModelAllowed } from '../../utils_v2/model/modelAllowlist.js';
+import { validateModel } from '../../utils_v2/model/validateModel.js';
 function ModelPickerWrapper(t0) {
   const $ = _c(17);
   const {

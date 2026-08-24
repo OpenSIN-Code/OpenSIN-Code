@@ -1,17 +1,17 @@
 import { z } from 'zod/v4'
-import { setScheduledTasksEnabled } from '../../bootstrap/state.js'
-import type { ValidationResult } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { cronToHuman, parseCronExpression } from '../../utils/cron.js'
+import { setScheduledTasksEnabled } from '../../bootstrap_system/state.js'
+import type { ValidationResult } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { cronToHuman, parseCronExpression } from '../../utils_v2/cron.js'
 import {
   addCronTask,
   getCronFilePath,
   listAllCronTasks,
   nextCronRunMs,
-} from '../../utils/cronTasks.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { semanticBoolean } from '../../utils/semanticBoolean.js'
-import { getTeammateContext } from '../../utils/teammateContext.js'
+} from '../../utils_v2/cronTasks.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { semanticBoolean } from '../../utils_v2/semanticBoolean.js'
+import { getTeammateContext } from '../../utils_v2/teammateContext.js'
 import {
   buildCronCreateDescription,
   buildCronCreatePrompt,

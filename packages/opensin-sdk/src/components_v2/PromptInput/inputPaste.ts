@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { getPastedTextRefNumLines } from 'src/history'
 import type { PastedContent } from 'src/utils/config'
+=======
+import { getPastedTextRefNumLines } from 'src/history.js'
+import type { PastedContent } from '../../utils_v2/config.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 const TRUNCATION_THRESHOLD = 10000 // Characters before we truncate
 const PREVIEW_LENGTH = 1000 // Characters to show at start and end

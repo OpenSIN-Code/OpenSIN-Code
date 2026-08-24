@@ -4,16 +4,16 @@ import type {
   ToolResultBlockParam,
 } from '@opensin-ai/sdk/resources/index.mjs'
 import { readFile, stat } from 'fs/promises'
-import { getOriginalCwd } from 'src/bootstrap/state.js'
-import { logEvent } from 'src/services/analytics/index.js'
-import type { ToolPermissionContext } from 'src/Tool.js'
-import { getCwd } from 'src/utils/cwd.js'
-import { pathInAllowedWorkingPath } from 'src/utils/permissions/filesystem.js'
-import { setCwd } from 'src/utils/Shell.js'
-import { shouldMaintainProjectWorkingDir } from '../../utils/envUtils.js'
-import { maybeResizeAndDownsampleImageBuffer } from '../../utils/imageResizer.js'
-import { getMaxOutputLength } from '../../utils/shell/outputLimits.js'
-import { countCharInString, plural } from '../../utils/stringUtils.js'
+import { getOriginalCwd } from '../../bootstrap_system/state.js'
+import { logEvent } from '../services/analytics/index.js'
+import type { ToolPermissionContext } from '../../tools_v2/Tool.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { pathInAllowedWorkingPath } from '../../utils_v2/permissions/filesystem.js'
+import { setCwd } from '../../utils_v2/Shell.js'
+import { shouldMaintainProjectWorkingDir } from '../../utils_v2/envUtils.js'
+import { maybeResizeAndDownsampleImageBuffer } from '../../utils_v2/imageResizer.js'
+import { getMaxOutputLength } from '../../utils_v2/shell/outputLimits.js'
+import { countCharInString, plural } from '../../utils_v2/stringUtils.js'
 /**
  * Strips leading and trailing lines that contain only whitespace/newlines.
  * Unlike trim(), this preserves whitespace within content lines and only removes

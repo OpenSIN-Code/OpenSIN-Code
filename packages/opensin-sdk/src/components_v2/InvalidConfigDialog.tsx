@@ -1,12 +1,12 @@
 import { c as _c } from "react/compiler-runtime";
 import React from 'react';
-import { Box, render, Text } from '../ink.js';
-import { KeybindingSetup } from '../keybindings/KeybindingProviderSetup.js';
+import { Box, render, Text } from '../../ink_v2/index.js';
+import { KeybindingSetup } from '../../keybindings_v2/KeybindingProviderSetup.js';
 import { AppStateProvider } from '../state/AppState.js';
-import type { ConfigParseError } from '../utils/errors.js';
-import { getBaseRenderOptions } from '../utils/renderOptions.js';
-import { jsonStringify, writeFileSync_DEPRECATED } from '../utils/slowOperations.js';
-import type { ThemeName } from '../utils/theme.js';
+import type { ConfigParseError } from '../../utils_v2/errors.js';
+import { getBaseRenderOptions } from '../../utils_v2/renderOptions.js';
+import { jsonStringify, writeFileSync_DEPRECATED } from '../../utils_v2/slowOperations.js';
+import type { ThemeName } from '../../utils_v2/theme.js';
 import { Select } from './CustomSelect/index.js';
 import { Dialog } from './design-system/Dialog.js';
 interface InvalidConfigHandlerProps {

@@ -1,27 +1,27 @@
 import { z } from 'zod/v4'
-import type { ValidationResult } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { getCwd } from '../../utils/cwd.js'
-import { isENOENT } from '../../utils/errors.js'
+import type { ValidationResult } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { isENOENT } from '../../utils_v2/errors.js'
 import {
   FILE_NOT_FOUND_CWD_NOTE,
   suggestPathUnderCwd,
-} from '../../utils/file.js'
-import { getFsImplementation } from '../../utils/fsOperations.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { expandPath, toRelativePath } from '../../utils/path.js'
+} from '../../utils_v2/file.js'
+import { getFsImplementation } from '../../utils_v2/fsOperations.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { expandPath, toRelativePath } from '../../utils_v2/path.js'
 import {
   checkReadPermissionForTool,
   getFileReadIgnorePatterns,
   normalizePatternsToPath,
-} from '../../utils/permissions/filesystem.js'
-import type { PermissionDecision } from '../../utils/permissions/PermissionResult.js'
-import { matchWildcardPattern } from '../../utils/permissions/shellRuleMatching.js'
-import { getGlobExclusionsForPluginCache } from '../../utils/plugins/orphanedPluginFilter.js'
-import { ripGrep } from '../../utils/ripgrep.js'
-import { semanticBoolean } from '../../utils/semanticBoolean.js'
-import { semanticNumber } from '../../utils/semanticNumber.js'
-import { plural } from '../../utils/stringUtils.js'
+} from '../../utils_v2/permissions/filesystem.js'
+import type { PermissionDecision } from '../../utils_v2/permissions/PermissionResult.js'
+import { matchWildcardPattern } from '../../utils_v2/permissions/shellRuleMatching.js'
+import { getGlobExclusionsForPluginCache } from '../../utils_v2/plugins/orphanedPluginFilter.js'
+import { ripGrep } from '../../utils_v2/ripgrep.js'
+import { semanticBoolean } from '../../utils_v2/semanticBoolean.js'
+import { semanticNumber } from '../../utils_v2/semanticNumber.js'
+import { plural } from '../../utils_v2/stringUtils.js'
 import { GREP_TOOL_NAME, getDescription } from './prompt.js'
 import {
   getToolUseSummary,

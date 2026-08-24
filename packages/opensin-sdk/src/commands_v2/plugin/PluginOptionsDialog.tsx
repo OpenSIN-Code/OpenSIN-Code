@@ -1,13 +1,13 @@
 import { c as _c } from "react/compiler-runtime";
 import figures from 'figures';
 import React, { useCallback, useState } from 'react';
-import { Dialog } from '../../components/design-system/Dialog.js';
+import { Dialog } from '../../components_v2/design-system/Dialog.js';
 import { stringWidth } from '../../ink/stringWidth.js';
 // eslint-disable-next-line custom-rules/prefer-use-keybindings -- raw text input for config dialog
-import { Box, Text, useInput } from '../../ink.js';
-import { useKeybinding, useKeybindings } from '../../keybindings/useKeybinding.js';
-import { isEnvTruthy } from '../../utils/envUtils.js';
-import type { PluginOptionSchema, PluginOptionValues } from '../../utils/plugins/pluginOptionsStorage.js';
+import { Box, Text, useInput } from '../../ink_v2/index.js';
+import { useKeybinding, useKeybindings } from '../../keybindings_v2/useKeybinding.js';
+import { isEnvTruthy } from '../../utils_v2/envUtils.js';
+import type { PluginOptionSchema, PluginOptionValues } from '../../utils_v2/plugins/pluginOptionsStorage.js';
 
 /**
  * Build the onSave payload from collected string inputs.

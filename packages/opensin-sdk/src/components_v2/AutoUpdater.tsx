@@ -1,17 +1,17 @@
 import * as React from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from 'src/services/analytics/index.js';
+import { type AnalyticsMetadata_I_VERIFIED_THIS_IS_NOT_CODE_OR_FILEPATHS, logEvent } from '../services/analytics/index.js';
 import { useInterval } from 'usehooks-ts';
-import { useUpdateNotification } from '../hooks/useUpdateNotification.js';
-import { Box, Text } from '../ink.js';
-import { type AutoUpdaterResult, getLatestVersion, getMaxVersion, type InstallStatus, installGlobalPackage, shouldSkipVersion } from '../utils/autoUpdater.js';
-import { getGlobalConfig, isAutoUpdaterDisabled } from '../utils/config.js';
-import { logForDebugging } from '../utils/debug.js';
-import { getCurrentInstallationType } from '../utils/doctorDiagnostic.js';
-import { installOrUpdateOpenSINPackage, localInstallationExists } from '../utils/localInstaller.js';
-import { removeInstalledSymlink } from '../utils/nativeInstaller/index.js';
-import { gt, gte } from '../utils/semver.js';
-import { getInitialSettings } from '../utils/settings/settings.js';
+import { useUpdateNotification } from '../../hooks_v2/useUpdateNotification.js';
+import { Box, Text } from '../../ink_v2/index.js';
+import { type AutoUpdaterResult, getLatestVersion, getMaxVersion, type InstallStatus, installGlobalPackage, shouldSkipVersion } from '../../utils_v2/autoUpdater.js';
+import { getGlobalConfig, isAutoUpdaterDisabled } from '../../utils_v2/config.js';
+import { logForDebugging } from '../../utils_v2/debug.js';
+import { getCurrentInstallationType } from '../../utils_v2/doctorDiagnostic.js';
+import { installOrUpdateOpenSINPackage, localInstallationExists } from '../../utils_v2/localInstaller.js';
+import { removeInstalledSymlink } from '../../utils_v2/nativeInstaller/index.js';
+import { gt, gte } from '../../utils_v2/semver.js';
+import { getInitialSettings } from '../../utils_v2/settings/settings.js';
 type Props = {
   isUpdating: boolean;
   onChangeIsUpdating: (isUpdating: boolean) => void;

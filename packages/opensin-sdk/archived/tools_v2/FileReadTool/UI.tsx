@@ -1,14 +1,14 @@
 import type { ToolResultBlockParam } from '@opensin-ai/sdk/resources/index.mjs';
 import * as React from 'react';
-import { extractTag } from 'src/utils/messages.js';
-import { FallbackToolUseErrorMessage } from '../../components/FallbackToolUseErrorMessage.js';
-import { FilePathLink } from '../../components/FilePathLink.js';
-import { MessageResponse } from '../../components/MessageResponse.js';
-import { Text } from '../../ink.js';
-import { FILE_NOT_FOUND_CWD_NOTE, getDisplayPath } from '../../utils/file.js';
-import { formatFileSize } from '../../utils/format.js';
-import { getPlansDirectory } from '../../utils/plans.js';
-import { getTaskOutputDir } from '../../utils/task/diskOutput.js';
+import { extractTag } from '../../utils_v2/messages.js';
+import { FallbackToolUseErrorMessage } from '../../components_v2/FallbackToolUseErrorMessage.js';
+import { FilePathLink } from '../../components_v2/FilePathLink.js';
+import { MessageResponse } from '../../components_v2/MessageResponse.js';
+import { Text } from '../../ink_v2/index.js';
+import { FILE_NOT_FOUND_CWD_NOTE, getDisplayPath } from '../../utils_v2/file.js';
+import { formatFileSize } from '../../utils_v2/format.js';
+import { getPlansDirectory } from '../../utils_v2/plans.js';
+import { getTaskOutputDir } from '../../utils_v2/task/diskOutput.js';
 import type { Input, Output } from './FileReadTool.js';
 
 /**

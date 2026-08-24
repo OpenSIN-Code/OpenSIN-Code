@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import type { Tools } from '../../Tool'
 import { resolveAgentTools } from '../../tools/AgentTool/agentToolUtils'
+=======
+import type { Tools } from '../../tools_v2/Tool.js'
+import { resolveAgentTools } from '../../tools/AgentTool/agentToolUtils.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 import type {
   AgentDefinition,
   CustomAgentDefinition,

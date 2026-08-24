@@ -1,5 +1,9 @@
 import { useContext } from 'react'
+<<<<<<< HEAD
 import TerminalFocusContext from '../components/TerminalFocusContext'
+=======
+import TerminalFocusContext from '../../components_v2/TerminalFocusContext.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Hook to check if the terminal has focus.

@@ -8,8 +8,13 @@
  */
 
 import { useCallback, useEffect, useRef } from 'react'
+<<<<<<< HEAD
 import { useAppState, useSetAppState } from '../state/AppState'
 import type { Message } from '../types/message'
+=======
+import { useAppState, useSetAppState } from '../state/AppState.js'
+import type { Message } from '../../types/message.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type UseSessionBackgroundingProps = {
   setMessages: (messages: Message[] | ((prev: Message[]) => Message[])) => void

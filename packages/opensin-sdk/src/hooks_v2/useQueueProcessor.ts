@@ -3,9 +3,15 @@ import type { QueuedCommand } from '../types/textInputTypes'
 import {
   getCommandQueueSnapshot,
   subscribeToCommandQueue,
+<<<<<<< HEAD
 } from '../utils/messageQueueManager'
 import type { QueryGuard } from '../utils/QueryGuard'
 import { processQueueIfReady } from '../utils/queueProcessor'
+=======
+} from '../../utils_v2/messageQueueManager.js'
+import type { QueryGuard } from '../../utils_v2/QueryGuard.js'
+import { processQueueIfReady } from '../../utils_v2/queueProcessor.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 type UseQueueProcessorParams = {
   executeQueuedInput: (commands: QueuedCommand[]) => Promise<void>

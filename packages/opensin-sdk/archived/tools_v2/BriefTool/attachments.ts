@@ -8,13 +8,13 @@
 import { feature } from 'bun:bundle'
 import { stat } from 'fs/promises'
 
-import type { ValidationResult } from '../../Tool.js'
+import type { ValidationResult } from '../../tools_v2/Tool.js'
 
-import { getCwd } from '../../utils/cwd.js'
-import { isEnvTruthy } from '../../utils/envUtils.js'
-import { getErrnoCode } from '../../utils/errors.js'
-import { IMAGE_EXTENSION_REGEX } from '../../utils/imagePaste.js'
-import { expandPath } from '../../utils/path.js'
+import { getCwd } from '../../utils_v2/cwd.js'
+import { isEnvTruthy } from '../../utils_v2/envUtils.js'
+import { getErrnoCode } from '../../utils_v2/errors.js'
+import { IMAGE_EXTENSION_REGEX } from '../../utils_v2/imagePaste.js'
+import { expandPath } from '../../utils_v2/path.js'
 
 export type ResolvedAttachment = {
   path: string

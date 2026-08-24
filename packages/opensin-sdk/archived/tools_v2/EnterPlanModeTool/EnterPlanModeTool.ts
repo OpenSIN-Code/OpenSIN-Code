@@ -3,13 +3,13 @@ import { z } from 'zod/v4'
 import {
   getAllowedChannels,
   handlePlanModeTransition,
-} from '../../bootstrap/state.js'
-import type { Tool } from '../../Tool.js'
-import { buildTool, type ToolDef } from '../../Tool.js'
-import { lazySchema } from '../../utils/lazySchema.js'
-import { applyPermissionUpdate } from '../../utils/permissions/PermissionUpdate.js'
-import { prepareContextForPlanMode } from '../../utils/permissions/permissionSetup.js'
-import { isPlanModeInterviewPhaseEnabled } from '../../utils/planModeV2.js'
+} from '../../bootstrap_system/state.js'
+import type { Tool } from '../../tools_v2/Tool.js'
+import { buildTool, type ToolDef } from '../../tools_v2/Tool.js'
+import { lazySchema } from '../../utils_v2/lazySchema.js'
+import { applyPermissionUpdate } from '../../utils_v2/permissions/PermissionUpdate.js'
+import { prepareContextForPlanMode } from '../../utils_v2/permissions/permissionSetup.js'
+import { isPlanModeInterviewPhaseEnabled } from '../../utils_v2/planModeV2.js'
 import { ENTER_PLAN_MODE_TOOL_NAME } from './constants.js'
 import { getEnterPlanModeToolPrompt } from './prompt.js'
 import {

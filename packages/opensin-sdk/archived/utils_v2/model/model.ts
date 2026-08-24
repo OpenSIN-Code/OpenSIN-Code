@@ -5,7 +5,7 @@
  * literals with process.env.USER_TYPE === 'ant' for Bun to remove the codenames
  * during dead code elimination
  */
-import { getMainLoopModelOverride } from '../../bootstrap/state.js'
+import { getMainLoopModelOverride } from '../../bootstrap_system/state.js'
 import {
   getSubscriptionType,
   isOpenSINAISubscriber,

@@ -23,9 +23,15 @@ import {
 import {
   getXaaIdpSettings,
   isXaaEnabled,
+<<<<<<< HEAD
 } from '../../services/mcp/xaaIdpLogin'
 import { parseEnvVars } from '../../utils/envUtils'
 import { jsonStringify } from '../../utils/slowOperations'
+=======
+} from '../../services/mcp/xaaIdpLogin.js'
+import { parseEnvVars } from '../../utils_v2/envUtils.js'
+import { jsonStringify } from '../../utils_v2/slowOperations.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 /**
  * Registers the `mcp add` subcommand on the given Commander command.

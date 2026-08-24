@@ -3,10 +3,17 @@ import {
   DefaultEventPriority,
   DiscreteEventPriority,
   NoEventPriority,
+<<<<<<< HEAD
 } from 'react-reconciler/constants'
 import { logError } from '../../utils/log'
 import { HANDLER_FOR_EVENT } from './event-handlers'
 import type { EventTarget, TerminalEvent } from './terminal-event'
+=======
+} from 'react-reconciler/constants.js'
+import { logError } from '../../utils_v2/log.js'
+import { HANDLER_FOR_EVENT } from './event-handlers.js'
+import type { EventTarget, TerminalEvent } from './terminal-event.js'
+>>>>>>> 14499e481 (feat: Complete sin-claude migration to OpenSIN-Code (1,565+ files))
 
 // --
 

@@ -5,15 +5,15 @@ import {
   logEvent,
 } from '../../services/analytics/index.js'
 import { queryHaiku } from '../../services/api/opensin.js'
-import { AbortError } from '../../utils/errors.js'
-import { getWebFetchUserAgent } from '../../utils/http.js'
-import { logError } from '../../utils/log.js'
+import { AbortError } from '../../utils_v2/errors.js'
+import { getWebFetchUserAgent } from '../../utils_v2/http.js'
+import { logError } from '../../utils_v2/log.js'
 import {
   isBinaryContentType,
   persistBinaryContent,
-} from '../../utils/mcpOutputStorage.js'
-import { getSettings_DEPRECATED } from '../../utils/settings/settings.js'
-import { asSystemPrompt } from '../../utils/systemPromptType.js'
+} from '../../utils_v2/mcpOutputStorage.js'
+import { getSettings_DEPRECATED } from '../../utils_v2/settings/settings.js'
+import { asSystemPrompt } from '../../utils_v2/systemPromptType.js'
 import { isPreapprovedHost } from './preapproved.js'
 import { makeSecondaryModelPrompt } from './prompt.js'
 

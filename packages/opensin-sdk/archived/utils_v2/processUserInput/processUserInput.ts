@@ -5,18 +5,18 @@ import type {
   ImageBlockParam,
 } from '@opensin-ai/sdk/resources/messages.mjs'
 import { randomUUID } from 'crypto'
-import type { QuerySource } from 'src/constants/querySource.js'
-import { logEvent } from 'src/services/analytics/index.js'
-import { getContentText } from 'src/utils/messages.js'
+import type { QuerySource } from '../../constants/querySource.js'
+import { logEvent } from '../services/analytics/index.js'
+import { getContentText } from '../../utils_v2/messages.js'
 import {
   findCommand,
   getCommandName,
   isBridgeSafeCommand,
   type LocalJSXCommandContext,
-} from '../../commands.js'
-import type { CanUseToolFn } from '../../hooks/useCanUseTool.js'
-import type { IDESelection } from '../../hooks/useIdeSelection.js'
-import type { SetToolJSXFn, ToolUseContext } from '../../Tool.js'
+} from '../../commands_v2/index.js'
+import type { CanUseToolFn } from '../../hooks_v2/useCanUseTool.js'
+import type { IDESelection } from '../../hooks_v2/useIdeSelection.js'
+import type { SetToolJSXFn, ToolUseContext } from '../../tools_v2/Tool.js'
 import type {
   AssistantMessage,
   AttachmentMessage,
